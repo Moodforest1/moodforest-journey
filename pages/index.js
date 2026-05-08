@@ -22,36 +22,36 @@ export default function Home() {
   ];
 
   const healthCards = [
-    {
-      title: "Cognitive Strength",
-      value: "Awaiting Reflection",
-      description: "Clarity, steadiness & restorative sleep",
-    },
-    {
-      title: "Metabolic Fitness",
-      value: "Awaiting Reflection",
-      description: "Energy regulation & glycemic steadiness",
-    },
-    {
-      title: "Cardiac Health",
-      value: "Awaiting Reflection",
-      description: "Lipid balance & cardiovascular resilience",
-    },
-    {
-      title: "Inflammation Control",
-      value: "Awaiting Reflection",
-      description: "Systemic inflammatory load & recovery",
-    },
-    {
-      title: "Nutritional Status",
-      value: "Awaiting Reflection",
-      description: "Vitamin reserves & nutritional recovery",
-    },
-    {
-      title: "Physical Function",
-      value: "Awaiting Reflection",
-      description: "Movement, stamina & functional recovery",
-    },
+   {
+  title: "Cognitive Flow",
+  value: "Establishing Baseline",
+  description: "Clarity, steadiness & restorative sleep",
+},
+{
+  title: "Metabolic Resilience",
+  value: "Observing Rhythm",
+  description: "Energy regulation & glycemic steadiness",
+},
+{
+  title: "Cardiac Lipids",
+  value: "Recovery Continuity",
+  description: "Lipid balance & cardiovascular resilience",
+},
+{
+  title: "Inflammation Regulation",
+  value: "Stabilizing",
+  description: "Systemic inflammatory load & recovery",
+},
+{
+  title: "Vitamin Status",
+  value: "Replenishing",
+  description: "Vitamin reserves & nutritional recovery",
+},
+{
+  title: "Belly Balance",
+  value: "Restorative Movement",
+  description: "Movement, stamina & functional recovery",
+},
   ];
 
   return (
@@ -265,10 +265,10 @@ export default function Home() {
 
                 <div
                   style={{
-                    fontSize: isMobile ? "30px" : "38px",
+                    fontSize: isMobile ? "22px" : "28px",
                     lineHeight: "1.1",
                     marginBottom: "14px",
-                    fontWeight: 700,
+                    fontWeight: 600,
                   }}
                 >
                   {card.value}
