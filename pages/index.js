@@ -1,4 +1,5 @@
 export default function Home() {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const residencyUpdates = [
     {
       type: "Schedule",
@@ -58,14 +59,14 @@ export default function Home() {
       style={{
         minHeight: "100vh",
         background: "#edf2ed",
-        padding: "24px",
+        padding: isMobile ? "18px" : "24px",
         fontFamily: "Inter, sans-serif",
         color: "#244837",
       }}
     >
       <div
         style={{
-          maxWidth: "860px",
+          maxWidth: "920px",
           margin: "0 auto",
         }}
       >
@@ -121,7 +122,7 @@ export default function Home() {
 
           <h1
             style={{
-              fontSize: "62px",
+              fontSize: isMobile ? "48px" : "62px",
               lineHeight: "1.04",
               margin: 0,
               marginBottom: "18px",
@@ -183,7 +184,7 @@ export default function Home() {
 
           <div
             style={{
-              fontSize: "44px",
+              fontSize: isMobile ? "34px" : "44px",
               fontWeight: 700,
               marginBottom: "16px",
               lineHeight: "1.12",
@@ -264,7 +265,7 @@ export default function Home() {
 
                 <div
                   style={{
-                    fontSize: "38px",
+                    fontSize: isMobile ? "30px" : "38px",
                     lineHeight: "1.1",
                     marginBottom: "14px",
                     fontWeight: 700,
@@ -291,7 +292,7 @@ export default function Home() {
 
         <div
           style={{
-            marginBottom: "18px",
+            marginBottom: "120px",
           }}
         >
           <div
@@ -312,7 +313,7 @@ export default function Home() {
               style={{
                 background: "rgba(255,255,255,0.72)",
                 borderRadius: "28px",
-                padding: "28px",
+                padding: isMobile ? "22px" : "28px",
                 border: "1px solid #dde7df",
                 marginBottom: "18px",
               }}
@@ -331,7 +332,7 @@ export default function Home() {
 
               <div
                 style={{
-                  fontSize: "34px",
+                  fontSize: isMobile ? "28px" : "34px",
                   lineHeight: "1.18",
                   fontWeight: 700,
                   marginBottom: "14px",
@@ -349,6 +350,45 @@ export default function Home() {
               >
                 {update.description}
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* BOTTOM NAVIGATION */}
+
+        <div
+          style={{
+            position: "fixed",
+            bottom: "18px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: isMobile ? "92%" : "720px",
+            background: "rgba(255,255,255,0.82)",
+            backdropFilter: "blur(18px)",
+            border: "1px solid #dde7df",
+            borderRadius: "999px",
+            padding: "14px 10px",
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            boxShadow: "0 10px 32px rgba(31,45,38,0.08)",
+          }}
+        >
+          {[
+            "Journey",
+            "Reflect",
+            "Dossier",
+            "Support",
+          ].map((item, index) => (
+            <div
+              key={index}
+              style={{
+                fontSize: "14px",
+                color: index === 0 ? "#244837" : "#74877d",
+                fontWeight: index === 0 ? 700 : 500,
+              }}
+            >
+              {item}
             </div>
           ))}
         </div>
