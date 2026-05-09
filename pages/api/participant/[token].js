@@ -36,6 +36,7 @@ console.log("LIVE API RUNNING")
     )
 
     const records = zohoResponse.data.data || []
+    console.log(records[0])
 console.log(JSON.stringify(records[0], null, 2))
     const participant = records.find(
       p => p.Access_Token === token
