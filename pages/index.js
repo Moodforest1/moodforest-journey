@@ -22,36 +22,36 @@ export default function Home() {
   ];
 
   const healthCards = [
-   {
-  title: "Cognitive Flow",
-  value: "Establishing Baseline",
-  description: "Clarity, steadiness & restorative sleep",
-},
-{
-  title: "Metabolic Resilience",
-  value: "Observing Rhythm",
-  description: "Energy regulation & glycemic steadiness",
-},
-{
-  title: "Cardiac Lipids",
-  value: "Recovery Continuity",
-  description: "Lipid balance & cardiovascular resilience",
-},
-{
-  title: "Inflammation Regulation",
-  value: "Stabilizing",
-  description: "Systemic inflammatory load & recovery",
-},
-{
-  title: "Vitamin Status",
-  value: "Replenishing",
-  description: "Vitamin reserves & nutritional recovery",
-},
-{
-  title: "Belly Balance",
-  value: "Restorative Movement",
-  description: "Movement, stamina & functional recovery",
-},
+    {
+      title: "Cognitive Strength",
+      value: "Awaiting Reflection",
+      description: "Clarity, steadiness & restorative sleep",
+    },
+    {
+      title: "Metabolic Fitness",
+      value: "Awaiting Reflection",
+      description: "Energy regulation & glycemic steadiness",
+    },
+    {
+      title: "Cardiac Health",
+      value: "Awaiting Reflection",
+      description: "Lipid balance & cardiovascular resilience",
+    },
+    {
+      title: "Inflammation Control",
+      value: "Awaiting Reflection",
+      description: "Systemic inflammatory load & recovery",
+    },
+    {
+      title: "Nutritional Status",
+      value: "Awaiting Reflection",
+      description: "Vitamin reserves & nutritional recovery",
+    },
+    {
+      title: "Physical Function",
+      value: "Awaiting Reflection",
+      description: "Movement, stamina & functional recovery",
+    },
   ];
 
   return (
@@ -265,10 +265,10 @@ export default function Home() {
 
                 <div
                   style={{
-                    fontSize: isMobile ? "22px" : "28px",
+                    fontSize: isMobile ? "30px" : "38px",
                     lineHeight: "1.1",
                     marginBottom: "14px",
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
                   {card.value}
@@ -288,7 +288,82 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RESIDENCY CONTINUITY */}
+        {/* JOURNEY TIMELINE */}
+
+        <div
+          style={{
+            background: "rgba(255,255,255,0.68)",
+            borderRadius: "34px",
+            padding: isMobile ? "26px" : "34px",
+            border: "1px solid #dde7df",
+            marginBottom: "28px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "12px",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "#819287",
+              marginBottom: "28px",
+            }}
+          >
+            Journey Timeline
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              justifyContent: "space-between",
+              gap: isMobile ? "22px" : "12px",
+            }}
+          >
+            {[
+              "Enrollment",
+              "Diagnostics",
+              "Residency",
+              "Recovery",
+              "Longitudinal Continuity",
+            ].map((step, index) => {
+              const active = step === "Residency";
+
+              return (
+                <div
+                  key={index}
+                  style={{
+                    flex: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "14px",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "18px",
+                      height: "18px",
+                      borderRadius: "999px",
+                      background: active ? "#244837" : "#c8d5cc",
+                      flexShrink: 0,
+                    }}
+                  />
+
+                  <div
+                    style={{
+                      color: active ? "#244837" : "#819287",
+                      fontWeight: active ? 700 : 500,
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    {step}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* RESIDENCY CONTINUITY */}}
 
         <div
           style={{
