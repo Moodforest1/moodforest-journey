@@ -48,12 +48,7 @@ console.log(JSON.stringify(records[0], null, 2))
       })
     }
 
-    res.status(200).json({
-      name: participant.Full_Name || "Participant",
-      journeyState: participant.Journey_State || "",
-      assessmentUrl: participant.Assessment_URL || "",
-      reportUrl: participant.Report_URL || ""
-    })
+    res.status(200).json(participant)
 
   } catch (error) {
 
