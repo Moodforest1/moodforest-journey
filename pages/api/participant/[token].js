@@ -56,7 +56,7 @@ export default async function handler(req, res) {
     console.error(error.response?.data || error.message)
 
     res.status(500).json({
-      error: "Zoho fetch failed"
-    })
+  error: error.response?.data || error.message
+})
   }
 }
