@@ -3,8 +3,8 @@ export async function getServerSideProps(context) {
   const { token } = context.params
 
   const res = await fetch(
-    `http://localhost:3000/api/participant/${token}`
-  )
+  `https://journey.moodforest.co/api/participant/${token}`
+)
 
   if (!res.ok) {
     return {
