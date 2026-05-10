@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     const accessToken = await getAccessToken()
 
     const zohoResponse = await axios.get(
-      "https://www.zohoapis.in/creator/v2.1/data/madhur_moodforest755/moodforest-app/report/API_Test/all",
+      "https://www.zohoapis.in/creator/v2.1/data/madhur_moodforest755/moodforest-app/report/API_Test/records",
       {
         headers: {
           Authorization: `Zoho-oauthtoken ${accessToken}`
