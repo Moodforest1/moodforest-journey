@@ -26,14 +26,14 @@ export default async function handler(req, res) {
 
     const accessToken = await getAccessToken()
 
-    const zohoResponse = await axios.get(
+    const zohoResponse = await axios.post(
       "https://www.zohoapis.in/creator/v2.1/data/madhur_moodforest755/moodforest-app/form/Participant_Master",
+      {
+        criteria: `(Access_Token=="${token}")`
+      },
       {
         headers: {
           Authorization: `Zoho-oauthtoken ${accessToken}`
-        },
-        params: {
-          criteria: `(Access_Token=="${token}")`
         }
       }
     )
