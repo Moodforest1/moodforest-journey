@@ -6,7 +6,8 @@ export default function JourneyPage() {
   const { token } = router.query
 
   const assessmentUrl =
-    `https://creatorapp.zoho.in/madhur_moodforest755/moodforest-app/#Form:Cognitive_Flow_Assessment?Access_Token=${token}`
+    `const assessmentUrl =
+  `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1?Access_Token=${token}`
 
   const reportUrl =
     `https://creatorapp.zoho.in/madhur_moodforest755/moodforest-app/#Report:Archived_Reports1`
