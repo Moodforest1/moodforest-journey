@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     const accessToken = await getAccessToken()
 
     const zohoResponse = await axios.get(
-      `${process.env.ZOHO_API_DOMAIN}/creator/v2/data/${process.env.ZOHO_OWNER_NAME}/${process.env.ZOHO_APP_NAME}/form/Participant_Master`,
+      `${process.env.ZOHO_API_DOMAIN}/creator/v2/data/${process.env.ZOHO_OWNER_NAME}/${process.env.ZOHO_APP_NAME}/report/${process.env.Participant_API_View}`,
       {
         headers: {
           Authorization: `Zoho-oauthtoken ${accessToken}`
