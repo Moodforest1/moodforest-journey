@@ -1,122 +1,98 @@
-export async function getServerSideProps(context) {
+import { useRouter } from "next/router"
 
-  const { token } = context.params
+export default function JourneyPage() {
 
-  const res = await fetch(
-  `https://journey.moodforest.co/api/participant/${token}`
-)
+  const router = useRouter()
+  const { token } = router.query
 
-  if (!res.ok) {
-    return {
-      notFound: true
-    }
-  }
+  const assessmentUrl =
+    `https://creatorapp.zoho.in/madhur_moodforest755/moodforest-app/#Form:Cognitive_Flow_Assessment?Access_Token=${token}`
 
-  const participant = await res.json()
-
-  return {
-    props: {
-      participant
-    }
-  }
-}
-
-export default function JourneyPage({ participant }) {
+  const reportUrl =
+    `https://creatorapp.zoho.in/madhur_moodforest755/moodforest-app/#Report:Archived_Reports1`
 
   return (
     <div
       style={{
         minHeight: "100vh",
-        background: "#eef2ec",
-        padding: "40px",
-        fontFamily: "sans-serif"
+        backgroundColor: "#F6F4EE",
+        padding: "40px 24px",
+        fontFamily: "Arial, sans-serif",
+        color: "#18322A"
       }}
     >
-
       <div
         style={{
-          maxWidth: "700px",
-          margin: "0 auto",
-          background: "white",
-          borderRadius: "32px",
-          padding: "40px"
+          maxWidth: "480px",
+          margin: "0 auto"
         }}
       >
-
-        <p
+        <div
           style={{
-            letterSpacing: "3px",
-            color: "#7b8b7f",
-            fontSize: "12px"
+            fontSize: "42px",
+            fontWeight: "700",
+            lineHeight: "1.1",
+            marginBottom: "24px"
           }}
         >
-          YOUR JOURNEY
-        </p>
+          Welcome back.
+        </div>
 
-        <h1
+        <div
           style={{
-            fontSize: "72px",
-            lineHeight: 1,
-            color: "#163126"
-          }}
-        >
-          Welcome back,
-          <br />
-          {participant.name}.
-        </h1>
-
-        <p
-          style={{
-            marginTop: "24px",
-            color: "#5d6d61",
-            fontSize: "22px",
-            lineHeight: 1.6
+            fontSize: "20px",
+            lineHeight: "1.7",
+            marginBottom: "48px",
+            color: "#4B5B55"
           }}
         >
           Your preventive health journey continues through reflection,
           restorative continuity, emotional steadiness, and guided recovery.
-        </p>
+        </div>
 
         <div
           style={{
-            marginTop: "40px",
             display: "flex",
-            gap: "16px",
-            flexWrap: "wrap"
+            flexDirection: "column",
+            gap: "16px"
           }}
         >
-
           <a
-            href={participant.assessmentUrl}
+            href={assessmentUrl}
+            target="_blank"
             style={{
-              background: "#234434",
+              backgroundColor: "#18322A",
               color: "white",
-              padding: "18px 28px",
+              padding: "18px",
               borderRadius: "999px",
-              textDecoration: "none"
+              textDecoration: "none",
+              textAlign: "center",
+              fontSize: "18px",
+              fontWeight: "600"
             }}
           >
             Complete Reflection
           </a>
 
           <a
-            href={participant.reportUrl}
+            href={reportUrl}
+            target="_blank"
             style={{
-              border: "1px solid #d8dfd7",
-              background: "white",
-              color: "#234434",
-              padding: "18px 28px",
+              backgroundColor: "white",
+              color: "#18322A",
+              padding: "18px",
               borderRadius: "999px",
-              textDecoration: "none"
+              textDecoration: "none",
+              textAlign: "center",
+              fontSize: "18px",
+              fontWeight: "600",
+              border: "1px solid #D9D4C7"
             }}
           >
-            View Dossier
+            View Report
           </a>
-
         </div>
-
       </div>
-
     </div>
   )
 }
