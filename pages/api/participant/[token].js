@@ -33,7 +33,9 @@ export default async function handler(req, res) {
           Authorization: `Zoho-oauthtoken ${accessToken}`
         },
         params: {
-          criteria: `(Access_Token=="${token}")`
+          criteria: `(Access_Token=="${token}")`,
+          fields:
+            "Full_Name,Access_Token,Journey_State,Assessment_URL,Report_URL"
         }
       }
     )
