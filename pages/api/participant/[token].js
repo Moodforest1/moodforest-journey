@@ -28,7 +28,8 @@ export default async function handler(req, res) {
 
     console.log(process.env.ZOHO_API_DOMAIN) 
     const zohoResponse = await axios.get(
-      `${process.env.ZOHO_API_DOMAIN}/creator/v2.1/data/${process.env.ZOHO_OWNER_NAME}/${process.env.ZOHO_APP_NAME}/report/${process.env.ZOHO_REPORT_NAME}`,
+      `https://www.zohoapis.in/creator/v2.1/data/madhur_moodforest755/moodforest-app/report/API_Test
+      
       {
         headers: {
           Authorization: `Zoho-oauthtoken ${accessToken}`
