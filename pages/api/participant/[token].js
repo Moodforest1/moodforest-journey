@@ -27,21 +27,20 @@ export default async function handler(req, res) {
     const accessToken = await getAccessToken()
 
     const zohoResponse = await axios.get(
-      `${process.env.ZOHO_API_DOMAIN}/creator/v2/data/${process.env.ZOHO_OWNER_NAME}/${process.env.ZOHO_APP_NAME}/report/${process.env.Participant_API_View}`,
+      `${process.env.ZOHO_API_DOMAIN}/creator/v2/data/${process.env.ZOHO_OWNER_NAME}/${process.env.ZOHO_APP_NAME}/report/${process.env.ZOHO_REPORT_NAME}`,
       {
         headers: {
           Authorization: `Zoho-oauthtoken ${accessToken}`
+        },
+        params: {
+          criteria: `(Access_Token=="${token}")`
         }
       }
     )
 
     const records = zohoResponse.data.data || []
 
-    console.log(records[0])
-
-    const participant = records.find(
-      p => p.Access_Token === token
-    )
+    const participant = records[0]
 
     if (!participant) {
       return res.status(404).json({
@@ -49,14 +48,19 @@ export default async function handler(req, res) {
       })
     }
 
-    res.status(200).json(participant)
+    res.status(200).json({
+      name: participant.Full_Name || "",
+      journeyState: participant.Journey_State || "",
+      assessmentUrl: participant.Assessment_URL || "",
+      reportUrl: participant.Report_URL || ""
+    })
 
   } catch (error) {
 
     console.error(error.response?.data || error.message)
 
     res.status(500).json({
-  error: error.response?.data || error.message
-})
+      error: error.response?.data || error.message
+    })
   }
 }
