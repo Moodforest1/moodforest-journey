@@ -33,14 +33,14 @@ export default async function handler(req, res) {
           Authorization: `Zoho-oauthtoken ${accessToken}`
         },
         params: {
-          criteria: `(Access_Token=="${token}")`,
-          fields:
-            "Full_Name,Access_Token,Journey_State,Assessment_URL,Report_URL"
+          criteria: `(Access_Token=="${token}")`
         }
       }
     )
 
     const records = zohoResponse.data.data || []
+
+    console.log(JSON.stringify(records, null, 2))
 
     const participant = records[0]
 
@@ -59,7 +59,9 @@ export default async function handler(req, res) {
 
   } catch (error) {
 
-    console.error(error.response?.data || error.message)
+    console.error(
+      JSON.stringify(error.response?.data || error.message, null, 2)
+    )
 
     res.status(500).json({
       error: error.response?.data || error.message
