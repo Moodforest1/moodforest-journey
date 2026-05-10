@@ -6,11 +6,7 @@ export default function JourneyPage() {
   const { token } = router.query
 
   const assessmentUrl =
-    `const assessmentUrl =
-  `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1?Access_Token=${token}`
-
-  const reportUrl =
-    `https://creatorapp.zoho.in/madhur_moodforest755/moodforest-app/#Report:Archived_Reports1`
+    `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1?Access_Token=${token}`
 
   return (
     <div
@@ -48,7 +44,8 @@ export default function JourneyPage() {
           }}
         >
           Your preventive health journey continues through reflection,
-          restorative continuity, emotional steadiness, and guided recovery.
+          restorative continuity, emotional steadiness,
+          and guided recovery.
         </div>
 
         <div
@@ -61,6 +58,7 @@ export default function JourneyPage() {
           <a
             href={assessmentUrl}
             target="_blank"
+            rel="noopener noreferrer"
             style={{
               backgroundColor: "#18322A",
               color: "white",
@@ -75,23 +73,20 @@ export default function JourneyPage() {
             Complete Reflection
           </a>
 
-          <a
-            href={reportUrl}
-            target="_blank"
+          <div
             style={{
               backgroundColor: "white",
               color: "#18322A",
               padding: "18px",
               borderRadius: "999px",
-              textDecoration: "none",
               textAlign: "center",
               fontSize: "18px",
               fontWeight: "600",
               border: "1px solid #D9D4C7"
             }}
           >
-            View Report
-          </a>
+            Report Available Soon
+          </div>
         </div>
       </div>
     </div>
