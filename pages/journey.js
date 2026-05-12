@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router'
 
-export default function Home() {
+export default function JourneyHome() {
 
   const router = useRouter()
 
   const { mf_token } = router.query
 
   const iframeUrl =
-    `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/page-embed/Journey_Home/5hOOhPOy7q6NkQZ8T4h318ezGBw9jGwGXxqUqjsK2KmeCUgBJjYNhXrNazFp4gNTfuxavJ8zFxn5erKrgdsUqvwK64Vt4qUBDXfy?mf_token=${mf_token || ''}&v=21`
+    `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/page-perma/Journey_Home/Cq6s8WhunK6wUwu5C71Kgbf1xtyFf8mkfgT1CZp77HSX7M8NYN7Rhdkz3XTGMPT9mk2NEbmzTnasJrR5ueETxh2OOjuJk5e3HvDP?mf_token=${mf_token || ''}&v=5`
 
   return (
 
@@ -15,10 +15,10 @@ export default function Home() {
       style={{
         width: '100vw',
         height: '100vh',
+        overflow: 'hidden',
         margin: 0,
         padding: 0,
-        overflow: 'hidden',
-        background: '#edf4ef'
+        background: '#edf4ef',
       }}
     >
 
@@ -27,7 +27,7 @@ export default function Home() {
         style={{
           width: '100%',
           height: '100%',
-          border: 'none'
+          border: 'none',
         }}
       />
 

@@ -29,36 +29,25 @@ export default function MoodforestJourneyPage() {
     )
   }
 
-  const timeline = [
+  const timelineStages = [
 
-    {
-      label: "Initial Reflection",
-      completed: true,
-    },
-
-    {
-      label: "Residency",
-      completed: true,
-    },
-
-    {
-      label: participant.nextStep,
-      completed: false,
-    },
+    "Initial Reflection",
+    "Residency",
+    "Follow-up Reflection",
+    "Quarterly Follow-up"
   ]
 
-  const reports = [
+  const timeline = timelineStages.map((label, index) => {
 
-    {
-      title: "Preventive Health Profile",
-      subtitle: "Mind, Body & Biomarker Continuity",
-    },
+    return {
 
-    {
-      title: "Cognitive Flow Reflection",
-      subtitle: "Reflection & Cognitive Narrative",
-    },
-  ]
+      label,
+
+      completed: index < participant.stage,
+
+      current: index === participant.stage
+    }
+  })
 
   return (
 
@@ -184,18 +173,29 @@ export default function MoodforestJourneyPage() {
 
               {timeline.map((item, index) => (
 
-                <div key={index} className="flex items-center gap-4">
+                <div
+                  key={index}
+                  className="flex items-center gap-4"
+                >
 
                   <div
                     className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                       item.completed
                         ? "bg-[#1f4d3b] border-[#1f4d3b]"
+                        : item.current
+                        ? "border-[#1f4d3b] bg-white"
                         : "border-[#9ca3af]"
                     }`}
                   >
+
                     {item.completed && (
                       <div className="w-2 h-2 rounded-full bg-white"></div>
                     )}
+
+                    {item.current && !item.completed && (
+                      <div className="w-2 h-2 rounded-full bg-[#1f4d3b]"></div>
+                    )}
+
                   </div>
 
                   <div className="text-base text-[#374151]">
@@ -204,6 +204,7 @@ export default function MoodforestJourneyPage() {
 
                 </div>
               ))}
+
             </div>
           </div>
 
@@ -233,10 +234,40 @@ export default function MoodforestJourneyPage() {
               </a>
 
             </div>
+
           </div>
+
         </section>
 
+{/* Journey Timeline */}
+
+<section className="mt-10">
+  <h2 className="text-xl font-semibold text-emerald-900 mb-4">
+    Journey Timeline
+  </h2>
+
+  <div className="space-y-4">
+    {(participant?.timeline || []).map((item, index) => (
+      <div
+        key={index}
+        className="border-l-2 border-emerald-500 pl-4 py-3"
+      >
+        <div className="text-sm text-emerald-700 font-semibold">
+          {item.label}
+        </div>
+
+        <div className="text-xs text-zinc-500">
+          {item.completedAt
+            ? new Date(item.completedAt).toLocaleDateString()
+            : "In Progress"}
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+</section>
+
+</div>
+
+</div>
   )
 }
