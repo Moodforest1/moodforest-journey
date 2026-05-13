@@ -80,51 +80,59 @@ export default function ResultPage() {
         </section>
 
 
-        {/* EMOTIONAL CONTINUITY */}
+        {/* REFLECTIVE CONTINUITY */}
 
         <section className="bg-white/70 border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)] mb-8">
 
           <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
-            Reflective Continuity
+            Continue Your Reflective Journey
           </div>
 
-          <div className="text-[16px] leading-[1.95] text-[#64776d] space-y-5">
+          <div className="text-[16px] leading-[1.95] text-[#64776d] space-y-5 mb-8">
 
             <p>
-              Many people continue functioning externally while quietly carrying persistent cognitive fatigue, emotional overload, and restorative imbalance internally.
+              If this reflection felt meaningful, Moodforest can gently continue supporting your cognitive flow, restorative rhythm, emotional steadiness, and long-term vitality over time.
             </p>
 
             <p>
-              Awareness is often the first step toward steadier recovery.
+              Lifestyle rhythms, body vitality, biomarkers, inflammation balance, restorative recovery, and cognitive flow are often deeply interconnected.
+            </p>
+
+            <p>
+              You’ll receive a private continuity link for future reflections and restorative continuity.
             </p>
 
           </div>
-
-        </section>
-
-
-        {/* CONTINUE JOURNEY */}
-
-        <section className="bg-gradient-to-b from-[#f7fbf8] to-[#edf5ef] border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)]">
-
-          <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
-            Continue Your Journey
-          </div>
-
-          <h2 className="text-[30px] leading-[1.35] font-bold text-[#244837] mb-5">
-            Would you like to continue your Moodforest journey?
-          </h2>
-
-          <p className="text-[16px] leading-[1.95] text-[#64776d] mb-8">
-            You can continue tracking your reflective continuity, emotional steadiness, and restorative recovery over time through a private Moodforest journey link.
-          </p>
 
           <a
             href={`https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Journey_Continuity/2RgDEBzbrnkfkgv6HWPVC1zsqggMN4PsUBZRdfAbKPs3MvRqnea9rrbqCgAFBqCZHGRgAhTb9Q73FXAuO3XrEVdJ8rwuVDy68Bsg?score=${score}&state=${state}&insight=${insight}`}
             className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-7 py-4 text-sm font-semibold shadow-[0_10px_24px_rgba(39,72,56,0.16)] hover:opacity-95 transition"
           >
-            Continue My Journey
+            Receive My Private Continuity Link
           </a>
+
+        </section>
+
+
+        {/* WHOLE-PERSON PREVENTIVE VITALITY */}
+
+        <section className="bg-gradient-to-b from-[#f7fbf8] to-[#edf5ef] border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)]">
+
+          <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
+            Whole-Person Preventive Vitality
+          </div>
+
+          <div className="text-[16px] leading-[1.95] text-[#64776d] space-y-5">
+
+            <p>
+              Cognitive flow, emotional steadiness, restorative recovery, inflammation rhythms, physiological vitality, sleep quality, metabolic resilience, and long-term flourishing are often deeply interconnected.
+            </p>
+
+            <p>
+              Moodforest gradually integrates reflective continuity with whole-person preventive vitality understanding over time.
+            </p>
+
+          </div>
 
         </section>
 
