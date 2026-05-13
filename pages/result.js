@@ -7,7 +7,8 @@ export default function ResultPage() {
   const {
     score = "0",
     state = "Reflective",
-    insight = "Awareness is often the first step toward steadier recovery."
+    insight = "Awareness is often the first step toward steadier recovery.",
+    reflection = ""
   } = router.query
 
   return (
@@ -24,7 +25,8 @@ export default function ResultPage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold leading-[1.12] text-[#1f2d25] mb-6">
-            Your Cognitive State:<br />
+            Your Cognitive State:
+            <br />
             {state}
           </h1>
 
@@ -35,7 +37,7 @@ export default function ResultPage() {
         </section>
 
 
-        {/* SCORE */}
+        {/* FLOW SCORE */}
 
         <section className="bg-white border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)] mb-8">
 
@@ -63,7 +65,45 @@ export default function ResultPage() {
         </section>
 
 
-        {/* CONTINUITY */}
+        {/* DOMAIN REFLECTION */}
+
+        <section className="bg-white/80 border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)] mb-8">
+
+          <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
+            Mind / Flow Reflection
+          </div>
+
+          <div className="text-[16px] leading-[2] text-[#64776d] whitespace-pre-line">
+            {reflection}
+          </div>
+
+        </section>
+
+
+        {/* EMOTIONAL CONTINUITY */}
+
+        <section className="bg-white/70 border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)] mb-8">
+
+          <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
+            Reflective Continuity
+          </div>
+
+          <div className="text-[16px] leading-[1.95] text-[#64776d] space-y-5">
+
+            <p>
+              Many people continue functioning externally while quietly carrying persistent cognitive fatigue, emotional overload, and restorative imbalance internally.
+            </p>
+
+            <p>
+              Awareness is often the first step toward steadier recovery.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        {/* CONTINUE JOURNEY */}
 
         <section className="bg-gradient-to-b from-[#f7fbf8] to-[#edf5ef] border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)]">
 
