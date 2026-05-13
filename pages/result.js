@@ -120,7 +120,7 @@ export default function ResultPage() {
           </p>
 
           <a
-            href="https://journey.moodforest.co"
+            href={` https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Journey_Continuity/2RgDEBzbrnkfkgv6HWPVC1zsqggMN4PsUBZRdfAbKPs3MvRqnea9rrbqCgAFBqCZHGRgAhTb9Q73FXAuO3XrEVdJ8rwuVDy68Bsg?score=${score}&state=${state}`}
             className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-7 py-4 text-sm font-semibold shadow-[0_10px_24px_rgba(39,72,56,0.16)] hover:opacity-95 transition"
           >
             Continue My Journey
