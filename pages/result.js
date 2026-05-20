@@ -5,6 +5,8 @@ export default function ResultPage() {
 
   const router = useRouter()
 
+  const [showJourneyForm, setShowJourneyForm] = useState(false)
+
   const [showQuestionForm, setShowQuestionForm] = useState(false)
 
   const {
@@ -173,29 +175,137 @@ export default function ResultPage() {
 
           </div>
 
+{/* CONTINUITY INVITATION */}
 
-          {/* CONTINUITY INVITATION */}
+<section className="bg-white/80 border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)] mb-8">
 
-          <div className="border-t border-[#dbe6de] pt-8">
+  <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
+    The Moodforest Journey
+  </div>
 
-            <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
+  <div className="text-[16px] leading-[1.95] text-[#64776d] mb-8">
 
-              You may also choose to begin a longer-term Moodforest continuity journey with reflective follow-ups, vitality tracking, restorative guidance, and whole-person preventive recovery support over time.
+    Moodforest is designed as a gradual continuity journey centered around cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
 
-            </div>
+  </div>
 
-            <a
-              href="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-7 py-4 text-sm font-semibold shadow-[0_10px_24px_rgba(39,72,56,0.16)] hover:opacity-95 transition"
-            >
-              Create My Moodforest Journey
-            </a>
 
-          </div>
+  {/* STAGE 1 */}
 
-        </section>
+  <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[24px] px-6 py-6 mb-5">
+
+    <div className="flex items-center justify-between mb-3">
+
+      <div className="text-[18px] font-semibold text-[#274838]">
+        Reflective Onboarding & Psycho-Profiling
+      </div>
+
+      <div className="text-[15px] font-semibold text-[#274838]">
+        Free
+      </div>
+
+    </div>
+
+    <div className="text-[15px] leading-[1.9] text-[#64776d]">
+
+      Initial continuity onboarding, reflective assessment, and guided psychological understanding.
+
+    </div>
+
+  </div>
+
+
+  {/* STAGE 2 */}
+
+  <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[24px] px-6 py-6 mb-5">
+
+    <div className="flex items-center justify-between mb-3">
+
+      <div className="text-[18px] font-semibold text-[#274838]">
+        Bio-Profiling & Consultation
+      </div>
+
+      <div className="text-[15px] font-semibold text-[#274838]">
+        Rs 5,000
+      </div>
+
+    </div>
+
+    <div className="text-[15px] leading-[1.9] text-[#64776d]">
+
+      Body measurements, blood biomarkers, preventive vitality profiling, and online consultation.
+
+    </div>
+
+  </div>
+
+
+  {/* STAGE 3 */}
+
+  <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[24px] px-6 py-6 mb-8">
+
+    <div className="flex items-center justify-between mb-3">
+
+      <div className="text-[18px] font-semibold text-[#274838]">
+        Bio-Residency
+      </div>
+
+      <div className="text-[15px] font-semibold text-[#274838]">
+        Rs 45k – 100k
+      </div>
+
+    </div>
+
+    <div className="text-[15px] leading-[1.9] text-[#64776d]">
+
+      A 7+2 day restorative residency focused on recovery rhythms, metabolic restoration, emotional steadiness, fasting support, and preventive vitality.
+
+    </div>
+
+  </div>
+
+
+  {/* SOFTENER */}
+
+  <div className="text-[15px] leading-[1.9] text-[#64776d] mb-8">
+
+    Participants move through the journey gradually and only as deeply as feels meaningful or appropriate for them.
+
+  </div>
+
+
+  {/* CTA */}
+
+  <button
+    onClick={() => setShowJourneyForm(!showJourneyForm)}
+    className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-8 py-4 text-sm font-semibold shadow-[0_10px_24px_rgba(39,72,56,0.16)] hover:opacity-95 transition"
+  >
+    Begin My Moodforest Journey
+  </button>
+
+
+  {/* EMBEDDED FORM */}
+
+  {showJourneyForm && (
+
+    <div className="mt-10 rounded-[28px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
+
+      <iframe
+        height="520px"
+        width="100%"
+        frameBorder="0"
+        scrolling="auto"
+        allowTransparency="true"
+        src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
+        className="w-full bg-white"
+      ></iframe>
+
+    </div>
+
+  )}
+
+</section>
+
 
 
         {/* WHOLE-PERSON PREVENTIVE VITALITY */}
