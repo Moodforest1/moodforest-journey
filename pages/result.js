@@ -116,7 +116,7 @@ export default function ResultPage() {
 
   <div className="overflow-hidden bg-black">
 
-    <div className="relative w-full pt-[62%]">
+    <div className="relative w-full pt-[68%]">
 
       <iframe
         src="https://www.youtube.com/embed/Btsc55GIljI"
@@ -228,7 +228,7 @@ export default function ResultPage() {
                 </div>
 
                 <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  A restorative residency experience centered around recovery rhythms, metabolic restoration, emotional steadiness, fasting support, and preventive vitality.
+                  A restorative residency experience centered around recovery rhythms, cardio-metabolic restoration, emotional steadiness, fasting support, and preventive vitality.
                 </div>
 
               </div>
@@ -280,7 +280,7 @@ export default function ResultPage() {
 
               <br /><br />
 
-              The reflection is completely anonymous — no login, identity verification, or payment required.
+              The reflection is completely anonymous — no login, identity or payment required.
 
             </div>
 
