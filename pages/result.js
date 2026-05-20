@@ -17,45 +17,45 @@ export default function ResultPage() {
 
   return (
 
-    <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-3 py-5">
+    <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-5">
 
-      <div className="max-w-2xl mx-auto space-y-5">
+      <div className="max-w-xl mx-auto">
 
 
         {/* HERO */}
 
-        <section className="bg-white/85 border border-[#dbe6de] rounded-[24px] px-5 py-7 shadow-[0_10px_24px_rgba(31,45,38,0.04)]">
+        <section className="mb-7">
 
-          <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-4">
+          <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
             Flow in Mind · Vitality in Body
           </div>
 
-          <h1 className="text-[34px] leading-[1.08] font-bold text-[#1f2d25] mb-5">
+          <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-4">
             Your Cognitive State:
             <br />
             {state}
           </h1>
 
-          <p className="text-[15px] leading-[1.85] text-[#62756b]">
+          <p className="text-[14px] leading-[1.8] text-[#62756b]">
             {insight}
           </p>
 
         </section>
 
 
-        {/* FLOW SCORE */}
+        {/* SCORE */}
 
-        <section className="bg-white border border-[#dbe6de] rounded-[22px] px-5 py-6 shadow-[0_10px_24px_rgba(31,45,38,0.04)]">
+        <section className="mb-8">
 
-          <div className="text-[11px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+          <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-3">
             Cognitive Flow
           </div>
 
-          <div className="text-[52px] font-bold leading-none text-[#244837] mb-4">
+          <div className="text-[48px] font-bold leading-none text-[#244837] mb-4">
             {score} / 100
           </div>
 
-          <div className="w-full h-[8px] bg-[#e3ece5] rounded-full overflow-hidden mb-4">
+          <div className="w-full h-[7px] bg-[#dfe8e1] rounded-full overflow-hidden mb-4">
 
             <div
               className="h-full rounded-full bg-[#274838]"
@@ -64,7 +64,7 @@ export default function ResultPage() {
 
           </div>
 
-          <p className="text-[15px] leading-[1.85] text-[#64776d]">
+          <p className="text-[14px] leading-[1.8] text-[#64776d]">
             Awareness is often the first step toward steadier recovery.
           </p>
 
@@ -73,13 +73,13 @@ export default function ResultPage() {
 
         {/* REFLECTION */}
 
-        <section className="bg-white/85 border border-[#dbe6de] rounded-[22px] px-5 py-6 shadow-[0_10px_24px_rgba(31,45,38,0.04)]">
+        <section className="mb-10">
 
-          <div className="text-[11px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+          <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
             Mind / Flow Reflection
           </div>
 
-          <div className="text-[15px] leading-[1.95] text-[#64776d] whitespace-pre-line">
+          <div className="text-[14px] leading-[2] text-[#64776d] whitespace-pre-line">
             {reflection}
           </div>
 
@@ -88,13 +88,13 @@ export default function ResultPage() {
 
         {/* NEXT STEPS */}
 
-        <section className="bg-white/75 border border-[#dbe6de] rounded-[22px] px-5 py-6 shadow-[0_10px_24px_rgba(31,45,38,0.04)]">
+        <section className="mb-10">
 
-          <div className="text-[11px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+          <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
             Where Would You Like To Go From Here?
           </div>
 
-          <div className="text-[15px] leading-[1.9] text-[#64776d] mb-7">
+          <div className="text-[14px] leading-[1.9] text-[#64776d] mb-7">
 
             Some people simply pause here for reflection, while others choose to explore deeper questions around recovery, vitality, emotional steadiness, and cognitive flow.
 
@@ -103,17 +103,17 @@ export default function ResultPage() {
 
           {/* VIDEO */}
 
-          <div className="bg-[#f7faf8] border border-[#dfe8e1] rounded-[18px] px-4 py-5 mb-5">
+          <div className="mb-8">
 
             <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
               Reflective Video
             </div>
 
-            <div className="text-[15px] leading-[1.85] text-[#64776d] mb-5">
+            <div className="text-[14px] leading-[1.85] text-[#64776d] mb-5">
               Watch a short reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
             </div>
 
-            <div className="rounded-[16px] overflow-hidden border border-[#dbe6de]">
+            <div className="rounded-[14px] overflow-hidden">
 
               <div className="relative w-full pt-[56.25%]">
 
@@ -135,13 +135,13 @@ export default function ResultPage() {
 
           {/* QUESTION */}
 
-          <div className="bg-[#f7faf8] border border-[#dfe8e1] rounded-[18px] px-4 py-5 mb-8">
+          <div className="border-t border-[#dbe6de] pt-7 mb-8">
 
             <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
               Question & Reflection
             </div>
 
-            <div className="text-[15px] leading-[1.9] text-[#64776d] mb-5">
+            <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
 
               If something in this reflection resonated with you, you’re welcome to continue the conversation gently through WhatsApp.
 
@@ -149,23 +149,23 @@ export default function ResultPage() {
 
             <button
               onClick={() => setShowQuestionForm(!showQuestionForm)}
-              className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-6 py-3.5 text-[14px] font-semibold hover:bg-[#f1f6f3] transition"
+              className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
             >
               Continue the Conversation
             </button>
 
             {showQuestionForm && (
 
-              <div className="mt-6 rounded-[16px] overflow-hidden border border-[#dfe8e1]">
+              <div className="mt-5 overflow-hidden rounded-[12px]">
 
                 <iframe
-                  height="360px"
+                  height="340px"
                   width="100%"
                   frameBorder="0"
                   scrolling="auto"
                   allowTransparency="true"
                   src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
-                  className="w-full bg-white"
+                  className="w-full bg-transparent"
                 ></iframe>
 
               </div>
@@ -177,26 +177,26 @@ export default function ResultPage() {
 
           {/* JOURNEY */}
 
-          <div className="border-t border-[#dbe6de] pt-7">
+          <div className="border-t border-[#dbe6de] pt-7 mb-8">
 
-            <div className="text-[11px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+            <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
               A Gradual Journey Toward Restorative Vitality
             </div>
 
-            <div className="text-[15px] leading-[1.9] text-[#64776d] mb-7">
+            <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
               Others gradually choose to explore deeper restorative continuity, emotional steadiness, preventive vitality, physiological rhythms, and whole-person flourishing over time.
 
             </div>
 
 
-            {/* JOURNEY STAGES */}
+            {/* STAGES */}
 
-            <div className="space-y-4 mb-7">
+            <div className="space-y-5 mb-6">
 
-              <div className="bg-[#f7faf8] border border-[#dfe8e1] rounded-[18px] px-4 py-5">
+              <div>
 
-                <div className="text-[16px] font-semibold text-[#274838] mb-2">
+                <div className="text-[15px] font-semibold text-[#274838] mb-2">
                   Reflective Continuity
                 </div>
 
@@ -207,9 +207,9 @@ export default function ResultPage() {
               </div>
 
 
-              <div className="bg-[#f7faf8] border border-[#dfe8e1] rounded-[18px] px-4 py-5">
+              <div>
 
-                <div className="text-[16px] font-semibold text-[#274838] mb-2">
+                <div className="text-[15px] font-semibold text-[#274838] mb-2">
                   Bio-Vitality Understanding
                 </div>
 
@@ -220,9 +220,9 @@ export default function ResultPage() {
               </div>
 
 
-              <div className="bg-[#f7faf8] border border-[#dfe8e1] rounded-[18px] px-4 py-5">
+              <div>
 
-                <div className="text-[16px] font-semibold text-[#274838] mb-2">
+                <div className="text-[15px] font-semibold text-[#274838] mb-2">
                   Restorative Residency
                 </div>
 
@@ -235,7 +235,7 @@ export default function ResultPage() {
             </div>
 
 
-            <div className="text-[14px] leading-[1.85] text-[#64776d] mb-6">
+            <div className="text-[13px] leading-[1.85] text-[#64776d] mb-5">
 
               There is no expectation to move beyond reflection unless it feels meaningful or appropriate for you.
 
@@ -244,7 +244,7 @@ export default function ResultPage() {
 
             <button
               onClick={() => setShowJourneyForm(!showJourneyForm)}
-              className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-6 py-3.5 text-[14px] font-semibold shadow-[0_8px_20px_rgba(39,72,56,0.12)] hover:opacity-95 transition"
+              className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold hover:opacity-95 transition"
             >
               Begin My Moodforest Journey
             </button>
@@ -252,16 +252,16 @@ export default function ResultPage() {
 
             {showJourneyForm && (
 
-              <div className="mt-6 rounded-[16px] overflow-hidden border border-[#dfe8e1]">
+              <div className="mt-5 overflow-hidden rounded-[12px]">
 
                 <iframe
-                  height="360px"
+                  height="340px"
                   width="100%"
                   frameBorder="0"
                   scrolling="auto"
                   allowTransparency="true"
                   src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
-                  className="w-full bg-white"
+                  className="w-full bg-transparent"
                 ></iframe>
 
               </div>
@@ -273,13 +273,13 @@ export default function ResultPage() {
 
           {/* SHARE */}
 
-          <div className="border-t border-[#dbe6de] pt-7 mt-8">
+          <div className="border-t border-[#dbe6de] pt-7">
 
-            <div className="text-[11px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+            <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
               Share Reflection
             </div>
 
-            <div className="text-[15px] leading-[1.9] text-[#64776d] mb-6">
+            <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
 
               If this reflection felt meaningful, you may wish to gently share it with someone you care about.
 
@@ -295,7 +295,7 @@ export default function ResultPage() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-6 py-3.5 text-[14px] font-semibold hover:bg-[#f1f6f3] transition"
+              className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
             >
               Share Moodforest Reflection
             </a>
@@ -307,13 +307,13 @@ export default function ResultPage() {
 
         {/* WHOLE PERSON */}
 
-        <section className="bg-gradient-to-b from-[#f7fbf8] to-[#edf5ef] border border-[#dbe6de] rounded-[22px] px-5 py-6 shadow-[0_10px_24px_rgba(31,45,38,0.04)]">
+        <section className="border-t border-[#dbe6de] pt-7 pb-4">
 
-          <div className="text-[11px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+          <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
             Whole-Person Preventive Vitality
           </div>
 
-          <div className="text-[15px] leading-[1.9] text-[#64776d] space-y-5">
+          <div className="text-[14px] leading-[1.9] text-[#64776d] space-y-5">
 
             <p>
               Cognitive flow, emotional steadiness, restorative recovery, inflammation rhythms, physiological vitality, sleep quality, metabolic resilience, and long-term flourishing are often deeply interconnected.
