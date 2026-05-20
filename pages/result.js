@@ -142,7 +142,7 @@ export default function ResultPage() {
 
             <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
 
-              If something in this reflection resonated with you, you’re welcome to ask a question about recovery, vitality, emotional steadiness, or cognitive flow.
+              If something in this reflection resonated with you, you’re welcome to ask a question about recovery, vitality, emotional steadiness, or cognitive flow. Moodforest will continue the conversation gently through WhatsApp.
 
             </div>
 
@@ -150,7 +150,7 @@ export default function ResultPage() {
               onClick={() => setShowQuestionForm(!showQuestionForm)}
               className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-7 py-4 text-sm font-semibold hover:bg-[#f1f6f3] transition"
             >
-              Ask a Question
+              Continue the Conversation
             </button>
 
             {showQuestionForm && (
@@ -158,7 +158,7 @@ export default function ResultPage() {
               <div className="mt-8 rounded-[26px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
 
                 <iframe
-                  height="620px"
+                  height="440px"
                   width="100%"
                   frameBorder="0"
                   scrolling="auto"
