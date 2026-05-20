@@ -64,10 +64,7 @@ export default function ResultPage() {
 
           </div>
 
-          <p className="text-[14px] leading-[1.8] text-[#64776d]">
-            Awareness is often the first step toward steadier recovery.
-          </p>
-
+          
         </section>
 
 
@@ -143,7 +140,7 @@ export default function ResultPage() {
 
             <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
 
-              If something in this reflection resonated with you, you’re welcome to continue the conversation gently through WhatsApp.
+              If something in this reflection resonated with you, you’re welcome to ask a question or continue the conversation gently with the Moodforest team through WhatsApp.
 
             </div>
 
@@ -235,13 +232,7 @@ export default function ResultPage() {
             </div>
 
 
-            <div className="text-[13px] leading-[1.85] text-[#64776d] mb-5">
-
-              There is no expectation to move beyond reflection unless it feels meaningful or appropriate for you.
-
-            </div>
-
-
+            
             <button
               onClick={() => setShowJourneyForm(!showJourneyForm)}
               className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold hover:opacity-95 transition"
