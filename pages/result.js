@@ -100,34 +100,38 @@ export default function ResultPage() {
 
           {/* VIDEO */}
 
-          <div className="mb-8">
+<div className="mb-9 -mx-4">
 
-            <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
-              Reflective Video
-            </div>
+  <div className="px-4">
 
-            <div className="text-[14px] leading-[1.85] text-[#64776d] mb-5">
-              Watch a short reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
-            </div>
+    <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
+      Reflective Video
+    </div>
 
-            <div className="rounded-[14px] overflow-hidden">
+    <div className="text-[14px] leading-[1.85] text-[#64776d] mb-5">
+      Watch a short reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
+    </div>
 
-              <div className="relative w-full pt-[56.25%]">
+  </div>
 
-                <iframe
-                  src="https://www.youtube.com/embed/Btsc55GIljI"
-                  title="Moodforest Reflection"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute top-0 left-0 w-full h-full"
-                ></iframe>
+  <div className="overflow-hidden bg-black">
 
-              </div>
+    <div className="relative w-full pt-[62%]">
 
-            </div>
+      <iframe
+        src="https://www.youtube.com/embed/Btsc55GIljI"
+        title="Moodforest Reflection"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="absolute top-0 left-0 w-full h-full"
+      ></iframe>
 
-          </div>
+    </div>
+
+  </div>
+
+</div>
 
 
           {/* QUESTION */}
