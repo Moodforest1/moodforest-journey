@@ -306,6 +306,32 @@ export default function ResultPage() {
 
 </div>
 
+{/* SHARE REFLECTION */}
+
+<div className="border-t border-[#dbe6de] pt-8 mt-10">
+
+  <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
+    Share Reflection
+  </div>
+
+  <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
+
+    If this reflection felt meaningful, you may wish to gently share it with someone you care about.
+
+  </div>
+
+  <a
+    href="https://journey.moodforest.org/cfa"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-7 py-4 text-sm font-semibold hover:bg-[#f1f6f3] transition"
+  >
+    Share Moodforest Reflection
+  </a>
+
+</div>
+
+</section>
         {/* WHOLE-PERSON PREVENTIVE VITALITY */}
 
         <section className="bg-gradient-to-b from-[#f7fbf8] to-[#edf5ef] border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)]">
