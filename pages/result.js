@@ -95,7 +95,7 @@ export default function ResultPage() {
           </div>
 
 
-          {/* VIDEO OPTION */}
+         {/* VIDEO OPTION */}
 
 <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[26px] px-6 py-7 mb-6">
 
@@ -104,25 +104,25 @@ export default function ResultPage() {
   </div>
 
   <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
-
     Watch a short 5-minute reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
-
   </div>
 
   <div className="flex justify-center">
 
-  <div className="w-full max-w-[340px] rounded-[22px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
+    <div className="w-full max-w-[340px] rounded-[22px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
 
-    <iframe
-      width="100%"
-      height="605"
-      src="https://www.youtube.com/embed/Btsc55GIljI"
-      title="Moodforest Reflection"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className="w-full"
-    ></iframe>
+      <iframe
+        width="100%"
+        height="605"
+        src="https://www.youtube.com/embed/Btsc55GIljI"
+        title="Moodforest Reflection"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full"
+      ></iframe>
+
+    </div>
 
   </div>
 
