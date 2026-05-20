@@ -109,11 +109,13 @@ export default function ResultPage() {
 
   </div>
 
-  <div className="rounded-[22px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
+  <div className="flex justify-center">
+
+  <div className="w-full max-w-[340px] rounded-[22px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
 
     <iframe
       width="100%"
-      height="315"
+      height="605"
       src="https://www.youtube.com/embed/Btsc55GIljI"
       title="Moodforest Reflection"
       frameBorder="0"
