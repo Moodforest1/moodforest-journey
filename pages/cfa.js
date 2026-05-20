@@ -1,28 +1,19 @@
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 
 export default function CFA() {
-
-  const router = useRouter()
-
-  if (!router.isReady) {
-    return null
-  }
-
-  const { wa } = router.query
 
   useEffect(() => {
 
     const target =
-      `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1#WhatsApp_Number=${encodeURIComponent(wa || '')}`
+      `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1`
 
     const timer = setTimeout(() => {
       window.location.href = target
-    }, 1800)
+    }, 1200)
 
     return () => clearTimeout(timer)
 
-  }, [wa])
+  }, [])
 
   return (
     <div
