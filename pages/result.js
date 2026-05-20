@@ -180,12 +180,16 @@ export default function ResultPage() {
 <div className="border-t border-[#dbe6de] pt-8">
 
   <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
-    The Moodforest Journey
+    A Gradual Journey Toward Restorative Vitality
   </div>
 
   <div className="text-[16px] leading-[1.95] text-[#64776d] mb-8">
 
-    Moodforest is designed as a gradual continuity journey centered around cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
+    Some people simply pause here for reflection.
+
+    <br /><br />
+
+    Others gradually choose to explore deeper restorative continuity, emotional steadiness, physiological vitality, preventive recovery, and whole-person flourishing over time.
 
   </div>
 
@@ -194,21 +198,13 @@ export default function ResultPage() {
 
   <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[24px] px-6 py-6 mb-5">
 
-    <div className="flex items-center justify-between mb-3">
-
-      <div className="text-[18px] font-semibold text-[#274838]">
-        Reflective Onboarding & Psycho-Profiling
-      </div>
-
-      <div className="text-[15px] font-semibold text-[#274838]">
-        Free
-      </div>
-
+    <div className="text-[18px] font-semibold text-[#274838] mb-3">
+      Reflective Continuity
     </div>
 
     <div className="text-[15px] leading-[1.9] text-[#64776d]">
 
-      Initial continuity onboarding, reflective assessment, and guided psychological understanding.
+      Initial onboarding, reflective continuity, psychological understanding, and guided cognitive flow exploration.
 
     </div>
 
@@ -219,21 +215,13 @@ export default function ResultPage() {
 
   <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[24px] px-6 py-6 mb-5">
 
-    <div className="flex items-center justify-between mb-3">
-
-      <div className="text-[18px] font-semibold text-[#274838]">
-        Bio-Profiling & Consultation
-      </div>
-
-      <div className="text-[15px] font-semibold text-[#274838]">
-        Rs 5,000
-      </div>
-
+    <div className="text-[18px] font-semibold text-[#274838] mb-3">
+      Bio-Vitality Understanding
     </div>
 
     <div className="text-[15px] leading-[1.9] text-[#64776d]">
 
-      Body measurements, blood biomarkers, preventive vitality profiling, and online consultation.
+      Body measurements, biomarkers, preventive vitality understanding, physiological rhythms, and guided consultation.
 
     </div>
 
@@ -244,21 +232,13 @@ export default function ResultPage() {
 
   <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[24px] px-6 py-6 mb-8">
 
-    <div className="flex items-center justify-between mb-3">
-
-      <div className="text-[18px] font-semibold text-[#274838]">
-        Bio-Residency
-      </div>
-
-      <div className="text-[15px] font-semibold text-[#274838]">
-        Rs 45k – 100k
-      </div>
-
+    <div className="text-[18px] font-semibold text-[#274838] mb-3">
+      Restorative Residency
     </div>
 
     <div className="text-[15px] leading-[1.9] text-[#64776d]">
 
-      A 7+2 day restorative residency focused on recovery rhythms, metabolic restoration, emotional steadiness, fasting support, and preventive vitality.
+      A gradual restorative residency experience centered around recovery rhythms, emotional steadiness, metabolic restoration, fasting support, and preventive vitality.
 
     </div>
 
@@ -269,7 +249,7 @@ export default function ResultPage() {
 
   <div className="text-[15px] leading-[1.9] text-[#64776d] mb-8">
 
-    Participants move through the journey gradually and only as deeply as feels meaningful or appropriate for them.
+    There is no expectation to move beyond reflection unless it feels meaningful or appropriate for you.
 
   </div>
 
@@ -288,10 +268,10 @@ export default function ResultPage() {
 
   {showJourneyForm && (
 
-    <div className="mt-10 rounded-[28px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
+    <div className="mt-8 rounded-[28px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
 
       <iframe
-        height="520px"
+        height="420px"
         width="100%"
         frameBorder="0"
         scrolling="auto"
@@ -306,6 +286,7 @@ export default function ResultPage() {
 
 </div>
 
+
 {/* SHARE REFLECTION */}
 
 <div className="border-t border-[#dbe6de] pt-8 mt-10">
@@ -318,10 +299,16 @@ export default function ResultPage() {
 
     If this reflection felt meaningful, you may wish to gently share it with someone you care about.
 
+    <br /><br />
+
+    The reflection is completely anonymous — no login, identity verification, or payment required.
+
   </div>
 
   <a
-    href="https://journey.moodforest.org/cfa"
+    href={`https://wa.me/?text=${encodeURIComponent(
+      "I came across this reflective Cognitive Flow Assessment from Moodforest and thought you might find it meaningful.\n\nIt is completely anonymous — no login, identity verification, or payment required.\n\nhttps://journey.moodforest.org/cfa"
+    )}`}
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-7 py-4 text-sm font-semibold hover:bg-[#f1f6f3] transition"
