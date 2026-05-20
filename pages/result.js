@@ -177,7 +177,7 @@ export default function ResultPage() {
 
 {/* CONTINUITY INVITATION */}
 
-<section className="bg-white/80 border border-[#dbe6de] rounded-[30px] px-8 py-8 shadow-[0_16px_34px_rgba(31,45,38,0.05)] mb-8">
+<div className="border-t border-[#dbe6de] pt-8">
 
   <div className="text-[12px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
     The Moodforest Journey
@@ -304,9 +304,7 @@ export default function ResultPage() {
 
   )}
 
-</section>
-
-
+</div>
 
         {/* WHOLE-PERSON PREVENTIVE VITALITY */}
 
