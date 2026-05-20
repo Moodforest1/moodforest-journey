@@ -97,28 +97,34 @@ export default function ResultPage() {
 
           {/* VIDEO OPTION */}
 
-          <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[26px] px-6 py-7 mb-6">
+<div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[26px] px-6 py-7 mb-6">
 
-            <div className="text-[11px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
-              Reflective Video
-            </div>
+  <div className="text-[11px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
+    Reflective Video
+  </div>
 
-            <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
+  <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
 
-              Watch a short 5-minute reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
+    Watch a short 5-minute reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
 
-            </div>
+  </div>
 
-            <a
-              href="https://your-video-link.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-7 py-4 text-sm font-semibold shadow-[0_10px_24px_rgba(39,72,56,0.16)] hover:opacity-95 transition"
-            >
-              Watch 5-Minute Reflection
-            </a>
+  <div className="rounded-[22px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
 
-          </div>
+    <iframe
+      width="100%"
+      height="315"
+      src="https://www.youtube.com/embed/Btsc55GIljI"
+      title="Moodforest Reflection"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="w-full"
+    ></iframe>
+
+  </div>
+
+</div>
 
 
           {/* QUESTION OPTION */}
