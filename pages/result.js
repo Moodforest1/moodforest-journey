@@ -1,8 +1,11 @@
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 export default function ResultPage() {
 
   const router = useRouter()
+
+  const [showQuestionForm, setShowQuestionForm] = useState(false)
 
   const {
     score = "0",
@@ -95,38 +98,38 @@ export default function ResultPage() {
           </div>
 
 
-         {/* VIDEO OPTION */}
+          {/* VIDEO OPTION */}
 
-<div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[26px] px-6 py-7 mb-6">
+          <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[26px] px-6 py-7 mb-6">
 
-  <div className="text-[11px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
-    Reflective Video
-  </div>
+            <div className="text-[11px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
+              Reflective Video
+            </div>
 
-  <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
-    Watch a short 5-minute reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
-  </div>
+            <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
+              Watch a short 5-minute reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
+            </div>
 
-  <div className="flex justify-center">
+            <div className="flex justify-center">
 
-    <div className="w-full max-w-[340px] rounded-[22px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
+              <div className="w-full max-w-[340px] rounded-[22px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
 
-      <iframe
-        width="100%"
-        height="605"
-        src="https://www.youtube.com/embed/Btsc55GIljI"
-        title="Moodforest Reflection"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="w-full"
-      ></iframe>
+                <iframe
+                  width="100%"
+                  height="605"
+                  src="https://www.youtube.com/embed/Btsc55GIljI"
+                  title="Moodforest Reflection"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full"
+                ></iframe>
 
-    </div>
+              </div>
 
-  </div>
+            </div>
 
-</div>
+          </div>
 
 
           {/* QUESTION OPTION */}
@@ -134,23 +137,39 @@ export default function ResultPage() {
           <div className="bg-[#f6faf7] border border-[#dbe6de] rounded-[26px] px-6 py-7 mb-8">
 
             <div className="text-[11px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
-              Question & Continuity
+              Question & Reflection
             </div>
 
             <div className="text-[16px] leading-[1.95] text-[#64776d] mb-6">
 
-              If something in this reflection resonated with you, you’re welcome to ask a question or continue your Moodforest journey gently over time.
+              If something in this reflection resonated with you, you’re welcome to ask a question about recovery, vitality, emotional steadiness, or cognitive flow.
 
             </div>
 
-            <a
-              href="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-perma/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setShowQuestionForm(!showQuestionForm)}
               className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-7 py-4 text-sm font-semibold hover:bg-[#f1f6f3] transition"
             >
               Ask a Question
-            </a>
+            </button>
+
+            {showQuestionForm && (
+
+              <div className="mt-8 rounded-[26px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
+
+                <iframe
+                  height="620px"
+                  width="100%"
+                  frameBorder="0"
+                  scrolling="auto"
+                  allowTransparency="true"
+                  src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
+                  className="w-full bg-white"
+                ></iframe>
+
+              </div>
+
+            )}
 
           </div>
 
