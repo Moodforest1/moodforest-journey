@@ -198,11 +198,11 @@ export default function ResultPage() {
               <div>
 
                 <div className="text-[15px] font-semibold text-[#274838] mb-2">
-                  Reflective Continuity
+                  Psycho-Profiling
                 </div>
 
                 <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  Initial onboarding, reflective continuity, psychological understanding, and guided cognitive flow exploration.
+                  Free continuity and psychological understanding over time.
                 </div>
 
               </div>
@@ -211,11 +211,11 @@ export default function ResultPage() {
               <div>
 
                 <div className="text-[15px] font-semibold text-[#274838] mb-2">
-                  Bio-Vitality Understanding
+                  Biomarker Profiling
                 </div>
 
                 <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  Biomarkers, body rhythms, preventive vitality understanding, physiological restoration, and guided consultation.
+                  Preventive vitality understanding, physiology, and guided consultation.
                 </div>
 
               </div>
@@ -224,11 +224,11 @@ export default function ResultPage() {
               <div>
 
                 <div className="text-[15px] font-semibold text-[#274838] mb-2">
-                  Restorative Residency
+                  7-Day Bio-Residency
                 </div>
 
                 <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  A restorative residency experience centered around recovery rhythms, cardio-metabolic restoration, emotional steadiness, fasting support, and preventive vitality.
+                  Recovery rhythms, cardio-metabolic restoration, fasting support, and whole-person vitality.
                 </div>
 
               </div>
