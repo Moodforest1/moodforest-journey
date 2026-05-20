@@ -158,7 +158,7 @@ export default function ResultPage() {
               <div className="mt-8 rounded-[26px] overflow-hidden border border-[#dbe6de] shadow-[0_10px_24px_rgba(31,45,38,0.06)]">
 
                 <iframe
-                  height="440px"
+                  height="410px"
                   width="100%"
                   frameBorder="0"
                   scrolling="auto"
