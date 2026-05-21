@@ -3,16 +3,24 @@ import { useRouter } from 'next/router'
 export default function CFA() {
 
   const router = useRouter()
-  const { mf_token } = router.query
 
-  const formUrl =
-    `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1?mf_token=${mf_token || ''}`
+  const { mf_token, phase } = router.query
+
+  // Prevent iframe loading before query params exist
+  if (!mf_token || !phase) {
+    return null
+  }
+
+  const iframeUrl =
+    `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1?mf_token=${mf_token}&Assessment_Phase=${phase}`
 
   return (
     <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-5 py-10">
+
       <div className="max-w-2xl mx-auto">
 
         {/* HERO */}
+
         <section className="bg-white/80 border border-[#dbe6de] rounded-[34px] px-8 py-10 shadow-[0_18px_42px_rgba(31,45,38,0.05)]">
 
           <div className="text-[11px] tracking-[0.24em] uppercase text-[#71857a] font-semibold mb-5">
@@ -41,14 +49,17 @@ export default function CFA() {
           </p>
 
           <div className="bg-[#f5faf7] border border-[#dbe6de] rounded-2xl px-5 py-4">
+
             <div className="text-sm leading-[1.8] text-[#5f7368]">
               No sign-up, identity verification, or payment required.
             </div>
+
           </div>
 
         </section>
 
         {/* EMBEDDED CFA FORM */}
+
         <section className="mt-8">
 
           <div className="bg-white rounded-[30px] overflow-hidden border border-[#dbe6de] shadow-[0_16px_34px_rgba(31,45,38,0.05)]">
@@ -58,7 +69,7 @@ export default function CFA() {
               width="100%"
               frameBorder="0"
               scrolling="auto"
-              src={formUrl}
+              src={iframeUrl}
               className="w-full"
             ></iframe>
 
@@ -67,6 +78,7 @@ export default function CFA() {
         </section>
 
       </div>
+
     </div>
   )
 }
