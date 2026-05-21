@@ -211,19 +211,24 @@ export default function ResultPage() {
 
             {showQuestionForm && (
 
-              <div className="mt-5 overflow-hidden rounded-[12px]">
+<div className="mt-5 w-full overflow-hidden">
 
-                <iframe
-                  height="340px"
-                  width="100%"
-                  frameBorder="0"
-                  scrolling="auto"
-                  allowTransparency="true"
-                  src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
-                  className="w-full bg-transparent"
-                ></iframe>
+  <iframe
+    height="380px"
+    width="100%"
+    frameBorder="0"
+    scrolling="no"
+    allowTransparency="true"
+    src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
+    className="w-full bg-transparent"
+    style={{
+      transform: 'scale(1.02)',
+      transformOrigin: 'top left'
+    }}
+  ></iframe>
 
-              </div>
+</div>
+
 
             )}
 
@@ -319,19 +324,23 @@ export default function ResultPage() {
 
             {showJourneyForm && (
 
-              <div className="mt-5 overflow-hidden rounded-[12px]">
+             <div className="mt-5 w-full overflow-hidden">
 
-                <iframe
-                  height="340px"
-                  width="100%"
-                  frameBorder="0"
-                  scrolling="auto"
-                  allowTransparency="true"
-                  src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
-                  className="w-full bg-transparent"
-                ></iframe>
+  <iframe
+    height="380px"
+    width="100%"
+    frameBorder="0"
+    scrolling="no"
+    allowTransparency="true"
+    src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
+    className="w-full bg-transparent"
+    style={{
+      transform: 'scale(1.02)',
+      transformOrigin: 'top left'
+    }}
+  ></iframe>
 
-              </div>
+</div>
 
             )}
 
