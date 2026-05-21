@@ -3,70 +3,68 @@ import { useRouter } from 'next/router'
 export default function ReflectPage() {
 
   const router = useRouter()
-  const { mf_token } = router.query
 
   const formUrl =
     'https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/CFA_Public/OyU3E66ewrZ4bbAY35A3nOvhX7S3mHPj0FvddVnqg0VmnNmF5qatNJOqOQrXaYJFXF2tOBxQsMD64yAJYrV8eBEfNYFeye0eNzzX'
 
   return (
-    <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-5 py-10">
-      <div className="max-w-2xl mx-auto">
+
+    <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-5">
+
+      <div className="max-w-xl mx-auto">
+
 
         {/* HERO */}
-        <section className="bg-white/80 border border-[#dbe6de] rounded-[34px] px-8 py-10 shadow-[0_18px_42px_rgba(31,45,38,0.05)]">
 
-          <div className="text-[11px] tracking-[0.24em] uppercase text-[#71857a] font-semibold mb-5">
+        <section className="mb-8">
+
+          <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
             Flow in Mind · Vitality in Body
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold leading-[1.12] text-[#1f2d25] mb-6">
-            A gentle reflection on cognitive flow, emotional steadiness, and restorative recovery.
+          <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-5">
+            A brief reflection on recovery, emotional wellbeing, restorative balance, and cognitive flow.
           </h1>
 
-          <p className="text-[17px] leading-[1.9] text-[#62756b] mb-8">
-            This brief reflection explores:
-            <br />
-            • mental clarity
-            <br />
-            • emotional resilience
-            <br />
-            • stress recovery
-            <br />
-            • restorative rhythm
-            <br />
-            • overall vitality
-            <br />
-            <br />
-            Most people complete it in about 3–5 minutes.
-          </p>
+          <div className="text-[14px] leading-[1.95] text-[#62756b] space-y-4 mb-6">
 
-          <div className="bg-[#f5faf7] border border-[#dbe6de] rounded-2xl px-5 py-4">
-            <div className="text-sm leading-[1.8] text-[#5f7368]">
-              No sign-up, identity verification, or payment required.
-            </div>
+            <p>
+              This brief assessment explores patterns related to psychological wellbeing, emotional resilience, restorative balance, stress recovery, and future outlook.
+            </p>
+
+            <p>
+              Most people complete it in about 3–5 minutes.
+            </p>
+
+          </div>
+
+          <div className="text-[13px] leading-[1.85] text-[#64776d] border-t border-[#dbe6de] pt-5">
+
+            Completely anonymous — no login, identity or payment required.
+
           </div>
 
         </section>
 
-        {/* EMBEDDED REFLECTION FORM */}
-        <section className="mt-8">
 
-          <div className="bg-white rounded-[30px] overflow-hidden border border-[#dbe6de] shadow-[0_16px_34px_rgba(31,45,38,0.05)]">
+        {/* FORM */}
 
-            <iframe
-              height="900px"
-              width="100%"
-              frameBorder="0"
-              scrolling="auto"
-              src={formUrl}
-              className="w-full"
-            ></iframe>
+        <section>
 
-          </div>
+          <iframe
+            height="980px"
+            width="100%"
+            frameBorder="0"
+            scrolling="auto"
+            src={formUrl}
+            className="w-full bg-transparent"
+          ></iframe>
 
         </section>
+
 
       </div>
+
     </div>
   )
 }
