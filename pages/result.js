@@ -147,7 +147,7 @@ export default function ResultPage() {
 
           <div className="text-[14px] leading-[1.9] text-[#64776d] mb-7">
 
-            Some people simply pause here for reflection, while others choose to explore deeper questions around recovery, vitality, emotional steadiness, and cognitive flow.
+            Some people simply pause here for reflection, while others choose to explore deeper questions around whole person wellbeing.
 
           </div>
 
@@ -163,7 +163,7 @@ export default function ResultPage() {
     </div>
 
     <div className="text-[14px] leading-[1.85] text-[#64776d] mb-5">
-      A brief introduction to Moodforest, restorative wellbeing, and continuity-oriented recovery.
+      A brief introduction to Moodforest process and outcomes.
     </div>
 
   </div>
@@ -240,7 +240,7 @@ export default function ResultPage() {
 
             <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-              Some people choose to explore deeper psychological understanding, preventive health, restorative recovery, and long-term wellbeing through Moodforest over time.
+              There are 3 stages:
 
             </div>
 
@@ -296,11 +296,11 @@ export default function ResultPage() {
     </div>
 
     <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
-      Optional Guided Fasting
+      With Optional Guided Fasting
     </div>
 
     <div className="text-[14px] leading-[1.85] text-[#64776d]">
-      Deep restorative recovery and physiological reset, with optional fasting support for whole-person wellbeing.
+      Deep restorative recovery and physiological reset involving 9 components, with optional fasting, for whole-person wellbeing.
     </div>
 
   </div>
