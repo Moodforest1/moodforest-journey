@@ -8,12 +8,18 @@ export default function ResultPage() {
   const [showJourneyForm, setShowJourneyForm] = useState(false)
   const [showQuestionForm, setShowQuestionForm] = useState(false)
 
-  const {
-    score = "0",
-    state = "Reflective",
-    insight = "Awareness is often the first step toward steadier recovery.",
-    reflection = ""
-  } = router.query
+ const {
+  score = "0",
+  state = "Reflective",
+  insight = "",
+  reflection = "",
+  biomarker = "",
+  clarity = "0",
+  emotional = "0",
+  somatic = "0",
+  meaning = "0",
+  future = "0"
+} = router.query
 
   return (
 
@@ -43,44 +49,94 @@ export default function ResultPage() {
         </section>
 
 
-        {/* SCORE */}
+{/* REPORT */}
 
-        <section className="mb-8">
+<section className="mb-10">
 
-          <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-3">
-            Cognitive Flow
-          </div>
+  <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-3">
+    Overall Cognitive Flow
+  </div>
 
-          <div className="text-[48px] font-bold leading-none text-[#244837] mb-4">
-            {score} / 100
-          </div>
+  <div className="text-[48px] font-bold leading-none text-[#244837] mb-2">
+    {score} / 100
+  </div>
 
-          <div className="w-full h-[7px] bg-[#dfe8e1] rounded-full overflow-hidden mb-4">
+  <div className="text-[15px] font-semibold text-[#274838] mb-6">
+    {state}
+  </div>
 
-            <div
-              className="h-full rounded-full bg-[#274838]"
-              style={{ width: `${score}%` }}
-            />
+  <div className="w-full h-[7px] bg-[#dfe8e1] rounded-full overflow-hidden mb-8">
 
-          </div>
+    <div
+      className="h-full rounded-full bg-[#274838]"
+      style={{ width: `${score}%` }}
+    />
 
-          
-        </section>
+  </div>
 
 
-        {/* REFLECTION */}
+  {/* DOMAIN SCORES */}
 
-        <section className="mb-10">
+  <div className="space-y-4 mb-8">
 
-          <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-            Mind & Flow
-          </div>
+    <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+      <div>Cognitive Clarity</div>
+      <div className="font-semibold">{clarity} / 25</div>
+    </div>
 
-          <div className="text-[14px] leading-[2] text-[#64776d] whitespace-pre-line">
-            {reflection}
-          </div>
+    <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+      <div>Emotional Resilience</div>
+      <div className="font-semibold">{emotional} / 25</div>
+    </div>
 
-        </section>
+    <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+      <div>Somatic Balance</div>
+      <div className="font-semibold">{somatic} / 15</div>
+    </div>
+
+    <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+      <div>Meaning & Engagement</div>
+      <div className="font-semibold">{meaning} / 20</div>
+    </div>
+
+    <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+      <div>Future Readiness</div>
+      <div className="font-semibold">{future} / 15</div>
+    </div>
+
+  </div>
+
+
+  {/* SYNTHESIS */}
+
+  <div className="border-t border-[#dbe6de] pt-6 mb-7">
+
+    <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+      Interpretation
+    </div>
+
+    <div className="text-[14px] leading-[1.95] text-[#64776d] whitespace-pre-line">
+      {reflection}
+    </div>
+
+  </div>
+
+
+  {/* BIOMARKER INSIGHT */}
+
+  <div className="border-t border-[#dbe6de] pt-6">
+
+    <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+      Biomarker Context
+    </div>
+
+    <div className="text-[14px] leading-[1.95] text-[#64776d]">
+      {biomarker}
+    </div>
+
+  </div>
+
+</section>
 
 
         {/* NEXT STEPS */}
