@@ -29,7 +29,7 @@ export default function ReflectPage() {
           <div className="text-[14px] leading-[1.95] text-[#62756b] space-y-4 mb-6">
 
             <p>
-              Explore your patterns related to whole person wellbeing including stress recovery and future outlook.
+              Explore your patterns of whole person wellbeing including stress recovery and future outlook.
             </p>
 
             <p>
