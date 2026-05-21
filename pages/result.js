@@ -113,9 +113,9 @@ export default function ResultPage() {
       Integrated Interpretation
     </div>
 
-    <div className="text-[14px] leading-[1.95] text-[#64776d] whitespace-pre-line">
-      {reflection}
-    </div>
+    <div className="text-[14px] leading-[1.95] text-[#64776d]">
+  Test reflection
+</div>
 
   </div>
 
