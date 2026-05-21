@@ -23,13 +23,13 @@ export default function ReflectPage() {
           </div>
 
           <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-5">
-            A brief reflection on recovery, emotional wellbeing, restorative balance, and cognitive flow.
+            A brief reflection on emotional wellbeing, restorative balance and cognitive flow.
           </h1>
 
           <div className="text-[14px] leading-[1.95] text-[#62756b] space-y-4 mb-6">
 
             <p>
-              This assessment explores patterns related to psychological wellbeing, emotional resilience, restorative balance, stress recovery, and future outlook.
+              Explore your patterns related to whole person wellbeing including stress recovery and future outlook.
             </p>
 
             <p>
