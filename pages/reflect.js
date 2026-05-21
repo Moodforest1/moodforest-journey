@@ -40,7 +40,7 @@ export default function ReflectPage() {
 
           <div className="text-[13px] leading-[1.85] text-[#64776d] border-t border-[#dbe6de] pt-5">
 
-            Completely anonymous — no login, identity or payment required.
+            Completely anonymous — no login, identity or payment required. Instant report.
 
           </div>
 
