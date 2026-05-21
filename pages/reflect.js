@@ -57,7 +57,7 @@ export default function ReflectPage() {
       height="1120px"
       width="100%"
       frameBorder="0"
-      scrolling="no"
+      scrolling="auto"
       src={formUrl}
       className="w-full bg-transparent"
       style={{
