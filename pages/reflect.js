@@ -54,7 +54,7 @@ export default function ReflectPage() {
   <div className="w-full overflow-hidden">
 
     <iframe
-      height="3000px"
+      height="1120px"
       width="100%"
       frameBorder="0"
       scrolling="auto"
