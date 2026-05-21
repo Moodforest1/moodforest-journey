@@ -29,7 +29,7 @@ export default function ReflectPage() {
           <div className="text-[14px] leading-[1.95] text-[#62756b] space-y-4 mb-6">
 
             <p>
-              This brief assessment explores patterns related to psychological wellbeing, emotional resilience, restorative balance, stress recovery, and future outlook.
+              This assessment explores patterns related to psychological wellbeing, emotional resilience, restorative balance, stress recovery, and future outlook.
             </p>
 
             <p>
@@ -49,18 +49,26 @@ export default function ReflectPage() {
 
         {/* FORM */}
 
-        <section>
+        <section className="-mx-4">
 
-          <iframe
-            height="980px"
-            width="100%"
-            frameBorder="0"
-            scrolling="auto"
-            src={formUrl}
-            className="w-full bg-transparent"
-          ></iframe>
+  <div className="w-full overflow-hidden">
 
-        </section>
+    <iframe
+      height="1120px"
+      width="100%"
+      frameBorder="0"
+      scrolling="no"
+      src={formUrl}
+      className="w-full bg-transparent"
+      style={{
+        transform: 'scale(1.02)',
+        transformOrigin: 'top left'
+      }}
+    ></iframe>
+
+  </div>
+
+</section>
 
 
       </div>
