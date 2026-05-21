@@ -73,7 +73,7 @@ export default function ResultPage() {
         <section className="mb-10">
 
           <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-            Mind / Flow Reflection
+            Mind & Flow
           </div>
 
           <div className="text-[14px] leading-[2] text-[#64776d] whitespace-pre-line">
@@ -88,7 +88,7 @@ export default function ResultPage() {
         <section className="mb-10">
 
           <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-            Where Would You Like To Go From Here?
+            Where To From Here?
           </div>
 
           <div className="text-[14px] leading-[1.9] text-[#64776d] mb-7">
@@ -109,7 +109,7 @@ export default function ResultPage() {
     </div>
 
     <div className="text-[14px] leading-[1.85] text-[#64776d] mb-5">
-      Watch a short reflection on cognitive flow, restorative recovery, emotional steadiness, and whole-person vitality.
+      Watch a short video on how people have felt with Moodforest.
     </div>
 
   </div>
@@ -139,12 +139,12 @@ export default function ResultPage() {
           <div className="border-t border-[#dbe6de] pt-7 mb-8">
 
             <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
-              Question & Reflection
+              Questions & Conversation
             </div>
 
             <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
 
-              If something in this reflection resonated with you, you’re welcome to ask a question or continue the conversation gently with the Moodforest team through WhatsApp.
+              If something here resonated with you, you're welcome to continue the conversation with the Moodforest team through WhatsApp.
 
             </div>
 
@@ -186,7 +186,7 @@ export default function ResultPage() {
 
             <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-              Others gradually choose to explore deeper restorative continuity, emotional steadiness, preventive vitality, physiological rhythms, and whole-person flourishing over time.
+              Some people gradually choose to explore deeper psychological understanding, preventive health, restorative rhythms, and long-term wellbeing over time.
 
             </div>
 
@@ -198,7 +198,7 @@ export default function ResultPage() {
               <div>
 
                 <div className="text-[15px] font-semibold text-[#274838] mb-2">
-                  Psycho-Profiling
+                  Psychological Understanding
                 </div>
 
                 <div className="text-[14px] leading-[1.85] text-[#64776d]">
@@ -280,7 +280,7 @@ export default function ResultPage() {
 
               <br /><br />
 
-              The reflection is completely anonymous — no login, identity or payment required.
+              It is completely anonymous — no login, identity or payment required.
 
             </div>
 
@@ -299,28 +299,6 @@ export default function ResultPage() {
 
         </section>
 
-
-        {/* WHOLE PERSON */}
-
-        <section className="border-t border-[#dbe6de] pt-7 pb-4">
-
-          <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-            Whole-Person Preventive Vitality
-          </div>
-
-          <div className="text-[14px] leading-[1.9] text-[#64776d] space-y-5">
-
-            <p>
-              Cognitive flow, emotional steadiness, restorative recovery, inflammation rhythms, physiological vitality, sleep quality, metabolic resilience, and long-term flourishing are often deeply interconnected.
-            </p>
-
-            <p>
-              Moodforest gradually integrates reflective continuity with whole-person preventive vitality understanding over time.
-            </p>
-
-          </div>
-
-        </section>
 
       </div>
 
