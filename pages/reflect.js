@@ -61,7 +61,7 @@ export default function ReflectPage() {
       src={formUrl}
       className="w-full bg-transparent"
       style={{
-        overflow: 'auto'
+      
       }}
     ></iframe>
 
