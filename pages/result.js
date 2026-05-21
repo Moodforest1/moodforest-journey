@@ -163,7 +163,7 @@ export default function ResultPage() {
     </div>
 
     <div className="text-[14px] leading-[1.85] text-[#64776d] mb-5">
-      A brief introduction to Moodforest process and outcomes.
+      A 5-min video on Moodforest's process and outcomes.
     </div>
 
   </div>
@@ -254,7 +254,7 @@ export default function ResultPage() {
   <div>
 
     <div className="text-[15px] font-semibold text-[#274838] mb-1">
-      Psychological Understanding
+      1. Psychological Understanding
     </div>
 
     <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
@@ -273,7 +273,7 @@ export default function ResultPage() {
   <div>
 
     <div className="text-[15px] font-semibold text-[#274838] mb-1">
-      Biomarker Profiling
+      2. Biomarker Profiling
     </div>
 
     <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
@@ -292,7 +292,7 @@ export default function ResultPage() {
   <div>
 
     <div className="text-[15px] font-semibold text-[#274838] mb-1">
-      7-Day Bio-Residency
+      3. 7-Day Bio-Residency
     </div>
 
     <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
