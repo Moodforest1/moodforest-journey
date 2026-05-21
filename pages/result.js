@@ -286,7 +286,7 @@ export default function ResultPage() {
     </div>
 
     <div className="text-[14px] leading-[1.85] text-[#64776d]">
-      Blood tests through home sample collection, biomarker interpretation, and guided consultation on whole-person wellbeing.
+      Blood tests, biomarker interpretation, and guided consultation on whole-person wellbeing.
     </div>
 
   </div>
