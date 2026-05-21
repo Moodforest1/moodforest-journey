@@ -152,11 +152,11 @@ export default function ResultPage() {
           </div>
 
 
-          {/* VIDEO */}
+    {/* VIDEO */}
 
-<div className="mb-9 -mx-2">
+<div className="mb-9">
 
-  <div className="px-4">
+  <div>
 
     <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
       A Short Introduction
@@ -168,9 +168,9 @@ export default function ResultPage() {
 
   </div>
 
-  <div className="overflow-hidden bg-black">
+  <div className="overflow-hidden rounded-[18px] bg-black">
 
-    <div className="relative w-full pt-[68%]">
+    <div className="relative w-full aspect-video">
 
       <iframe
         src="https://www.youtube.com/embed/Btsc55GIljI"
