@@ -37,14 +37,12 @@ export default function ResultPage() {
           </div>
 
           <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-4">
-            Your Cognitive State:
+            Your Current State:
             <br />
             {state}
           </h1>
 
-          <p className="text-[14px] leading-[1.8] text-[#62756b]">
-            {insight}
-          </p>
+         
 
         </section>
 
@@ -54,7 +52,7 @@ export default function ResultPage() {
 <section className="mb-10">
 
   <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-3">
-    Overall Cognitive Flow
+    Overall Wellbeing Pattern
   </div>
 
   <div className="text-[48px] font-bold leading-none text-[#244837] mb-2">
@@ -100,7 +98,7 @@ export default function ResultPage() {
     </div>
 
     <div className="flex items-center justify-between text-[14px] text-[#42574d]">
-      <div>Future Readiness</div>
+      <div>Future Outlook</div>
       <div className="font-semibold">{future} / 15</div>
     </div>
 
@@ -112,7 +110,7 @@ export default function ResultPage() {
   <div className="border-t border-[#dbe6de] pt-6 mb-7">
 
     <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-      Interpretation
+      Integrated Interpretation
     </div>
 
     <div className="text-[14px] leading-[1.95] text-[#64776d] whitespace-pre-line">
@@ -161,11 +159,11 @@ export default function ResultPage() {
   <div className="px-4">
 
     <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
-      Reflective Video
+      A Short Introduction
     </div>
 
     <div className="text-[14px] leading-[1.85] text-[#64776d] mb-5">
-      Watch a short video on how people have felt with Moodforest.
+      A brief introduction to Moodforest, restorative wellbeing, and continuity-oriented recovery.
     </div>
 
   </div>
@@ -237,59 +235,77 @@ export default function ResultPage() {
           <div className="border-t border-[#dbe6de] pt-7 mb-8">
 
             <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-              A Gradual Journey Toward Restorative Vitality
+              The Moodforest Journey
             </div>
 
             <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-              Some people gradually choose to explore deeper psychological understanding, preventive health, restorative rhythms, and long-term wellbeing over time.
+              Some people choose to explore deeper psychological understanding, preventive health, restorative recovery, and long-term wellbeing through Moodforest over time.
 
             </div>
 
 
-            {/* STAGES */}
+          {/* STAGES */}
 
-            <div className="space-y-5 mb-6">
+<div className="space-y-7 mb-7">
 
-              <div>
+  {/* PSYCHOLOGICAL UNDERSTANDING */}
 
-                <div className="text-[15px] font-semibold text-[#274838] mb-2">
-                  Psychological Understanding
-                </div>
+  <div>
 
-                <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  Free continuity and psychological understanding over time.
-                </div>
+    <div className="text-[15px] font-semibold text-[#274838] mb-1">
+      Psychological Understanding
+    </div>
 
-              </div>
+    <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
+      Always Free
+    </div>
 
+    <div className="text-[14px] leading-[1.85] text-[#64776d]">
+      Ongoing continuity, psychological understanding, and deeper self-awareness over time.
+    </div>
 
-              <div>
-
-                <div className="text-[15px] font-semibold text-[#274838] mb-2">
-                  Biomarker Profiling
-                </div>
-
-                <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  Preventive vitality understanding, physiology, and guided consultation.
-                </div>
-
-              </div>
+  </div>
 
 
-              <div>
+  {/* BIOMARKER PROFILING */}
 
-                <div className="text-[15px] font-semibold text-[#274838] mb-2">
-                  7-Day Bio-Residency
-                </div>
+  <div>
 
-                <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  Recovery rhythms, cardio-metabolic restoration, fasting support, and whole-person vitality.
-                </div>
+    <div className="text-[15px] font-semibold text-[#274838] mb-1">
+      Biomarker Profiling
+    </div>
 
-              </div>
+    <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
+      Home Sample Collection
+    </div>
 
-            </div>
+    <div className="text-[14px] leading-[1.85] text-[#64776d]">
+      Blood tests through home sample collection, biomarker interpretation, and guided consultation on whole-person wellbeing.
+    </div>
+
+  </div>
+
+
+  {/* BIO-RESIDENCY */}
+
+  <div>
+
+    <div className="text-[15px] font-semibold text-[#274838] mb-1">
+      7-Day Bio-Residency
+    </div>
+
+    <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
+      Optional Guided Fasting
+    </div>
+
+    <div className="text-[14px] leading-[1.85] text-[#64776d]">
+      Deep restorative recovery and physiological reset, with optional fasting support for whole-person wellbeing.
+    </div>
+
+  </div>
+
+</div>
 
 
             
@@ -327,12 +343,12 @@ export default function ResultPage() {
           <div className="border-t border-[#dbe6de] pt-7">
 
             <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-              Share Reflection
+              Share Moodforest
             </div>
 
             <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
 
-              If this reflection felt meaningful, you may wish to gently share it with someone you care about.
+              If this felt meaningful, you may wish to gently share it with someone you care about.
 
               <br /><br />
 
@@ -348,7 +364,7 @@ export default function ResultPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
             >
-              Share Moodforest Reflection
+              Share with Someone
             </a>
 
           </div>
