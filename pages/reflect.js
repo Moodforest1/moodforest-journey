@@ -53,17 +53,18 @@ export default function ReflectPage() {
 
   <div className="w-full overflow-hidden">
 
-    <iframe
-      height="1120px"
-      width="100%"
-      frameBorder="0"
-      scrolling="yes"
-      src={formUrl}
-      className="w-full bg-transparent"
-      style={{
-      
-      }}
-    ></iframe>
+   <iframe
+  key={formUrl}
+  height="1120px"
+  width="100%"
+  frameBorder="0"
+  scrolling="yes"
+  src={formUrl}
+  className="w-full bg-transparent"
+  style={{
+    display: "block",
+  }}
+></iframe>
 
   </div>
 
