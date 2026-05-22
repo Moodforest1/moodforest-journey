@@ -32,10 +32,7 @@ export default function ResultPage() {
 
         <section className="mb-7">
 
-          <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
-            Flow in Mind · Vitality in Body
-          </div>
-
+        
           <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-4">
             Your Current State:
             <br />
