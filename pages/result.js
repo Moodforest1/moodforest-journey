@@ -5,24 +5,24 @@ import { useState } from 'react'
 export default function ResultPage() {
 
   const router = useRouter()
-if (!router.isReady) {
-  return null
-}
+
   const [showJourneyForm, setShowJourneyForm] = useState(false)
   const [showQuestionForm, setShowQuestionForm] = useState(false)
   const [showMore, setShowMore] = useState(false)
 
-  const {
-    score = "0",
-    state = "Reflective",
-    reflection = "",
-    biomarker = "",
-    clarity = "0",
-    emotional = "0",
-    somatic = "0",
-    meaning = "0",
-    future = "0"
-  } = router.query
+  if (!router.isReady) {
+    return null
+  }
+
+  const score = router.query.score || "0"
+  const state = router.query.state || "Reflective"
+  const reflection = router.query.reflection || ""
+  const biomarker = router.query.biomarker || ""
+  const clarity = router.query.clarity || "0"
+  const emotional = router.query.emotional || "0"
+  const somatic = router.query.somatic || "0"
+  const meaning = router.query.meaning || "0"
+  const future = router.query.future || "0"
 
   return (
 
@@ -66,7 +66,7 @@ if (!router.isReady) {
             <div
               className="h-full rounded-full bg-[#274838]"
               style={{ width: score + '%' }}
-            />
+            ></div>
 
           </div>
 
@@ -107,295 +107,295 @@ if (!router.isReady) {
 
         {showMore && (
 
-        <section className="mb-10 animate-fadeIn">
+          <section className="mb-10">
 
 
-          {/* VIDEO */}
+            {/* VIDEO */}
 
-          <div className="mb-12 border-t border-[#dbe6de] pt-8">
+            <div className="mb-12 border-t border-[#dbe6de] pt-8">
 
-            <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
-              A Gentle Introduction
-            </div>
+              <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
+                A Gentle Introduction
+              </div>
 
-            <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
+              <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-              A short introduction to Moodforest's whole-person approach to psychological and physiological wellbeing.
+                A short introduction to Moodforest's whole-person approach to psychological and physiological wellbeing.
 
-            </div>
+              </div>
 
-            <div className="overflow-hidden rounded-[18px] bg-black">
+              <div className="overflow-hidden rounded-[18px] bg-black">
 
-              <div className="relative w-full aspect-video">
+                <div className="relative w-full aspect-video">
 
-                <iframe
-                  src="https://www.youtube.com/embed/Btsc55GIljI"
-                  title="Moodforest Reflection"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute top-0 left-0 w-full h-full"
-                ></iframe>
+                  <iframe
+                    src="https://www.youtube.com/embed/Btsc55GIljI"
+                    title="Moodforest Reflection"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full"
+                  ></iframe>
+
+                </div>
 
               </div>
 
             </div>
 
-          </div>
 
 
+            {/* DEEPER INSIGHTS */}
 
-          {/* DEEPER INSIGHTS */}
+            <div className="border-t border-[#dbe6de] pt-8 mb-10">
 
-          <div className="border-t border-[#dbe6de] pt-8 mb-10">
+              <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
+                Deeper Insights
+              </div>
 
-            <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-5">
-              Deeper Insights
+
+              {/* DOMAIN SCORES */}
+
+              <div className="space-y-4 mb-8">
+
+                <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+                  <div>Cognitive Clarity</div>
+                  <div className="font-semibold">{clarity} / 25</div>
+                </div>
+
+                <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+                  <div>Emotional Resilience</div>
+                  <div className="font-semibold">{emotional} / 25</div>
+                </div>
+
+                <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+                  <div>Somatic Balance</div>
+                  <div className="font-semibold">{somatic} / 15</div>
+                </div>
+
+                <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+                  <div>Meaning & Engagement</div>
+                  <div className="font-semibold">{meaning} / 20</div>
+                </div>
+
+                <div className="flex items-center justify-between text-[14px] text-[#42574d]">
+                  <div>Future Outlook</div>
+                  <div className="font-semibold">{future} / 15</div>
+                </div>
+
+              </div>
+
+
+              {/* BIOMARKERS */}
+
+              <div className="border-t border-[#dbe6de] pt-6">
+
+                <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+                  Biomarker Context
+                </div>
+
+                <div className="text-[14px] leading-[1.95] text-[#64776d]">
+                  {biomarker}
+                </div>
+
+              </div>
+
             </div>
 
 
-            {/* DOMAIN SCORES */}
 
-            <div className="space-y-4 mb-8">
+            {/* QUESTIONS */}
 
-              <div className="flex items-center justify-between text-[14px] text-[#42574d]">
-                <div>Cognitive Clarity</div>
-                <div className="font-semibold">{clarity} / 25</div>
+            <div className="border-t border-[#dbe6de] pt-8 mb-10">
+
+              <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
+                Questions & Conversation
               </div>
 
-              <div className="flex items-center justify-between text-[14px] text-[#42574d]">
-                <div>Emotional Resilience</div>
-                <div className="font-semibold">{emotional} / 25</div>
+              <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
+
+                If something here resonated with you, you're welcome to continue the conversation with the Moodforest team through WhatsApp.
+
               </div>
 
-              <div className="flex items-center justify-between text-[14px] text-[#42574d]">
-                <div>Somatic Balance</div>
-                <div className="font-semibold">{somatic} / 15</div>
-              </div>
+              <button
+                onClick={() => setShowQuestionForm(!showQuestionForm)}
+                className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
+              >
+                Continue the Conversation
+              </button>
 
-              <div className="flex items-center justify-between text-[14px] text-[#42574d]">
-                <div>Meaning & Engagement</div>
-                <div className="font-semibold">{meaning} / 20</div>
-              </div>
 
-              <div className="flex items-center justify-between text-[14px] text-[#42574d]">
-                <div>Future Outlook</div>
-                <div className="font-semibold">{future} / 15</div>
-              </div>
+              {showQuestionForm && (
+
+                <div className="mt-5 w-full overflow-hidden max-w-full">
+
+                  <iframe
+                    height="460px"
+                    width="100%"
+                    frameBorder="0"
+                    scrolling="no"
+                    allowTransparency="true"
+                    src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
+                    className="w-full max-w-full bg-transparent"
+                    style={{
+                      transformOrigin: 'top left'
+                    }}
+                  ></iframe>
+
+                </div>
+
+              )}
 
             </div>
 
 
-            {/* BIOMARKERS */}
 
-            <div className="border-t border-[#dbe6de] pt-6">
+            {/* JOURNEY */}
+
+            <div className="border-t border-[#dbe6de] pt-8 mb-10">
 
               <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-                Biomarker Context
+                The Moodforest Journey
               </div>
 
-              <div className="text-[14px] leading-[1.95] text-[#64776d]">
-                {biomarker}
-              </div>
+              <div className="text-[14px] leading-[1.9] text-[#64776d] mb-7">
 
-            </div>
-
-          </div>
-
-
-
-          {/* QUESTIONS */}
-
-          <div className="border-t border-[#dbe6de] pt-8 mb-10">
-
-            <div className="text-[10px] tracking-[0.18em] uppercase text-[#7b8f84] font-semibold mb-4">
-              Questions & Conversation
-            </div>
-
-            <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
-
-              If something here resonated with you, you're welcome to continue the conversation with the Moodforest team through WhatsApp.
-
-            </div>
-
-            <button
-              onClick={() => setShowQuestionForm(!showQuestionForm)}
-              className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
-            >
-              Continue the Conversation
-            </button>
-
-
-            {showQuestionForm && (
-
-              <div className="mt-5 w-full overflow-hidden max-w-full">
-
-                <iframe
-                  height="460px"
-                  width="100%"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowTransparency="true"
-                  src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
-                  className="w-full max-w-full bg-transparent"
-                  style={{
-                    transformOrigin: 'top left'
-                  }}
-                ></iframe>
+                For those who wish to continue further, Moodforest unfolds across three stages of deeper understanding and restoration.
 
               </div>
 
-            )}
-
-          </div>
 
 
+              {/* STAGES */}
 
-          {/* JOURNEY */}
-
-          <div className="border-t border-[#dbe6de] pt-8 mb-10">
-
-            <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-              The Moodforest Journey
-            </div>
-
-            <div className="text-[14px] leading-[1.9] text-[#64776d] mb-7">
-
-              For those who wish to continue further, Moodforest unfolds across three stages of deeper understanding and restoration.
-
-            </div>
+              <div className="space-y-7 mb-7">
 
 
+                <div>
 
-            {/* STAGES */}
+                  <div className="text-[15px] font-semibold text-[#274838] mb-1">
+                    1. Psychological Understanding
+                  </div>
 
-            <div className="space-y-7 mb-7">
+                  <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
+                    Always Free
+                  </div>
 
+                  <div className="text-[14px] leading-[1.85] text-[#64776d]">
+                    Ongoing continuity, reflection, and deeper self-understanding over time.
+                  </div>
 
-              <div>
-
-                <div className="text-[15px] font-semibold text-[#274838] mb-1">
-                  1. Psychological Understanding
                 </div>
 
-                <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
-                  Always Free
+
+
+                <div>
+
+                  <div className="text-[15px] font-semibold text-[#274838] mb-1">
+                    2. Biomarker Profiling
+                  </div>
+
+                  <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
+                    Home Sample Collection
+                  </div>
+
+                  <div className="text-[14px] leading-[1.85] text-[#64776d]">
+                    Biomarker interpretation and guided consultation around whole-person wellbeing.
+                  </div>
+
                 </div>
 
-                <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  Ongoing continuity, reflection, and deeper self-understanding over time.
+
+
+                <div>
+
+                  <div className="text-[15px] font-semibold text-[#274838] mb-1">
+                    3. 7-Day Bio-Residency
+                  </div>
+
+                  <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
+                    With Optional Guided Fasting
+                  </div>
+
+                  <div className="text-[14px] leading-[1.85] text-[#64776d]">
+                    A deeper restorative process designed for physiological reset and whole-person recovery.
+                  </div>
+
                 </div>
 
               </div>
 
 
 
-              <div>
+              <button
+                onClick={() => setShowJourneyForm(!showJourneyForm)}
+                className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold hover:opacity-95 transition"
+              >
+                Begin My Moodforest Journey
+              </button>
 
-                <div className="text-[15px] font-semibold text-[#274838] mb-1">
-                  2. Biomarker Profiling
+
+              {showJourneyForm && (
+
+                <div className="mt-5 w-full overflow-hidden max-w-full">
+
+                  <iframe
+                    height="460px"
+                    width="100%"
+                    frameBorder="0"
+                    scrolling="no"
+                    allowTransparency="true"
+                    src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
+                    className="w-full max-w-full bg-transparent"
+                    style={{
+                      transformOrigin: 'top left'
+                    }}
+                  ></iframe>
+
                 </div>
 
-                <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
-                  Home Sample Collection
-                </div>
-
-                <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  Biomarker interpretation and guided consultation around whole-person wellbeing.
-                </div>
-
-              </div>
-
-
-
-              <div>
-
-                <div className="text-[15px] font-semibold text-[#274838] mb-1">
-                  3. 7-Day Bio-Residency
-                </div>
-
-                <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
-                  With Optional Guided Fasting
-                </div>
-
-                <div className="text-[14px] leading-[1.85] text-[#64776d]">
-                  A deeper restorative process designed for physiological reset and whole-person recovery.
-                </div>
-
-              </div>
+              )}
 
             </div>
 
 
 
-            <button
-              onClick={() => setShowJourneyForm(!showJourneyForm)}
-              className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold hover:opacity-95 transition"
-            >
-              Begin My Moodforest Journey
-            </button>
+            {/* SHARE */}
 
+            <div className="border-t border-[#dbe6de] pt-8">
 
-            {showJourneyForm && (
+              <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
+                Share Moodforest
+              </div>
 
-              <div className="mt-5 w-full overflow-hidden max-w-full">
+              <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
 
-                <iframe
-                  height="460px"
-                  width="100%"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowTransparency="true"
-                  src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
-                  className="w-full max-w-full bg-transparent"
-                  style={{
-                    transformOrigin: 'top left'
-                  }}
-                ></iframe>
+                If this felt meaningful, you may wish to gently share it with someone you care about.
+
+                <br /><br />
+
+                It is completely anonymous — no login, identity verification, or payment required.
 
               </div>
 
-            )}
-
-          </div>
-
-
-
-          {/* SHARE */}
-
-          <div className="border-t border-[#dbe6de] pt-8">
-
-            <div className="text-[10px] tracking-[0.18em] uppercase text-[#74887d] font-semibold mb-4">
-              Share Moodforest
-            </div>
-
-            <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
-
-              If this felt meaningful, you may wish to gently share it with someone you care about.
-
-              <br /><br />
-
-              It is completely anonymous — no login, identity verification, or payment required.
+              <a
+                href={
+                  "https://wa.me/?text=" +
+                  encodeURIComponent(
+                    "I came across this reflective Cognitive Flow Assessment from Moodforest and thought you might find it meaningful.\n\nIt is completely anonymous — no login, identity verification, or payment required.\n\nhttps://journey.moodforest.org/cfa"
+                  )
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
+              >
+                Share with Someone
+              </a>
 
             </div>
 
-            <a
-              href={
-  "https://wa.me/?text=" +
-  encodeURIComponent(
-    "I came across this reflective Cognitive Flow Assessment from Moodforest and thought you might find it meaningful.\n\nIt is completely anonymous — no login, identity verification, or payment required.\n\nhttps://journey.moodforest.org/cfa"
-  )
-}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
-            >
-              Share with Someone
-            </a>
-
-          </div>
-
-        </section>
+          </section>
 
         )}
 
