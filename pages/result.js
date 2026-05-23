@@ -5,7 +5,9 @@ import { useState } from 'react'
 export default function ResultPage() {
 
   const router = useRouter()
-
+if (!router.isReady) {
+  return null
+}
   const [showJourneyForm, setShowJourneyForm] = useState(false)
   const [showQuestionForm, setShowQuestionForm] = useState(false)
   const [showMore, setShowMore] = useState(false)
