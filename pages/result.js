@@ -6,22 +6,26 @@ export default function ResultPage() {
 
   const router = useRouter()
 
+  if (!router.isReady) {
+  return null
+}
+
   const [showJourneyForm, setShowJourneyForm] = useState(false)
   const [showQuestionForm, setShowQuestionForm] = useState(false)
   const [showMore, setShowMore] = useState(false)
 
-  const {
-    score = "0",
-    state = "Reflective",
-    insight = "",
-    reflection = "",
-    biomarker = "",
-    clarity = "0",
-    emotional = "0",
-    somatic = "0",
-    meaning = "0",
-    future = "0"
-  } = router.query
+  const score = router.query?.score || "0"
+const state = router.query?.state || "Reflective"
+const insight = router.query?.insight || ""
+const reflection = router.query?.reflection || ""
+const biomarker = router.query?.biomarker || ""
+const clarity = router.query?.clarity || "0"
+const emotional = router.query?.emotional || "0"
+const somatic = router.query?.somatic || "0"
+const meaning = router.query?.meaning || "0"
+const future = router.query?.future || "0"
+
+
 
   return (
 
