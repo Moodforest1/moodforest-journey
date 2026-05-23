@@ -105,7 +105,7 @@ export default function ResultPage() {
         {/* SECOND LAYER */}
 
         {showMore && (
-        <>
+<div>
 
 
         {/* VIDEO */}
@@ -387,8 +387,8 @@ export default function ResultPage() {
         </section>
 
 
-        </>
-        )}
+</div>
+)}
 
 
       </div>
