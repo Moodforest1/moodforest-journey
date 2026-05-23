@@ -63,7 +63,7 @@ export default function ResultPage() {
 
             <div
               className="h-full rounded-full bg-[#274838]"
-              style={{ width: `${score}%` }}
+              style={{ width: score + '%' }}
             />
 
           </div>
