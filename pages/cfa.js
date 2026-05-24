@@ -63,7 +63,7 @@ return (
 
     {/* FORM */}
 
-    <section className="-mx-4 mb-8">
+    <section className="mb-8">
 
       <div className="w-full overflow-hidden">
 
