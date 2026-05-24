@@ -20,7 +20,7 @@ phase
 
 useEffect(() => {
 
-```
+
 const iframe = iframeRef.current
 
 if (!iframe) {
@@ -46,13 +46,13 @@ iframe.addEventListener('load', handleLoad)
 return function () {
   iframe.removeEventListener('load', handleLoad)
 }
-```
+
 
 }, [])
 
 if (submitted) {
 
-```
+
 return (
 
   <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-8">
@@ -86,13 +86,13 @@ return (
 
   </div>
 )
-```
+
 
 }
 
 return (
 
-```
+
 <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-5">
 
   <div className="max-w-xl mx-auto">
@@ -152,7 +152,7 @@ return (
   </div>
 
 </div>
-```
+
 
 )
 }
