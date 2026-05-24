@@ -24,7 +24,7 @@ phase
 
 return (
 
-```
+
 <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-8">
 
   <div className="max-w-2xl mx-auto">
@@ -118,7 +118,7 @@ return (
   </div>
 
 </div>
-```
+
 
 )
 }
