@@ -37,20 +37,7 @@ return (
   <div className="max-w-xl mx-auto">
 
 
-    {/* HERO */}
-
-    <section className="mb-8 pt-2">
-
-      <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-4">
-        Your Current State:
-        <br />
-        {state}
-      </h1>
-
-    </section>
-
-
-    {/* REPORT */}
+       {/* REPORT */}
 
     <section className="mb-10 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_16px_34px_rgba(31,45,38,0.04)] p-7">
 

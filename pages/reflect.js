@@ -57,7 +57,7 @@ return (
 
     {/* FORM */}
 
-    <section className="-mx-4">
+    <section className="mt-2">
 
       <div className="w-full overflow-hidden">
 
@@ -66,7 +66,8 @@ return (
           height="1120px"
           width="100%"
           frameBorder="0"
-          scrolling="yes"
+          scrolling="auto"
+          loading="eager"
           src={formUrl}
           className="w-full bg-transparent"
           style={{
