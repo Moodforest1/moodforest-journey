@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState } from 'react'
 
 export default function CFA() {
 
@@ -8,87 +7,11 @@ const router = useRouter()
 const mf_token = router.query.mf_token || ''
 const phase = router.query.phase || 'Pre'
 
-const iframeRef = useRef(null)
-
-const [submitted, setSubmitted] = useState(false)
-
 const iframeUrl =
 "https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1?mf_token=" +
 mf_token +
 "&Assessment_Phase=" +
 phase
-
-useEffect(() => {
-
-
-const iframe = iframeRef.current
-
-if (!iframe) {
-  return
-}
-
-let firstLoad = true
-
-const handleLoad = () => {
-
-  if (firstLoad) {
-    firstLoad = false
-    return
-  }
-
-  setTimeout(function () {
-    setSubmitted(true)
-  }, 1000)
-}
-
-iframe.addEventListener('load', handleLoad)
-
-return function () {
-  iframe.removeEventListener('load', handleLoad)
-}
-
-
-}, [])
-
-if (submitted) {
-
-
-return (
-
-  <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-8">
-
-    <div className="max-w-xl mx-auto">
-
-      <div className="bg-white rounded-[28px] border border-[#dbe6de] shadow-[0_16px_34px_rgba(31,45,38,0.05)] p-8">
-
-        <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
-          Reflection Received
-        </div>
-
-        <h1 className="text-[30px] leading-[1.12] font-bold text-[#1f2d25] mb-5">
-          Your reflection has been received.
-        </h1>
-
-        <div className="text-[15px] leading-[1.9] text-[#62756b] mb-8">
-          Thank you for continuing your continuity journey with Moodforest.
-        </div>
-
-        <a
-          href={"https://journey.moodforest.co/?mf_token=" + mf_token}
-          className="inline-block rounded-full bg-[#274838] text-white px-6 py-3 text-[14px] font-semibold no-underline"
-        >
-          Return to Journey Home
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-)
-
-
-}
 
 return (
 
@@ -96,6 +19,8 @@ return (
 <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-5">
 
   <div className="max-w-xl mx-auto">
+
+    {/* HERO */}
 
     <section className="mb-8">
 
@@ -127,12 +52,13 @@ return (
 
     </section>
 
-    <section className="-mx-4">
+    {/* FORM */}
+
+    <section className="-mx-4 mb-8">
 
       <div className="w-full overflow-hidden">
 
         <iframe
-          ref={iframeRef}
           key={iframeUrl}
           height="1120px"
           width="100%"
@@ -144,6 +70,37 @@ return (
             display: "block"
           }}
         ></iframe>
+
+      </div>
+
+    </section>
+
+    {/* RETURN CTA */}
+
+    <section>
+
+      <div className="bg-white rounded-[28px] border border-[#dbe6de] shadow-[0_16px_34px_rgba(31,45,38,0.05)] p-7">
+
+        <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
+          Continuity Journey
+        </div>
+
+        <h2 className="text-[24px] leading-[1.15] font-bold text-[#1f2d25] mb-4">
+          Finished your reflection?
+        </h2>
+
+        <div className="text-[15px] leading-[1.85] text-[#62756b] mb-7">
+
+          Return to your Journey Home to continue your longitudinal continuity experience.
+
+        </div>
+
+        <a
+          href={"https://journey.moodforest.co/?mf_token=" + mf_token}
+          className="inline-block rounded-full bg-[#274838] text-white px-6 py-3 text-[14px] font-semibold no-underline"
+        >
+          Return to Journey Home
+        </a>
 
       </div>
 
