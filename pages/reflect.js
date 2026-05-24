@@ -57,7 +57,7 @@ return (
 
     {/* FORM */}
 
-    <section className="-mx-4">
+    <section>
 
       <div className="w-full overflow-hidden">
 
