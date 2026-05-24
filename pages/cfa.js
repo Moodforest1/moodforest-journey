@@ -1,8 +1,17 @@
+/* =========================
+CFA PAGE — FULL REPLACEMENT
+========================= */
+
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 export default function CFA() {
 
 const router = useRouter()
+
+useEffect(() => {
+window.scrollTo(0, 0)
+}, [])
 
 const mf_token = router.query.mf_token || ''
 const phase = router.query.phase || 'Pre'
@@ -15,16 +24,16 @@ phase
 
 return (
 
+```
+<div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-8">
 
-<div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-5">
-
-  <div className="max-w-xl mx-auto">
+  <div className="max-w-2xl mx-auto">
 
     {/* HERO */}
 
-    <section className="mb-8">
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_16px_34px_rgba(31,45,38,0.04)] p-7">
 
-      <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
+      <div className="text-[10px] tracking-[0.16em] uppercase text-[#71857a] font-semibold mb-3">
         Moodforest Continuity
       </div>
 
@@ -44,7 +53,7 @@ return (
 
       </div>
 
-      <div className="text-[13px] leading-[1.85] text-[#64776d] border-t border-[#dbe6de] pt-5">
+      <div className="text-[13px] leading-[1.85] text-[#64776d] border-t border-[#e7efe9] pt-5">
 
         Your responses become part of your longitudinal continuity journey.
 
@@ -79,9 +88,9 @@ return (
 
     <section>
 
-      <div className="bg-white rounded-[28px] border border-[#dbe6de] shadow-[0_16px_34px_rgba(31,45,38,0.05)] p-7">
+      <div className="bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_16px_34px_rgba(31,45,38,0.04)] p-7">
 
-        <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
+        <div className="text-[10px] tracking-[0.16em] uppercase text-[#71857a] font-semibold mb-3">
           Continuity Journey
         </div>
 
@@ -109,7 +118,7 @@ return (
   </div>
 
 </div>
-
+```
 
 )
 }
