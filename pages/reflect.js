@@ -57,16 +57,16 @@ return (
 
     {/* FORM */}
 
-    <section className="mt-2">
+    <section className="mt-4">
 
       <div className="w-full overflow-hidden">
 
         <iframe
           key={formUrl}
-          height="2200px"
+          height="1120px"
           width="100%"
           frameBorder="0"
-          scrolling="no"
+          scrolling="auto"
           loading="eager"
           src={formUrl}
           className="w-full bg-transparent"
