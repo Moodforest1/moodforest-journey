@@ -4,53 +4,67 @@ export default function CFA() {
 
   const router = useRouter()
 
-  const { mf_token, phase } = router.query
-
-  // Prevent iframe rendering before query params load
-  if (!mf_token || !phase) {
-    return null
-  }
+  const mf_token = router.query.mf_token || ''
+  const phase = router.query.phase || 'Pre'
 
   const iframeUrl =
     `https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Cognitive_Flow_Assessment/vpFXQWs4VqRJ8nkNRTOdgW8qVat6Z2u2D4QPMM0VveKq619fQKOxDW0WGDtHYdyJZ1yepZXJN4V31vCGUzHbDCPmgdSeDUxaXwF1?mf_token=${mf_token}&Assessment_Phase=${phase}`
 
   return (
 
-    <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-5 py-8">
+    <div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-5">
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-xl mx-auto">
 
-        {/* MINIMAL CONTINUITY HEADER */}
+        {/* HERO */}
 
-        <section className="mb-6">
+        <section className="mb-8">
 
-          <div className="text-[11px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
+          <div className="text-[10px] tracking-[0.22em] uppercase text-[#71857a] font-semibold mb-3">
             Moodforest Continuity
           </div>
 
-          <h1 className="text-[28px] leading-[1.15] font-bold text-[#1f2d25] mb-4">
+          <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-5">
             Continuity Reflection
           </h1>
 
-          <p className="text-[15px] leading-[1.8] text-[#62756b]">
-            Please complete your next scheduled reflection.
-          </p>
+          <div className="text-[14px] leading-[1.95] text-[#62756b] space-y-4 mb-6">
+
+            <p>
+              Please complete your next scheduled reflection.
+            </p>
+
+            <p>
+              Most people complete it in about 3–5 minutes.
+            </p>
+
+          </div>
+
+          <div className="text-[13px] leading-[1.85] text-[#64776d] border-t border-[#dbe6de] pt-5">
+
+            Your responses become part of your longitudinal continuity journey.
+
+          </div>
 
         </section>
 
-        {/* EMBEDDED FORM */}
+        {/* FORM */}
 
-        <section>
+        <section className="-mx-4">
 
-          <div className="bg-white rounded-[30px] overflow-hidden border border-[#dbe6de] shadow-[0_16px_34px_rgba(31,45,38,0.05)]">
+          <div className="w-full overflow-hidden">
 
             <iframe
-              height="900px"
+              key={iframeUrl}
+              height="1120px"
               width="100%"
               frameBorder="0"
-              scrolling="auto"
+              scrolling="yes"
               src={iframeUrl}
-              className="w-full"
+              className="w-full bg-transparent"
+              style={{
+                display: "block",
+              }}
             ></iframe>
 
           </div>
