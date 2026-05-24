@@ -130,7 +130,7 @@ return (
         </div>
 
         <a
-          href={`https://journey.moodforest.co/?mf_token=${mf_token}`}
+          href={"https://journey.moodforest.co/?mf_token=" + mf_token}
           className="inline-block rounded-full bg-[#274838] text-white px-6 py-3 text-[14px] font-semibold no-underline"
         >
           Return to Journey Home
