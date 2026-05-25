@@ -13,13 +13,11 @@ useEffect(() => {
 window.scrollTo(0, 0)
 }, [])
 
-const [showJourneyForm, setShowJourneyForm] = useState(false)
 const [showQuestionForm, setShowQuestionForm] = useState(false)
 
 const {
 score = "0",
 state = "Reflective",
-insight = "",
 reflection = "",
 biomarker = "",
 clarity = "0",
@@ -31,26 +29,29 @@ future = "0"
 
 return (
 
-
-<div className="min-h-screen bg-[#edf4ef] text-[#203128] px-4 py-8 overflow-x-hidden">
+<div className="min-h-screen bg-[#f3f5f2] text-[#203128] px-4 py-8 overflow-x-hidden">
 
   <div className="max-w-xl mx-auto">
 
 
-       {/* REPORT */}
+    {/* REPORT */}
 
-    <section className="mb-10 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_16px_34px_rgba(31,45,38,0.04)] p-7">
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
 
       <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-3">
-        Overall Wellbeing Pattern
+        Current Mood Quotient
       </div>
 
       <div className="text-[42px] font-bold leading-none text-[#244837] mb-2">
         {score} / 100
       </div>
 
-      <div className="text-[15px] font-semibold text-[#274838] mb-6">
+      <div className="text-[15px] font-medium text-[#274838] mb-5">
         {state}
+      </div>
+
+      <div className="text-[13px] leading-[1.8] text-[#74887d] mb-7">
+        This is not a diagnosis or fixed identity — simply a reflective snapshot of how things feel right now.
       </div>
 
       <div className="w-full h-[7px] bg-[#dfe8e1] rounded-full overflow-hidden mb-8">
@@ -69,27 +70,27 @@ return (
 
         <div className="flex items-center justify-between text-[14px] text-[#42574d]">
           <div>Cognitive Clarity</div>
-          <div className="font-semibold">{clarity} / 25</div>
+          <div className="font-medium">{clarity} / 25</div>
         </div>
 
         <div className="flex items-center justify-between text-[14px] text-[#42574d]">
           <div>Emotional Resilience</div>
-          <div className="font-semibold">{emotional} / 25</div>
+          <div className="font-medium">{emotional} / 25</div>
         </div>
 
         <div className="flex items-center justify-between text-[14px] text-[#42574d]">
           <div>Somatic Balance</div>
-          <div className="font-semibold">{somatic} / 15</div>
+          <div className="font-medium">{somatic} / 15</div>
         </div>
 
         <div className="flex items-center justify-between text-[14px] text-[#42574d]">
           <div>Meaning & Engagement</div>
-          <div className="font-semibold">{meaning} / 20</div>
+          <div className="font-medium">{meaning} / 20</div>
         </div>
 
         <div className="flex items-center justify-between text-[14px] text-[#42574d]">
           <div>Future Outlook</div>
-          <div className="font-semibold">{future} / 15</div>
+          <div className="font-medium">{future} / 15</div>
         </div>
 
       </div>
@@ -110,12 +111,12 @@ return (
       </div>
 
 
-      {/* BIOMARKER INSIGHT */}
+      {/* MIND-BODY CONTEXT */}
 
       <div className="border-t border-[#e7efe9] pt-6">
 
         <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
-          Biomarker Context
+          Mind–Body Context
         </div>
 
         <div className="text-[14px] leading-[1.95] text-[#64776d]">
@@ -127,243 +128,153 @@ return (
     </section>
 
 
-    {/* NEXT STEPS */}
+    {/* VIDEO */}
 
-    <section className="mb-10 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_16px_34px_rgba(31,45,38,0.04)] p-7">
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
 
       <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
-        Where To From Here?
+        A Gentle Introduction
       </div>
 
-      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-7">
+      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-        Some people simply pause here for reflection, while others choose to explore deeper questions around whole person wellbeing.
+        A short introduction to how Moodforest approaches emotional continuity, recovery, and whole-person wellbeing.
 
       </div>
 
+      <div className="overflow-hidden rounded-[18px] bg-black">
 
-      {/* VIDEO */}
+        <div className="relative w-full aspect-video">
 
-      <div className="mb-9">
-
-        <div>
-
-          <div className="text-[10px] tracking-[0.14em] uppercase text-[#7b8f84] font-semibold mb-4">
-            A Short Introduction
-          </div>
-
-          <div className="text-[14px] leading-[1.85] text-[#64776d] mb-5">
-            A 5-min video on Moodforest's process and outcomes.
-          </div>
-
-        </div>
-
-        <div className="overflow-hidden rounded-[18px] bg-black">
-
-          <div className="relative w-full aspect-video">
-
-            <iframe
-              src="https://www.youtube.com/embed/Btsc55GIljI"
-              title="Moodforest Reflection"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute top-0 left-0 w-full h-full"
-            ></iframe>
-
-          </div>
+          <iframe
+            src="https://www.youtube.com/embed/Btsc55GIljI"
+            title="Moodforest Reflection"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute top-0 left-0 w-full h-full"
+          ></iframe>
 
         </div>
 
       </div>
 
+    </section>
 
-      {/* QUESTION */}
 
-      <div className="border-t border-[#e7efe9] pt-7 mb-8">
+    {/* QUESTIONS */}
 
-        <div className="text-[10px] tracking-[0.14em] uppercase text-[#7b8f84] font-semibold mb-4">
-          Questions & Conversation
-        </div>
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
 
-        <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
+      <div className="text-[10px] tracking-[0.14em] uppercase text-[#7b8f84] font-semibold mb-4">
+        Questions & Conversation
+      </div>
 
-          If something here resonated with you, you're welcome to continue the conversation with the Moodforest team through WhatsApp.
+      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
 
-        </div>
+        If something here resonated with you, you're welcome to continue the conversation with the Moodforest team.
 
-        <button
-          onClick={() => setShowQuestionForm(!showQuestionForm)}
-          className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
-        >
-          Continue the Conversation
-        </button>
+        <br /><br />
 
-        {showQuestionForm && (
-
-          <div className="mt-5 w-full overflow-hidden max-w-full">
-
-            <iframe
-              height="460px"
-              width="100%"
-              frameBorder="0"
-              scrolling="no"
-              allowTransparency="true"
-              src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
-              className="w-full max-w-full bg-transparent"
-              style={{
-                transformOrigin: 'top left'
-              }}
-            ></iframe>
-
-          </div>
-
-        )}
+        You may also call or WhatsApp <span className="font-semibold text-[#274838]">+91 86025 25887</span>.
 
       </div>
 
+      <button
+        onClick={() => setShowQuestionForm(!showQuestionForm)}
+        className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
+      >
+        Continue the Conversation
+      </button>
 
-      {/* JOURNEY */}
+      {showQuestionForm && (
 
-      <div className="border-t border-[#e7efe9] pt-7 mb-8">
+        <div className="mt-5 w-full overflow-hidden max-w-full">
 
-        <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
-          The Moodforest Journey
-        </div>
-
-        <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
-
-          There are 3 stages:
-
-        </div>
-
-
-        {/* STAGES */}
-
-        <div className="space-y-7 mb-7">
-
-          <div>
-
-            <div className="text-[15px] font-semibold text-[#274838] mb-1">
-              1. Psychological Understanding
-            </div>
-
-            <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
-              Always Free
-            </div>
-
-            <div className="text-[14px] leading-[1.85] text-[#64776d]">
-              Ongoing continuity, psychological understanding, and deeper self-awareness over time.
-            </div>
-
-          </div>
-
-
-          <div>
-
-            <div className="text-[15px] font-semibold text-[#274838] mb-1">
-              2. Biomarker Profiling
-            </div>
-
-            <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
-              Home Sample Collection
-            </div>
-
-            <div className="text-[14px] leading-[1.85] text-[#64776d]">
-              Blood tests, biomarker interpretation, and guided consultation on whole-person wellbeing.
-            </div>
-
-          </div>
-
-
-          <div>
-
-            <div className="text-[15px] font-semibold text-[#274838] mb-1">
-              3. 7-Day Bio-Residency
-            </div>
-
-            <div className="text-[11px] uppercase tracking-[0.12em] text-[#8a9a91] mb-3">
-              With Optional Guided Fasting
-            </div>
-
-            <div className="text-[14px] leading-[1.85] text-[#64776d]">
-              Deep restorative recovery and physiological reset involving 9 components, with optional fasting, for whole-person wellbeing.
-            </div>
-
-          </div>
+          <iframe
+            height="460px"
+            width="100%"
+            frameBorder="0"
+            scrolling="no"
+            allowTransparency="true"
+            src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
+            className="w-full max-w-full bg-transparent"
+            style={{
+              transformOrigin: 'top left'
+            }}
+          ></iframe>
 
         </div>
 
+      )}
 
-        <button
-          onClick={() => setShowJourneyForm(!showJourneyForm)}
-          className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold hover:opacity-95 transition"
-        >
-          Begin My Moodforest Journey
-        </button>
+    </section>
 
 
-        {showJourneyForm && (
+    {/* CONTINUITY */}
 
-          <div className="mt-5 w-full overflow-hidden max-w-full">
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
 
-            <iframe
-              height="460px"
-              width="100%"
-              frameBorder="0"
-              scrolling="no"
-              allowTransparency="true"
-              src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
-              className="w-full max-w-full bg-transparent"
-              style={{
-                transformOrigin: 'top left'
-              }}
-            ></iframe>
+      <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
+        Continuity Journey
+      </div>
 
-          </div>
+      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-        )}
+        Many people return monthly simply to better understand patterns in mood, vitality, wellbeing, and recovery over time.
 
       </div>
 
+      <div className="text-[13px] leading-[1.85] text-[#74887d] mb-7">
 
-      {/* SHARE */}
-
-      <div className="border-t border-[#e7efe9] pt-7">
-
-        <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
-          Share Moodforest
-        </div>
-
-        <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
-
-          If this felt meaningful, you may wish to gently share it with someone you care about.
-
-          <br /><br />
-
-          It is completely anonymous — no login, identity verification, or payment required.
-
-        </div>
-
-        <a
-          href={`https://wa.me/?text=${encodeURIComponent(
-            "I came across this reflective Cognitive Flow Assessment from Moodforest and thought you might find it meaningful.\n\nIt is completely anonymous — no login, identity verification, or payment required.\n\nhttps://journey.moodforest.org/cfa"
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
-        >
-          Share with Someone
-        </a>
+        Longitudinal reflection itself often creates greater emotional awareness and healthier decision-making.
 
       </div>
+
+      <a
+        href="https://journey.moodforest.co/reflect"
+        className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold no-underline"
+      >
+        Continue My Continuity Journey
+      </a>
+
+    </section>
+
+
+    {/* SHARE */}
+
+    <section className="bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
+
+      <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
+        Share Moodforest
+      </div>
+
+      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
+
+        If this reflection felt meaningful, you may wish to gently share it with someone you care about.
+
+        <br /><br />
+
+        It is completely anonymous — no login, identity, diagnosis, or payment required.
+
+      </div>
+
+      <a
+        href={`https://wa.me/?text=${encodeURIComponent(
+          "I recently came across Moodforest’s Mood Quotient reflection and thought you might find it meaningful.\n\nIt’s a gentle monthly reflection designed to help people better understand patterns in mood, wellbeing, stress recovery, and future outlook over time.\n\nInstant and anonymous — no login, identity, diagnosis, or payment required.\n\nhttps://journey.moodforest.co/reflect"
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
+      >
+        Share with Someone
+      </a>
 
     </section>
 
   </div>
 
 </div>
-
 
 )
 }
