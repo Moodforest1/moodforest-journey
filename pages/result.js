@@ -32,11 +32,11 @@ return (
 
 <div className="min-h-screen bg-[#f3f5f2] text-[#203128] px-4 py-8 overflow-x-hidden">
 
-  <div className="w-full max-w-5xl mx-auto px-6">
+  <div className="w-full max-w-5xl mx-auto px-2 md:px-6">
 
     {/* REPORT */}
 
-    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
 
       <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-3">
         Current Mood Quotient
@@ -130,7 +130,7 @@ return (
 
     {/* VIDEO */}
 
-    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
 
       <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
         A Gentle Introduction
@@ -164,7 +164,7 @@ return (
 
     {/* QUESTIONS */}
 
-    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
 
       <div className="text-[10px] tracking-[0.14em] uppercase text-[#7b8f84] font-semibold mb-4">
         Questions & Conversation
@@ -213,7 +213,7 @@ return (
 
     {/* CONTINUITY */}
 
-    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
+    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
 
       <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
         Monthly Continuity
@@ -262,7 +262,7 @@ return (
 
     {/* SHARE */}
 
-    <section className="bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
+    <section className="bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
 
       <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
         Share Moodforest
