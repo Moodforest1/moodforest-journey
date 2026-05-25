@@ -32,8 +32,7 @@ return (
 
 <div className="min-h-screen bg-[#f3f5f2] text-[#203128] px-4 py-8 overflow-x-hidden">
 
-  <div className="max-w-xl mx-auto">
-
+  <div className="w-full max-w-3xl mx-auto px-4">
 
     {/* REPORT */}
 
