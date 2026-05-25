@@ -15,7 +15,7 @@ const formUrl =
 
 return (
 
-<div className="min-h-screen bg-[#f4f1eb] text-[#203128] px-4 py-8">
+<div className="min-h-screen bg-[#f4f1eb] text-[#203128] px-2 md:px-4 py-8">
 
   <div className="max-w-5xl mx-auto">
 
