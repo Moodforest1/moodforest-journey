@@ -34,7 +34,7 @@ return (
       <div className="text-[14px] leading-[1.95] text-[#62756b] space-y-5 mb-6">
 
         <p>
-          Mood Quotient (MQ) is a gentle monthly reflection designed to help you better understand patterns in mood, stress recovery, vitality, and future outlook over time.
+          Mood Quotient (MQ) is a gentle reflection designed to help you better understand patterns in mood, stress recovery, vitality, and future outlook over time.
         </p>
 
         <p>
@@ -49,7 +49,7 @@ return (
 
       <div className="text-[13px] leading-[1.85] text-[#64776d] border-t border-[#ebe7de] pt-5">
 
-        Instant and anonymous — no login, identity, diagnosis, or payment required.
+        Instant and anonymous — no login, identity or payment required.
 
       </div>
 
@@ -67,7 +67,7 @@ return (
 
         <div className="text-[12px] text-[#74887d] leading-[1.85] mb-5">
 
-          There are no right or wrong answers — simply reflect honestly on how things feel for you right now.
+          There are no right or wrong answers — simply reflect on how things feel for you.
 
         </div>
 

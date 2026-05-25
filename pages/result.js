@@ -52,7 +52,7 @@ return (
       </div>
 
       <div className="text-[13px] leading-[1.8] text-[#74887d] mb-7">
-        This is not a diagnosis or fixed identity — simply a reflective snapshot of how things feel right now.
+        This is not a diagnosis or fixed identity — simply a reflective snapshot of how things feel.
       </div>
 
       <div className="w-full h-[7px] bg-[#dfe8e1] rounded-full overflow-hidden mb-8">
@@ -139,7 +139,7 @@ return (
 
       <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-        A short introduction to how Moodforest approaches emotional continuity, recovery, and whole-person wellbeing.
+        A short introduction to how Moodforest approaches whole-person wellbeing.
 
       </div>
 
@@ -222,11 +222,11 @@ return (
 
       <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-        Some people choose to revisit this reflection monthly to better understand patterns in mood, vitality, recovery, and wellbeing over time.
+        Some people choose to revisit this reflection monthly to better understand the patterns.
 
         <br /><br />
 
-        If you’d like, you may create a private continuity link for future monthly check-ins.
+        If you’d like, you may create a private link for future check-ins.
 
       </div>
 
@@ -271,17 +271,17 @@ return (
 
       <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
 
-        If this reflection felt meaningful, you may wish to gently share it with someone you care about.
+        If this felt meaningful, you may wish to share it with someone you care about.
 
         <br /><br />
 
-        It is completely anonymous — no login, identity, diagnosis, or payment required.
+        It is completely anonymous — no login, identity or payment required.
 
       </div>
 
       <a
         href={`https://wa.me/?text=${encodeURIComponent(
-          "I recently came across Moodforest’s Mood Quotient reflection and thought you might find it meaningful.\n\nIt’s a gentle monthly reflection designed to help people better understand patterns in mood, wellbeing, stress recovery, and future outlook over time.\n\nInstant and anonymous — no login, identity, diagnosis, or payment required.\n\nhttps://journey.moodforest.co/reflect"
+          "I recently came across Moodforest’s Mood Quotient reflection and thought you might find it meaningful.\n\nIt’s a gentle monthly reflection designed to help people better understand patterns in mood, wellbeing, stress recovery, and future outlook over time.\n\nInstant and anonymous — no login, identity or payment required.\n\nhttps://journey.moodforest.co/reflect"
         )}`}
         target="_blank"
         rel="noopener noreferrer"
