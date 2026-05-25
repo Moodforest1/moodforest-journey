@@ -14,6 +14,7 @@ window.scrollTo(0, 0)
 }, [])
 
 const [showQuestionForm, setShowQuestionForm] = useState(false)
+const [showJourneyForm, setShowJourneyForm] = useState(false)
 
 const {
 score = "0",
@@ -216,27 +217,46 @@ return (
     <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
 
       <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
-        Continuity Journey
+        Monthly Continuity
       </div>
 
       <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-        Many people return monthly simply to better understand patterns in mood, vitality, wellbeing, and recovery over time.
+        Some people choose to revisit this reflection monthly to better understand patterns in mood, vitality, recovery, and wellbeing over time.
+
+        <br /><br />
+
+        If you’d like, you may create a private continuity link for future monthly check-ins.
 
       </div>
 
-      <div className="text-[13px] leading-[1.85] text-[#74887d] mb-7">
-
-        Longitudinal reflection itself often creates greater emotional awareness and healthier decision-making.
-
-      </div>
-
-      <a
-        href="https://journey.moodforest.co/reflect"
-        className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold no-underline"
+      <button
+        onClick={() => setShowJourneyForm(!showJourneyForm)}
+        className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold hover:opacity-95 transition"
       >
-        Continue My Continuity Journey
-      </a>
+        Get Private Link For Next Month
+      </button>
+
+      {showJourneyForm && (
+
+        <div className="mt-5 w-full overflow-hidden max-w-full">
+
+          <iframe
+            height="460px"
+            width="100%"
+            frameBorder="0"
+            scrolling="no"
+            allowTransparency="true"
+            src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp"
+            className="w-full max-w-full bg-transparent"
+            style={{
+              transformOrigin: 'top left'
+            }}
+          ></iframe>
+
+        </div>
+
+      )}
 
     </section>
 
