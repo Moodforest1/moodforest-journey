@@ -55,20 +55,20 @@ return (
 
     </section>
 
-    {/* MICROCOPY + GUIDANCE */}
+    {/* BEFORE YOU BEGIN */}
 
     <section className="mb-6">
 
-      <div className="text-[12px] text-[#74887d] leading-[1.8] px-1 mb-5">
-
-        There are no right or wrong answers — simply reflect honestly on how things feel for you right now.
-
-      </div>
-
       <div className="bg-white border border-[#ebe7de] rounded-[22px] p-5 shadow-[0_6px_18px_rgba(31,45,38,0.03)]">
 
-        <div className="text-[10px] tracking-[0.14em] uppercase text-[#738277] font-semibold mb-3">
+        <div className="text-[10px] tracking-[0.14em] uppercase text-[#738277] font-semibold mb-4">
           Before You Begin
+        </div>
+
+        <div className="text-[12px] text-[#74887d] leading-[1.85] mb-5">
+
+          There are no right or wrong answers — simply reflect honestly on how things feel for you right now.
+
         </div>
 
         <div className="text-[13px] leading-[1.9] text-[#66756c]">
