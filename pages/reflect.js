@@ -55,13 +55,35 @@ return (
 
     </section>
 
-    {/* MICROCOPY */}
+    {/* MICROCOPY + GUIDANCE */}
 
-    <section className="mb-5">
+    <section className="mb-6">
 
-      <div className="text-[12px] text-[#74887d] leading-[1.8] px-1">
+      <div className="text-[12px] text-[#74887d] leading-[1.8] px-1 mb-5">
 
         There are no right or wrong answers — simply reflect honestly on how things feel for you right now.
+
+      </div>
+
+      <div className="bg-white border border-[#ebe7de] rounded-[22px] p-5 shadow-[0_6px_18px_rgba(31,45,38,0.03)]">
+
+        <div className="text-[10px] tracking-[0.14em] uppercase text-[#738277] font-semibold mb-3">
+          Before You Begin
+        </div>
+
+        <div className="text-[13px] leading-[1.9] text-[#66756c]">
+
+          • Your personalized Mood Quotient report becomes available immediately after submission.
+
+          <br /><br />
+
+          • Please allow pop-ups if prompted and return to the top of the page after submitting your reflection.
+
+          <br /><br />
+
+          • If something doesn’t work as expected, you may call or WhatsApp us at <span className="font-semibold text-[#274838]">+91 86025 25887</span>.
+
+        </div>
 
       </div>
 
