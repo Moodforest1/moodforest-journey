@@ -97,7 +97,7 @@ return (
 
         <iframe
           key={formUrl}
-          height="1200px"
+          height="1250px"
           width="100%"
           frameBorder="0"
           scrolling="auto"

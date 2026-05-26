@@ -108,7 +108,7 @@ return (
 
         <iframe
           key={iframeUrl}
-          height="1120px"
+          height="1250px"
           width="100%"
           frameBorder="0"
           scrolling="yes"
