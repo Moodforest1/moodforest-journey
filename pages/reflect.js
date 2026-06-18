@@ -40,7 +40,7 @@ return (
 
         <p>
           For many people, these experiences are influenced not only by life
-          circumstances, but also by sleep, nutrition, inflammation and metabolic health.
+circumstances, but also by sleep, nutrition and overall physical wellbeing.
         </p>
 
         <p>
@@ -51,11 +51,7 @@ return (
 
     </section>
 
-    {/* REPORT NOTE */}
 
-    <div className="text-[12px] text-[#74887d] mb-4 px-1">
-      Your personalized Mood Quotient report will be available immediately after submission.
-    </div>
 
     {/* FORM */}
 
