@@ -28,24 +28,28 @@ return (
       </div>
 
       <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-5">
-        Understanding your patterns can change how you heal.
-      </h1>
+  Understanding mood is often the first step toward understanding health.
+</h1>
 
-      <div className="text-[14px] leading-[1.95] text-[#62756b] space-y-5 mb-6">
+<div className="text-[14px] leading-[1.95] text-[#62756b] space-y-5 mb-6">
 
-        <p>
-          Mood Quotient (MQ) is a gentle reflection designed to help you better understand patterns in mood, stress recovery, vitality, and future outlook over time.
-        </p>
+  <p>
+    Mood Quotient (MQ) is a brief reflection designed to help you understand patterns in mood, stress recovery, vitality and future outlook.
+  </p>
 
-        <p>
-          Many people discover that simply tracking these patterns regularly creates greater emotional clarity, self-awareness, and healthier decision-making.
-        </p>
+  <p>
+    For many people, these experiences are influenced not only by life circumstances, but also by sleep, nutrition, inflammation, metabolic health and recovery capacity.
+  </p>
 
-        <p>
-          Most people complete it in about 3–5 minutes.
-        </p>
+  <p>
+    Your personalized Mood Quotient report becomes available immediately after submission.
+  </p>
 
-      </div>
+  <p>
+    Most people complete it in about 3–5 minutes.
+  </p>
+
+</div>
 
       <div className="text-[13px] leading-[1.85] text-[#64776d] border-t border-[#ebe7de] pt-5">
 
@@ -73,7 +77,7 @@ return (
 
         <div className="text-[13px] leading-[1.9] text-[#66756c]">
 
-          • Your personalized Mood Quotient report becomes available immediately after submission.
+       • Your personalized Mood Quotient report becomes available immediately after submission, including domain scores and a personalized interpretation.
 
           <br /><br />
 
