@@ -21,77 +21,41 @@ return (
 
     {/* HERO */}
 
-    <section className="mb-8 bg-white rounded-[28px] border border-[#ebe7de] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
+    <section className="mb-6 bg-white rounded-[28px] border border-[#ebe7de] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-7">
 
       <div className="text-[10px] tracking-[0.16em] uppercase text-[#71857a] font-semibold mb-3">
-        Mood Quotient · Monthly Reflection
+        Mood Quotient
       </div>
 
       <h1 className="text-[30px] leading-[1.08] font-bold text-[#1f2d25] mb-5">
-  Understanding mood is often the first step toward understanding health.
-</h1>
+        Understanding mood is often the first step toward understanding health.
+      </h1>
 
-<div className="text-[14px] leading-[1.95] text-[#62756b] space-y-5 mb-6">
+      <div className="text-[14px] leading-[1.95] text-[#62756b] space-y-5">
 
-  <p>
-    Mood Quotient (MQ) is a brief reflection designed to help you understand patterns in mood, stress recovery, vitality and future outlook.
-  </p>
+        <p>
+          Mood Quotient (MQ) is a brief reflection that explores patterns in mood,
+          stress recovery, vitality and future outlook.
+        </p>
 
-  <p>
-    For many people, these experiences are influenced not only by life circumstances, but also by sleep, nutrition, inflammation, metabolic health and recovery capacity.
-  </p>
+        <p>
+          For many people, these experiences are influenced not only by life
+          circumstances, but also by sleep, nutrition, inflammation and metabolic health.
+        </p>
 
-  <p>
-    Your personalized Mood Quotient report becomes available immediately after submission.
-  </p>
-
-  <p>
-    Most people complete it in about 3–5 minutes.
-  </p>
-
-</div>
-
-      <div className="text-[13px] leading-[1.85] text-[#64776d] border-t border-[#ebe7de] pt-5">
-
-        Instant and anonymous — no login, identity or payment required.
+        <p>
+          Most people complete it in about 3–5 minutes.
+        </p>
 
       </div>
 
     </section>
 
-    {/* BEFORE YOU BEGIN */}
+    {/* REPORT NOTE */}
 
-    <section className="mb-6">
-
-      <div className="bg-white border border-[#ebe7de] rounded-[22px] p-5 shadow-[0_6px_18px_rgba(31,45,38,0.03)]">
-
-        <div className="text-[10px] tracking-[0.14em] uppercase text-[#738277] font-semibold mb-4">
-          Before You Begin
-        </div>
-
-        <div className="text-[12px] text-[#74887d] leading-[1.85] mb-5">
-
-          There are no right or wrong answers — simply reflect on how things feel for you.
-
-        </div>
-
-        <div className="text-[13px] leading-[1.9] text-[#66756c]">
-
-       • Your personalized Mood Quotient report becomes available immediately after submission, including domain scores and a personalized interpretation.
-
-          <br /><br />
-
-          • Please allow pop-ups if prompted and return to the top of the page after submitting your reflection.
-
-          <br /><br />
-
-          • If something doesn’t work as expected, you may call or WhatsApp us at <span className="font-semibold text-[#274838]">+91 86025 25887</span>.
-
-        </div>
-
-      </div>
-
-    </section>
+    <div className="text-[12px] text-[#74887d] mb-4 px-1">
+      Your personalized Mood Quotient report will be available immediately after submission.
+    </div>
 
     {/* FORM */}
 
