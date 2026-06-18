@@ -128,168 +128,88 @@ return (
     </section>
 
 
-    {/* VIDEO */}
 
-    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
+     {/* JOURNEY HOME */}
 
-      <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
-        A Gentle Introduction
-      </div>
+<section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
 
-      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
+  <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
+    Continue Your Journey
+  </div>
 
-        A short introduction to how Moodforest approaches whole-person wellbeing.
+  <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-      </div>
+    Your Mood Quotient reflects how things feel today.
 
-      <div className="overflow-hidden rounded-[18px] bg-black">
+    <br /><br />
 
-        <div className="relative w-full aspect-video">
+    For many people, mood is influenced by sleep, inflammation, metabolic health, nutrition, recovery capacity and daily habits.
 
-          <iframe
-            src="https://www.youtube.com/embed/Btsc55GIljI"
-            title="Moodforest Reflection"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute top-0 left-0 w-full h-full"
-          ></iframe>
+    <br /><br />
 
-        </div>
+    Create your private Journey Home to save today's baseline, track future Mood Quotient assessments and access additional wellbeing resources over time.
 
-      </div>
+  </div>
 
-    </section>
+  <button
+    onClick={() => setShowJourneyForm(!showJourneyForm)}
+    className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold hover:opacity-95 transition"
+  >
+    Create Journey Home
+  </button>
 
+  {showJourneyForm && (
 
-    {/* QUESTIONS */}
+    <div className="mt-5 w-full overflow-hidden max-w-full">
 
-    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
+      <iframe
+        height="460px"
+        width="100%"
+        frameBorder="0"
+        scrolling="no"
+        allowTransparency="true"
+        src={`https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp?cfa_id=${router.query.cfa_id || ""}`}
+        className="w-full max-w-full bg-transparent"
+        style={{
+          transformOrigin: 'top left'
+        }}
+      ></iframe>
 
-      <div className="text-[10px] tracking-[0.14em] uppercase text-[#7b8f84] font-semibold mb-4">
-        Questions & Conversation
-      </div>
+    </div>
 
-      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
+  )}
 
-        If something here resonated with you, you're welcome to continue the conversation with the Moodforest team.
+</section>
 
-        <br /><br />
+{/* EXPLORE MOODFOREST */}
 
-        You may also call or WhatsApp <span className="font-semibold text-[#274838]">+91 86025 25887</span>.
+<section className="bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
 
-      </div>
+  <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
+    Interested In Understanding More?
+  </div>
 
-      <button
-        onClick={() => setShowQuestionForm(!showQuestionForm)}
-        className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
-      >
-        Continue the Conversation
-      </button>
+  <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
 
-      {showQuestionForm && (
+    Mood and wellbeing are often influenced by biological factors such as sleep, inflammation, nutrition, metabolic health and recovery capacity.
 
-        <div className="mt-5 w-full overflow-hidden max-w-full">
+    <br /><br />
 
-          <iframe
-            height="460px"
-            width="100%"
-            frameBorder="0"
-            scrolling="no"
-            allowTransparency="true"
-            src="https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Participant_Questions/JjmDbJkyvyASDCO9zzb9zYZ9mn8QWHjauV9uEg9YVj8aJnKAKO84tgBsfx8rmtn06sCEFmvzYX4ErCfJu3N96NuRgOJfYjm5Xtye"
-            className="w-full max-w-full bg-transparent"
-            style={{
-              transformOrigin: 'top left'
-            }}
-          ></iframe>
+    Explore how Moodforest combines Mood Quotient, Baseline Mapping and SuperFasting within a whole-person wellbeing pathway.
 
-        </div>
+  </div>
 
-      )}
+  <a
+    href="https://www.moodforest.co/bookings.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
+  >
+    Explore Moodforest
+  </a>
 
-    </section>
-
-
-    {/* CONTINUITY */}
-
-    <section className="mb-8 bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
-
-      <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
-        Monthly Continuity
-      </div>
-
-      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-6">
-
-        Some people choose to revisit this reflection monthly to better understand the patterns.
-
-        <br /><br />
-
-        If you’d like, you may create a private link for future check-ins.
-
-      </div>
-
-      <button
-        onClick={() => setShowJourneyForm(!showJourneyForm)}
-        className="inline-flex items-center justify-center rounded-full bg-[#274838] text-white px-5 py-3 text-[13px] font-semibold hover:opacity-95 transition"
-      >
-        Get Private Link For Next Month
-      </button>
-
-      {showJourneyForm && (
-
-        <div className="mt-5 w-full overflow-hidden max-w-full">
-
-          <iframe
-            height="460px"
-            width="100%"
-            frameBorder="0"
-            scrolling="no"
-            allowTransparency="true"
-            src={`https://creatorapp.zohopublic.in/madhur_moodforest755/moodforest-app/form-embed/Journey_Continuity/6VVUAhPr5jeVrEeBpvW9b17WaxH4j3PHJ0Ku5wFSVwY4k8C1Pm6Me05nJ4dvmxwJPUdZe9nFOZsFmmHOK5q8F4Nzr0uVCN2Y2Htp?cfa_id=${router.query.cfa_id || ""}`}
-            className="w-full max-w-full bg-transparent"
-            style={{
-              transformOrigin: 'top left'
-            }}
-          ></iframe>
-
-        </div>
-
-      )}
-
-    </section>
-
-
-    {/* SHARE */}
-
-    <section className="bg-white rounded-[28px] border border-[#e7efe9] shadow-[0_10px_24px_rgba(31,45,38,0.035)] p-4 md:p-8">
-
-      <div className="text-[10px] tracking-[0.14em] uppercase text-[#74887d] font-semibold mb-4">
-        Share Moodforest
-      </div>
-
-      <div className="text-[14px] leading-[1.9] text-[#64776d] mb-5">
-
-        If this felt meaningful, you may wish to share it with someone you care about.
-
-        <br /><br />
-
-        It is completely anonymous — no login, identity or payment required.
-
-      </div>
-
-      <a
-        href={`https://wa.me/?text=${encodeURIComponent(
-          "I recently came across Moodforest’s Mood Quotient reflection and thought you might find it meaningful.\n\nIt’s a gentle monthly reflection designed to help people better understand patterns in mood, wellbeing, stress recovery, and future outlook over time.\n\nInstant and anonymous — no login, identity or payment required.\n\nhttps://journey.moodforest.co/reflect"
-        )}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center justify-center rounded-full border border-[#274838] text-[#274838] px-5 py-3 text-[13px] font-semibold hover:bg-[#f1f6f3] transition"
-      >
-        Share with Someone
-      </a>
-
-    </section>
+</section>
+    
 
   </div>
 
