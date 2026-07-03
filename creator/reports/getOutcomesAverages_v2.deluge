@@ -111,6 +111,51 @@ map getOutcomesAverages()
 			mqPost
 		)
 	);
+	// =====================================================
+	// COGNITIVE CLARITY
+	// =====================================================
 
+	ccPre = List();
+	ccPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Cognitive_Clarity";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Cognitive_Clarity != null &&
+				post.Cognitive_Clarity != null
+			)
+			{
+				ccPre.add(pre.Cognitive_Clarity);
+				ccPost.add(post.Cognitive_Clarity);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Cognitive_Clarity",
+		thisapp.calculateStatistics(
+			ccPre,
+			ccPost
+		)
+	);
 	return returnMap;
 }
