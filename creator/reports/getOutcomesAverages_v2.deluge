@@ -108,7 +108,7 @@ map getOutcomesAverages()
 		"Mood_Quotient",
 		thisapp.calculateStatistics(
 			mqPre,
-			mqPost
+			mqPost,1
 		)
 	);
 	// =====================================================
@@ -154,7 +154,7 @@ map getOutcomesAverages()
 		"Cognitive_Clarity",
 		thisapp.calculateStatistics(
 			ccPre,
-			ccPost
+			ccPost,1
 		)
 	);
 
@@ -199,7 +199,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Emotional_Resilience",
-		thisapp.calculateStatistics(erPre,erPost)
+		thisapp.calculateStatistics(erPre,erPost,1)
 	);
 
 	// =====================================================
@@ -243,7 +243,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Somatic_Balance",
-		thisapp.calculateStatistics(sbPre,sbPost)
+		thisapp.calculateStatistics(sbPre,sbPost,1)
 	);
 
 	// =====================================================
@@ -287,7 +287,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Meaning_Engagement",
-		thisapp.calculateStatistics(mePre,mePost)
+		thisapp.calculateStatistics(mePre,mePost,1)
 	);
 
 	// =====================================================
@@ -331,7 +331,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Future_Orientation",
-		thisapp.calculateStatistics(foPre,foPost)
+		thisapp.calculateStatistics(foPre,foPost,1)
 	);
 
     	// =====================================================
@@ -375,7 +375,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Body_Vitality",
-		thisapp.calculateStatistics(bvPre,bvPost)
+		thisapp.calculateStatistics(bvPre,bvPost,1)
 	);
 
 	// =====================================================
@@ -419,7 +419,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Cardiovascular_Resilience",
-		thisapp.calculateStatistics(cvPre,cvPost)
+		thisapp.calculateStatistics(cvPre,cvPost,1)
 	);
 
 	// =====================================================
@@ -463,7 +463,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Metabolic_Resilience",
-		thisapp.calculateStatistics(mrPre,mrPost)
+		thisapp.calculateStatistics(mrPre,mrPost,1)
 	);
 
 	// =====================================================
@@ -507,10 +507,9 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Inflammation_Regulation",
-		thisapp.calculateStatistics(irPre,irPost)
+		thisapp.calculateStatistics(irPre,irPost,1)
 	);
-
-    	// =====================================================
+		// =====================================================
 	// VITAMIN STATUS
 	// =====================================================
 
@@ -551,7 +550,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Vitamin_Status",
-		thisapp.calculateStatistics(vsPre,vsPost)
+		thisapp.calculateStatistics(vsPre,vsPost,1)
 	);
 
 	// =====================================================
@@ -595,7 +594,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Physical_Resilience",
-		thisapp.calculateStatistics(prPre,prPost)
+		thisapp.calculateStatistics(prPre,prPost,1)
 	);
 
 	// =====================================================
@@ -639,9 +638,10 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Belly_Balance",
-		thisapp.calculateStatistics(bbPre,bbPost)
+		thisapp.calculateStatistics(bbPre,bbPost,1)
 	);
-    	// =====================================================
+	
+		// =====================================================
 	// SYSTOLIC BP
 	// =====================================================
 
@@ -682,7 +682,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Systolic_BP",
-		thisapp.calculateStatistics(sbpPre,sbpPost)
+		thisapp.calculateStatistics(sbpPre,sbpPost,-1)
 	);
 
 	// =====================================================
@@ -726,7 +726,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Diastolic_BP",
-		thisapp.calculateStatistics(dbpPre,dbpPost)
+		thisapp.calculateStatistics(dbpPre,dbpPost,-1)
 	);
 
 	// =====================================================
@@ -770,7 +770,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"Resting_Pulse",
-		thisapp.calculateStatistics(rpPre,rpPost)
+		thisapp.calculateStatistics(rpPre,rpPost,-1)
 	);
 
 	// =====================================================
@@ -814,7 +814,7 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"ApoB",
-		thisapp.calculateStatistics(apobPre,apobPost)
+		thisapp.calculateStatistics(apobPre,apobPost,-1)
 	);
 
 	// =====================================================
@@ -858,7 +858,427 @@ map getOutcomesAverages()
 
 	returnMap.put(
 		"LDL",
-		thisapp.calculateStatistics(ldlPre,ldlPost)
+		thisapp.calculateStatistics(ldlPre,ldlPost,-1)
+	);
+	
+		// =====================================================
+	// HDL
+	// =====================================================
+
+	hdlPre = List();
+	hdlPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|HDL";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.HDL != null &&
+				post.HDL != null)
+			{
+				hdlPre.add(pre.HDL);
+				hdlPost.add(post.HDL);
+			}
+		}
+	}
+
+	returnMap.put(
+		"HDL",
+		thisapp.calculateStatistics(hdlPre,hdlPost,1)
+	);
+
+	// =====================================================
+	// TRIGLYCERIDES
+	// =====================================================
+
+	tgPre = List();
+	tgPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Triglycerides";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Triglycerides != null &&
+				post.Triglycerides != null)
+			{
+				tgPre.add(pre.Triglycerides);
+				tgPost.add(post.Triglycerides);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Triglycerides",
+		thisapp.calculateStatistics(tgPre,tgPost,-1)
+	);
+
+	// =====================================================
+	// HBA1C
+	// =====================================================
+
+	hba1cPre = List();
+	hba1cPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|HbA1c";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.HbA1c != null &&
+				post.HbA1c != null)
+			{
+				hba1cPre.add(pre.HbA1c);
+				hba1cPost.add(post.HbA1c);
+			}
+		}
+	}
+
+	returnMap.put(
+		"HbA1c",
+		thisapp.calculateStatistics(hba1cPre,hba1cPost,-1)
+	);
+
+	// =====================================================
+	// HSCRP
+	// =====================================================
+
+	hscrpPre = List();
+	hscrpPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|hsCRP";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.hsCRP != null &&
+				post.hsCRP != null)
+			{
+				hscrpPre.add(pre.hsCRP);
+				hscrpPost.add(post.hsCRP);
+			}
+		}
+	}
+
+	returnMap.put(
+		"hsCRP",
+		thisapp.calculateStatistics(hscrpPre,hscrpPost,-1)
+	);
+
+	// =====================================================
+	// VITAMIN D
+	// =====================================================
+
+	vdPre = List();
+	vdPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Vitamin_D";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Vitamin_D != null &&
+				post.Vitamin_D != null)
+			{
+				vdPre.add(pre.Vitamin_D);
+				vdPost.add(post.Vitamin_D);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Vitamin_D",
+		thisapp.calculateStatistics(vdPre,vdPost,1)
+	);
+	
+		// =====================================================
+	// VITAMIN B12
+	// =====================================================
+
+	vb12Pre = List();
+	vb12Post = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Vitamin_B12";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Vitamin_B12 != null &&
+				post.Vitamin_B12 != null)
+			{
+				vb12Pre.add(pre.Vitamin_B12);
+				vb12Post.add(post.Vitamin_B12);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Vitamin_B12",
+		thisapp.calculateStatistics(vb12Pre,vb12Post,1)
+	);
+
+	// =====================================================
+	// WEIGHT
+	// =====================================================
+
+	weightPre = List();
+	weightPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Weight";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Weight != null &&
+				post.Weight != null)
+			{
+				weightPre.add(pre.Weight);
+				weightPost.add(post.Weight);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Weight",
+		thisapp.calculateStatistics(weightPre,weightPost,-1)
+	);
+
+	// =====================================================
+	// BMI
+	// =====================================================
+
+	bmiPre = List();
+	bmiPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|BMI";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.BMI != null &&
+				post.BMI != null)
+			{
+				bmiPre.add(pre.BMI);
+				bmiPost.add(post.BMI);
+			}
+		}
+	}
+
+	returnMap.put(
+		"BMI",
+		thisapp.calculateStatistics(bmiPre,bmiPost,-1)
+	);
+
+	// =====================================================
+	// VISCERAL FAT
+	// =====================================================
+
+	vfPre = List();
+	vfPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Visceral_Fat";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Visceral_Fat != null &&
+				post.Visceral_Fat != null)
+			{
+				vfPre.add(pre.Visceral_Fat);
+				vfPost.add(post.Visceral_Fat);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Visceral_Fat",
+		thisapp.calculateStatistics(vfPre,vfPost,-1)
+	);
+
+	// =====================================================
+	// BODY AGE
+	// =====================================================
+
+	bodyAgePre = List();
+	bodyAgePost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Body_Age";
+
+			if(overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Body_Age != null &&
+				post.Body_Age != null)
+			{
+				bodyAgePre.add(pre.Body_Age);
+				bodyAgePost.add(post.Body_Age);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Body_Age",
+		thisapp.calculateStatistics(bodyAgePre,bodyAgePost,-1)
 	);
 	return returnMap;
 }

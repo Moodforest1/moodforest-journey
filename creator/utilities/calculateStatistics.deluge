@@ -1,4 +1,4 @@
-map calculateStatistics(list preValues, list postValues, boolean higherIsBetter)
+map calculateStatistics(list preValues, list postValues, int direction)
 {
 	// =====================================================
 	// INITIALIZE
@@ -15,7 +15,7 @@ map calculateStatistics(list preValues, list postValues, boolean higherIsBetter)
 	participantCount = 0;
 
 	// =====================================================
-	// SAFETY CHECK
+	// VALIDATION
 	// =====================================================
 
 	if(preValues.size() != postValues.size())
@@ -29,7 +29,7 @@ map calculateStatistics(list preValues, list postValues, boolean higherIsBetter)
 	}
 
 	// =====================================================
-	// LOOP THROUGH VALUES
+	// CALCULATE
 	// =====================================================
 
 	i = 0;
@@ -47,20 +47,15 @@ map calculateStatistics(list preValues, list postValues, boolean higherIsBetter)
 
 			if(preValue != 0)
 			{
-				if(higherIsBetter)
-				{
-					percentChange = ((postValue - preValue) / preValue) * 100;
-				}
-				else
-				{
-					percentChange = ((preValue - postValue) / preValue) * 100;
-				}
+				rawPercentChange = ((postValue - preValue) / preValue) * 100;
 
-				totalPercentChange = totalPercentChange + percentChange;
+				percentImprovement = rawPercentChange * direction;
 
-				if(maximumPercentChange == null || percentChange > maximumPercentChange)
+				totalPercentChange = totalPercentChange + percentImprovement;
+
+				if(maximumPercentChange == null || percentImprovement > maximumPercentChange)
 				{
-					maximumPercentChange = percentChange;
+					maximumPercentChange = percentImprovement;
 				}
 			}
 		}
@@ -69,23 +64,25 @@ map calculateStatistics(list preValues, list postValues, boolean higherIsBetter)
 	}
 
 	// =====================================================
-	// CALCULATE RESULTS
+	// AVERAGES
 	// =====================================================
-
-	baselineAverage = 0.0;
-	postAverage = 0.0;
-	averagePercentChange = 0.0;
-
-	if(maximumPercentChange == null)
-	{
-		maximumPercentChange = 0.0;
-	}
 
 	if(participantCount > 0)
 	{
 		baselineAverage = (baselineTotal / participantCount).round(1);
 		postAverage = (postTotal / participantCount).round(1);
-		averagePercentChange = (totalPercentChange / participantCount).round(1);
+		averageImprovement = (totalPercentChange / participantCount).round(1);
+	}
+	else
+	{
+		baselineAverage = 0;
+		postAverage = 0;
+		averageImprovement = 0;
+	}
+
+	if(maximumPercentChange == null)
+	{
+		maximumPercentChange = 0;
 	}
 
 	// =====================================================
@@ -94,7 +91,7 @@ map calculateStatistics(list preValues, list postValues, boolean higherIsBetter)
 
 	returnMap.put("baseline",baselineAverage);
 	returnMap.put("post",postAverage);
-	returnMap.put("averageChange",averagePercentChange);
+	returnMap.put("averageChange",averageImprovement);
 	returnMap.put("maximumChange",maximumPercentChange.round(1));
 	returnMap.put("participants",participantCount);
 
