@@ -1,0 +1,73 @@
+map calculateStatistics(list preValues, list postValues)
+{
+	// =====================================================
+	// INITIALIZE
+	// =====================================================
+	returnMap = Map();
+	baselineTotal = 0.0;
+	postTotal = 0.0;
+	totalPercentChange = 0.0;
+	maximumPercentChange = null;
+	participantCount = 0;
+	// =====================================================
+	// SAFETY CHECK
+	// =====================================================
+	if(preValues.size() != postValues.size())
+	{
+		returnMap.put("baseline",0);
+		returnMap.put("post",0);
+		returnMap.put("averageChange",0);
+		returnMap.put("maximumChange",0);
+		returnMap.put("participants",0);
+		return returnMap;
+	}
+	// =====================================================
+	// LOOP THROUGH VALUES
+	// =====================================================
+	i = 0;
+	for each  preValue in preValues
+	{
+		postValue = postValues.get(i);
+		if(preValue != null && postValue != null)
+		{
+			baselineTotal = baselineTotal + preValue;
+			postTotal = postTotal + postValue;
+			participantCount = participantCount + 1;
+			if(preValue != 0)
+			{
+				percentChange = (postValue - preValue) / preValue * 100;
+				totalPercentChange = totalPercentChange + percentChange;
+				if(maximumPercentChange == null || percentChange > maximumPercentChange)
+				{
+					maximumPercentChange = percentChange;
+				}
+			}
+		}
+		i = i + 1;
+	}
+	// =====================================================
+	// CALCULATE RESULTS
+	// =====================================================
+	baselineAverage = 0;
+	postAverage = 0;
+	averagePercentChange = 0;
+	if(maximumPercentChange == null)
+	{
+		maximumPercentChange = 0;
+	}
+	if(participantCount > 0)
+	{
+		baselineAverage = (baselineTotal / participantCount).round(1);
+		postAverage = (postTotal / participantCount).round(1);
+		averagePercentChange = (totalPercentChange / participantCount).round(1);
+	}
+	// =====================================================
+	// RETURN
+	// =====================================================
+	returnMap.put("baseline",baselineAverage);
+	returnMap.put("post",postAverage);
+	returnMap.put("averageChange",averagePercentChange);
+	returnMap.put("maximumChange",maximumPercentChange.round(1));
+	returnMap.put("participants",participantCount);
+	return returnMap;
+}
