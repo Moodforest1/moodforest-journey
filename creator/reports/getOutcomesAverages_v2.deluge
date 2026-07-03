@@ -157,5 +157,181 @@ map getOutcomesAverages()
 			ccPost
 		)
 	);
+
+    	// =====================================================
+	// EMOTIONAL RESILIENCE
+	// =====================================================
+
+	erPre = List();
+	erPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Emotional_Resilience";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Emotional_Resilience != null &&
+				post.Emotional_Resilience != null
+			)
+			{
+				erPre.add(pre.Emotional_Resilience);
+				erPost.add(post.Emotional_Resilience);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Emotional_Resilience",
+		thisapp.calculateStatistics(erPre,erPost)
+	);
+
+	// =====================================================
+	// SOMATIC BALANCE
+	// =====================================================
+
+	sbPre = List();
+	sbPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Somatic_Balance";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Somatic_Balance != null &&
+				post.Somatic_Balance != null
+			)
+			{
+				sbPre.add(pre.Somatic_Balance);
+				sbPost.add(post.Somatic_Balance);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Somatic_Balance",
+		thisapp.calculateStatistics(sbPre,sbPost)
+	);
+
+	// =====================================================
+	// MEANING & ENGAGEMENT
+	// =====================================================
+
+	mePre = List();
+	mePost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Meaning_Engagement";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Meaning_Engagement != null &&
+				post.Meaning_Engagement != null
+			)
+			{
+				mePre.add(pre.Meaning_Engagement);
+				mePost.add(post.Meaning_Engagement);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Meaning_Engagement",
+		thisapp.calculateStatistics(mePre,mePost)
+	);
+
+	// =====================================================
+	// FUTURE ORIENTATION
+	// =====================================================
+
+	foPre = List();
+	foPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Future_Orientation";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Future_Orientation != null &&
+				post.Future_Orientation != null
+			)
+			{
+				foPre.add(pre.Future_Orientation);
+				foPost.add(post.Future_Orientation);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Future_Orientation",
+		thisapp.calculateStatistics(foPre,foPost)
+	);
 	return returnMap;
 }
