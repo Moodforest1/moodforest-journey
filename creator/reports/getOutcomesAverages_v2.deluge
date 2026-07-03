@@ -641,5 +641,224 @@ map getOutcomesAverages()
 		"Belly_Balance",
 		thisapp.calculateStatistics(bbPre,bbPost)
 	);
+    	// =====================================================
+	// SYSTOLIC BP
+	// =====================================================
+
+	sbpPre = List();
+	sbpPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Systolic_BP";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Systolic_BP != null &&
+				post.Systolic_BP != null
+			)
+			{
+				sbpPre.add(pre.Systolic_BP);
+				sbpPost.add(post.Systolic_BP);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Systolic_BP",
+		thisapp.calculateStatistics(sbpPre,sbpPost)
+	);
+
+	// =====================================================
+	// DIASTOLIC BP
+	// =====================================================
+
+	dbpPre = List();
+	dbpPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Diastolic_BP";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Diastolic_BP != null &&
+				post.Diastolic_BP != null
+			)
+			{
+				dbpPre.add(pre.Diastolic_BP);
+				dbpPost.add(post.Diastolic_BP);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Diastolic_BP",
+		thisapp.calculateStatistics(dbpPre,dbpPost)
+	);
+
+	// =====================================================
+	// RESTING PULSE
+	// =====================================================
+
+	rpPre = List();
+	rpPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Resting_Pulse";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Resting_Pulse != null &&
+				post.Resting_Pulse != null
+			)
+			{
+				rpPre.add(pre.Resting_Pulse);
+				rpPost.add(post.Resting_Pulse);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Resting_Pulse",
+		thisapp.calculateStatistics(rpPre,rpPost)
+	);
+
+	// =====================================================
+	// APOB
+	// =====================================================
+
+	apobPre = List();
+	apobPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|ApoB";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.ApoB != null &&
+				post.ApoB != null
+			)
+			{
+				apobPre.add(pre.ApoB);
+				apobPost.add(post.ApoB);
+			}
+		}
+	}
+
+	returnMap.put(
+		"ApoB",
+		thisapp.calculateStatistics(apobPre,apobPost)
+	);
+
+	// =====================================================
+	// LDL
+	// =====================================================
+
+	ldlPre = List();
+	ldlPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|LDL";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.LDL != null &&
+				post.LDL != null
+			)
+			{
+				ldlPre.add(pre.LDL);
+				ldlPost.add(post.LDL);
+			}
+		}
+	}
+
+	returnMap.put(
+		"LDL",
+		thisapp.calculateStatistics(ldlPre,ldlPost)
+	);
 	return returnMap;
 }
