@@ -1,20 +1,63 @@
 map getOutcomesAverages()
 {
-	returnMap = Map();
-	eligibleParticipants = Participant_Master[Outcome_Report_Eligible.contains("Yes")];
+		returnMap = Map();
+
+	// =====================================================
+	// LOAD ELIGIBLE PARTICIPANTS
+	// =====================================================
+
+	eligibleParticipants = Participant_Master[
+		Outcome_Report_Eligible.contains("Yes")
+	];
+
 	eligibleIDs = List();
-	for each  p in eligibleParticipants
+
+	for each p in eligibleParticipants
 	{
-		preRec = Vitality_Snapshots[Participant == p && Review_Status == "Approved" && Assessment_Phase == "Pre"];
-		postRec = Vitality_Snapshots[Participant == p && Review_Status == "Approved" && Assessment_Phase == "Post"];
+		preRec = Vitality_Snapshots[
+			Participant == p &&
+			Review_Status == "Approved" &&
+			Assessment_Phase == "Pre"
+		];
+
+		postRec = Vitality_Snapshots[
+			Participant == p &&
+			Review_Status == "Approved" &&
+			Assessment_Phase == "Post"
+		];
+
 		if(preRec.count() > 0 && postRec.count() > 0)
 		{
 			eligibleIDs.add(p.ID);
 		}
 	}
-	preSnapshots = Vitality_Snapshots[Review_Status == "Approved" && Assessment_Phase == "Pre" && Participant in eligibleIDs];
-	postSnapshots = Vitality_Snapshots[Review_Status == "Approved" && Assessment_Phase == "Post" && Participant in eligibleIDs];
-	followupSnapshots = Vitality_Snapshots[Review_Status == "Approved" && Assessment_Phase == "Followup" && Participant in eligibleIDs];
+
+	// =====================================================
+	// LOAD SNAPSHOTS
+	// =====================================================
+
+	preSnapshots = Vitality_Snapshots[
+		Review_Status == "Approved" &&
+		Assessment_Phase == "Pre" &&
+		Participant in eligibleIDs
+	];
+
+	postSnapshots = Vitality_Snapshots[
+		Review_Status == "Approved" &&
+		Assessment_Phase == "Post" &&
+		Participant in eligibleIDs
+	];
+
+	followupSnapshots = Vitality_Snapshots[
+		Review_Status == "Approved" &&
+		Assessment_Phase == "Followup" &&
+		Participant in eligibleIDs
+	];
+
+	// =====================================================
+	// BASIC COUNTS
+	// =====================================================
+
 	returnMap.put("preCount",preSnapshots.count());
 	returnMap.put("postCount",postSnapshots.count());
 	returnMap.put("followupCount",followupSnapshots.count());
