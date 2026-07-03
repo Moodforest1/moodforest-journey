@@ -333,5 +333,313 @@ map getOutcomesAverages()
 		"Future_Orientation",
 		thisapp.calculateStatistics(foPre,foPost)
 	);
+
+    	// =====================================================
+	// BODY VITALITY
+	// =====================================================
+
+	bvPre = List();
+	bvPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Body_Vitality";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Body_Vitality_Score != null &&
+				post.Body_Vitality_Score != null
+			)
+			{
+				bvPre.add(pre.Body_Vitality_Score);
+				bvPost.add(post.Body_Vitality_Score);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Body_Vitality",
+		thisapp.calculateStatistics(bvPre,bvPost)
+	);
+
+	// =====================================================
+	// CARDIOVASCULAR RESILIENCE
+	// =====================================================
+
+	cvPre = List();
+	cvPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Cardiovascular_Resilience";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Cardiovascular_Resilience != null &&
+				post.Cardiovascular_Resilience != null
+			)
+			{
+				cvPre.add(pre.Cardiovascular_Resilience);
+				cvPost.add(post.Cardiovascular_Resilience);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Cardiovascular_Resilience",
+		thisapp.calculateStatistics(cvPre,cvPost)
+	);
+
+	// =====================================================
+	// METABOLIC RESILIENCE
+	// =====================================================
+
+	mrPre = List();
+	mrPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Metabolic_Resilience";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Metabolic_Resilience != null &&
+				post.Metabolic_Resilience != null
+			)
+			{
+				mrPre.add(pre.Metabolic_Resilience);
+				mrPost.add(post.Metabolic_Resilience);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Metabolic_Resilience",
+		thisapp.calculateStatistics(mrPre,mrPost)
+	);
+
+	// =====================================================
+	// INFLAMMATION REGULATION
+	// =====================================================
+
+	irPre = List();
+	irPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Inflammation_Regulation";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Inflammation_Regulation != null &&
+				post.Inflammation_Regulation != null
+			)
+			{
+				irPre.add(pre.Inflammation_Regulation);
+				irPost.add(post.Inflammation_Regulation);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Inflammation_Regulation",
+		thisapp.calculateStatistics(irPre,irPost)
+	);
+
+    	// =====================================================
+	// VITAMIN STATUS
+	// =====================================================
+
+	vsPre = List();
+	vsPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Vitamin_Status";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Vitamin_Status != null &&
+				post.Vitamin_Status != null
+			)
+			{
+				vsPre.add(pre.Vitamin_Status);
+				vsPost.add(post.Vitamin_Status);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Vitamin_Status",
+		thisapp.calculateStatistics(vsPre,vsPost)
+	);
+
+	// =====================================================
+	// PHYSICAL RESILIENCE
+	// =====================================================
+
+	prPre = List();
+	prPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Physical_Resilience";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Physical_Resilience != null &&
+				post.Physical_Resilience != null
+			)
+			{
+				prPre.add(pre.Physical_Resilience);
+				prPost.add(post.Physical_Resilience);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Physical_Resilience",
+		thisapp.calculateStatistics(prPre,prPost)
+	);
+
+	// =====================================================
+	// BELLY BALANCE
+	// =====================================================
+
+	bbPre = List();
+	bbPost = List();
+
+	for each participant in eligibleParticipants
+	{
+		if(eligibleIDs.contains(participant.ID))
+		{
+			pre = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Pre"
+			];
+
+			post = Vitality_Snapshots[
+				Participant == participant &&
+				Review_Status == "Approved" &&
+				Assessment_Phase == "Post"
+			];
+
+			key = participant.ID.toString() + "|Belly_Balance";
+
+			if(
+				overrideMap.get(key) == null &&
+				pre.count() > 0 &&
+				post.count() > 0 &&
+				pre.Belly_Balance != null &&
+				post.Belly_Balance != null
+			)
+			{
+				bbPre.add(pre.Belly_Balance);
+				bbPost.add(post.Belly_Balance);
+			}
+		}
+	}
+
+	returnMap.put(
+		"Belly_Balance",
+		thisapp.calculateStatistics(bbPre,bbPost)
+	);
 	return returnMap;
 }

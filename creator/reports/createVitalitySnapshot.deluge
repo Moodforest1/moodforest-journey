@@ -1,0 +1,62 @@
+void createVitalitySnapshot(string participantId, string residencyId, string phase)
+{
+	mindMap = thisapp.fetchMindSnapshot(participantId,residencyId,phase);
+	bodyMap = thisapp.fetchBodySnapshot(participantId,residencyId,phase);
+	momentumMap = thisapp.calculateMomentum(mindMap.get("mindFlow"),bodyMap.get("bodyVitality"));
+	participantRec = Participant_Master[Participant_ID == participantId];
+	insert into Vitality_Snapshots
+	[
+		Participant=participantRec.ID
+		Assessment_Phase=phase
+		Snapshot_Date=zoho.currenttime
+		Snapshot_Label=participantId + " — " + phase + " Snapshot"
+		Mind_Flow_Score=mindMap.get("mindFlow")
+		Cognitive_Clarity=mindMap.get("cognitiveClarity")
+		Emotional_Resilience=mindMap.get("emotionalResilience")
+		Somatic_Balance=mindMap.get("somaticBalance")
+		Meaning_Engagement=mindMap.get("meaningEngagement")
+		Future_Orientation=mindMap.get("futureOrientation")
+		Mind_State=mindMap.get("mindState")
+		Mind_Insight=mindMap.get("mindInsight")
+		Body_Vitality_Score=bodyMap.get("bodyVitality")
+		Physical_Resilience=bodyMap.get("physicalResilience")
+		Belly_Balance=bodyMap.get("bellyBalance")
+		Vitamin_Status=bodyMap.get("vitaminStatus")
+		Inflammation_Regulation=bodyMap.get("inflammationRegulation")
+		Metabolic_Resilience=bodyMap.get("metabolicResilience")
+		Cardiovascular_Resilience=bodyMap.get("cardiovascularResilience")
+		Body_State=bodyMap.get("bodyState")
+		Body_Insight=bodyMap.get("bodyInsight")
+		Vitamin_B12=bodyMap.get("vitaminB12")
+		ApoB=bodyMap.get("apob")
+		Vitamin_D=bodyMap.get("vitaminD")
+		HDL=bodyMap.get("hdl")
+		Systolic_BP=bodyMap.get("systolicBP")
+		Diastolic_BP=bodyMap.get("diastolicBP")
+		Resting_Pulse=bodyMap.get("restingPulse")
+		Waist_Height_Ratio=bodyMap.get("waistHeightRatio")
+		hsCRP=bodyMap.get("hscrp")
+		LDL=bodyMap.get("ldl")
+		HbA1c=bodyMap.get("hba1c")
+		TG_HDL_Ratio=bodyMap.get("tgHdlRatio")
+		Squat_Hold_Minutes=bodyMap.get("squatHold")
+		Triglycerides=bodyMap.get("triglycerides")
+		Weight=bodyMap.get("weight").toDecimal()
+		Visceral_Fat=bodyMap.get("visceralFat").toDecimal()
+		BMI=bodyMap.get("bmi").toDecimal()
+		Body_Age=bodyMap.get("bodyAge").toDecimal()
+		Chronological_Age=0
+		Overall_Momentum=momentumMap.get("overallMomentum")
+		Trajectory_State=momentumMap.get("trajectoryState").toString()
+		Recovery_Direction=momentumMap.get("recoveryDirection").toString()
+		Key_Observations=momentumMap.get("keyObservations").toString()
+		Momentum_Label=momentumMap.get("momentumLabel").toString()
+		Snapshot_Version="V1"
+		Snapshot_Source="Centralized Vitality Engine"
+		Generated_On=zoho.currenttime
+		Generated_By=zoho.loginuser
+		Is_Latest=true
+		Added_User=zoho.loginuser
+	]
+	info "Centralized Vitality Snapshot Created";
+}
