@@ -1,0 +1,127 @@
+map getOutcomesAverages()
+{
+	returnMap = Map();
+
+	// =====================================================
+	// LOAD ELIGIBLE PARTICIPANTS
+	// =====================================================
+
+	eligibleParticipants = Participant_Master[
+		Outcome_Report_Eligible.contains("Yes")
+	];
+
+	eligibleIDs = List();
+
+	for each p in eligibleParticipants
+	{
+		preRec = Vitality_Snapshots[
+			Participant == p &&
+			Review_Status == "Approved" &&
+			Assessment_Phase == "Pre"
+		];
+
+		postRec = Vitality_Snapshots[
+			Participant == p &&
+			Review_Status == "Approved" &&
+			Assessment_Phase == "Post"
+		];
+
+		if(preRec.count() > 0 && postRec.count() > 0)
+		{
+			eligibleIDs.add(p.ID);
+		}
+	}
+
+	returnMap.put("participantCount",eligibleIDs.size());
+
+	// =====================================================
+	// LOAD OUTCOME REPORT OVERRIDES
+	// =====================================================
+
+	overrideMap = Map();
+
+	overrides = Outcome_Report_Overrides[
+		Decision == "Exclude"
+	];
+
+	for each o in overrides
+	{
+		key = o.Participant.ID.toString() + "|" + o.Measure;
+		overrideMap.put(key,true);
+	}
+
+	// =====================================================
+	// CACHE PRE / POST SNAPSHOTS
+	// =====================================================
+
+participantSnapshots = Map();
+
+for each participant in eligibleParticipants
+{
+	if(eligibleIDs.contains(participant.ID))
+	{
+		pre = Vitality_Snapshots[
+			Participant == participant &&
+			Review_Status == "Approved" &&
+			Assessment_Phase == "Pre"
+		];
+
+		post = Vitality_Snapshots[
+			Participant == participant &&
+			Review_Status == "Approved" &&
+			Assessment_Phase == "Post"
+		];
+
+		snapshotMap = Map();
+		snapshotMap.put("pre",pre);
+		snapshotMap.put("post",post);
+
+		participantSnapshots.put(
+			participant.ID.toString(),
+			snapshotMap
+		);
+	}
+}
+	// =====================================================
+	// MOOD QUOTIENT
+	// =====================================================
+
+	mqPre = List();
+	mqPost = List();
+
+	for each participantID in eligibleIDs
+	{
+		snapshotMap = participantSnapshots.get(
+			participantID.toString()
+		);
+
+		pre = snapshotMap.get("pre");
+		post = snapshotMap.get("post");
+
+		key = participantID.toString() + "|Mood_Quotient";
+
+		if(
+			overrideMap.get(key) == null &&
+			pre != null &&
+			post != null &&
+			pre.Mind_Flow_Score != null &&
+			post.Mind_Flow_Score != null
+		)
+		{
+			mqPre.add(pre.Mind_Flow_Score);
+			mqPost.add(post.Mind_Flow_Score);
+		}
+	}
+
+	mqMap = thisapp.calculateStatistics(
+		mqPre,
+		mqPost
+	);
+
+	returnMap.put(
+		"Mood_Quotient",
+		mqMap
+	);
+
+	return returnMap;
+}
