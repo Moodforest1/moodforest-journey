@@ -25,11 +25,12 @@
 	hba1c = outcomes.get("HbA1c");
 	hscrp = outcomes.get("hsCRP");
 	vitd = outcomes.get("Vitamin_D");
-	vitb12 = outcomes.get("Vitamin_B12");
+	b12 = outcomes.get("Vitamin_B12");
+
 	weight = outcomes.get("Weight");
 	bmi = outcomes.get("BMI");
-	vf = outcomes.get("Visceral_Fat");
-	bage = outcomes.get("Body_Age");
+	visceralfat = outcomes.get("Visceral_Fat");
+	bioage = outcomes.get("Body_Age");
 	participantCount = outcomes.get("participantCount");
 	%>
 <div class="le-page">
@@ -252,7 +253,7 @@ Real Change.
 
 <div class="le-intro" style="margin-top:34px;max-width:680px;">
 
-A continuously growing collection of measured health outcomes from participants completing participants.
+A continuously growing collection of measured health outcomes from participants completing the Moodforest programme.
 
 </div>
 
@@ -274,13 +275,13 @@ Observed Outcomes
 </div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 line-height:1.7;
 max-width:640px;
 color:#324039;
 margin-bottom:76px;">
 
-Average observed change across participants completing participants.
+Average observed change across participants.
 
 </div>
 
@@ -550,7 +551,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -590,7 +591,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -630,7 +631,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -670,7 +671,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -710,7 +711,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -1005,7 +1006,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -1051,7 +1052,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -1097,7 +1098,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -1143,7 +1144,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -1189,7 +1190,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -1235,7 +1236,7 @@ gap:28px;">
 <div>
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -1487,13 +1488,13 @@ The heart and circulatory system support every organ in the body. The observatio
 
 <div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
 
-<div style="font-size:24px;font-weight:500;color:#22352C;">
+<div style="font-size:22px;font-weight:500;color:#22352C;">
 
 Systolic Blood Pressure
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:54px;line-height:1;">
+<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
 
 <%=sbp.get("averageDifference")%> mmHg
 
@@ -1553,13 +1554,13 @@ n = <%=sbp.get("participants")%> participants
 
 <div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
 
-<div style="font-size:24px;font-weight:500;color:#22352C;">
+<div style="font-size:22px;font-weight:500;color:#22352C;">
 
 Diastolic Blood Pressure
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:54px;line-height:1;">
+<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
 
 <%=dbp.get("averageDifference")%> mmHg
 
@@ -1620,13 +1621,13 @@ n = <%=dbp.get("participants")%> participants
 
 <div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
 
-<div style="font-size:24px;font-weight:500;color:#22352C;">
+<div style="font-size:22px;font-weight:500;color:#22352C;">
 
 Resting Pulse
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:54px;line-height:1;">
+<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
 
 <%=pulse.get("averageDifference")%> bpm
 
@@ -1685,13 +1686,13 @@ n = <%=pulse.get("participants")%> participants
 
 <div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
 
-<div style="font-size:24px;font-weight:500;color:#22352C;">
+<div style="font-size:22px;font-weight:500;color:#22352C;">
 
 LDL Cholesterol
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:54px;line-height:1;">
+<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
 
 <%=ldl.get("averageChange")%>%
 
@@ -1750,13 +1751,13 @@ n = <%=ldl.get("participants")%> participants
 
 <div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
 
-<div style="font-size:24px;font-weight:500;color:#22352C;">
+<div style="font-size:22px;font-weight:500;color:#22352C;">
 
 HDL Cholesterol
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:54px;line-height:1;">
+<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
 
 <%=hdl.get("averageChange")%>%
 
@@ -1815,13 +1816,13 @@ n = <%=hdl.get("participants")%> participants
 
 <div style="padding:34px 0;">
 
-<div style="font-size:24px;font-weight:500;color:#22352C;">
+<div style="font-size:22px;font-weight:500;color:#22352C;">
 
 Apolipoprotein B (ApoB)
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:54px;line-height:1;">
+<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
 
 <%=apob.get("averageChange")%>%
 
@@ -1872,27 +1873,6 @@ n = <%=apob.get("participants")%> participants
 
 </div>
 
-
-
-<div class="le-divider" style="margin-top:72px;margin-bottom:52px;"></div>
-
-<div style="max-width:690px;margin:auto;">
-
-<div class="le-eyebrow">
-
-Methodology
-
-</div>
-
-<div class="le-note" style="margin-top:22px;font-size:17px;line-height:1.9;color:#4d5a53;">
-
-Percentage changes are presented for blood lipids, while blood pressure and resting pulse are shown using their original clinical units. Values represent average observed changes among participants with paired measurements available for each biomarker. The 'Highest observed' values highlight the largest individual improvements recorded within the current Living Evidence dataset.
-
-</div>
-
-</div>
-
-<div style="height:34px;"></div>
 
 <!-- ==========================================================
 End of LE-04A_HeartAndCirculation_v3.html
@@ -1964,7 +1944,7 @@ HbA1c
 
 <div class="le-big" style="
 margin-top:18px;
-font-size:60px;
+font-size:40px;
 line-height:1;">
 
 <%=hba1c.get("averageChange")%>%
@@ -1992,7 +1972,7 @@ Highest observed
 
 <div style="
 margin-top:14px;
-font-size:24px;
+font-size:22px;
 color:#22352C;
 line-height:1.7;">
 
@@ -2015,33 +1995,6 @@ margin-top:24px;">
 </div>
 
 
-
-<div class="le-divider" style="
-margin-top:68px;
-margin-bottom:48px;"></div>
-
-
-<div style="max-width:690px;margin:auto;">
-
-<div class="le-eyebrow">
-
-Methodology
-
-</div>
-
-<div class="le-note" style="
-margin-top:22px;
-font-size:17px;
-line-height:1.9;
-color:#4d5a53;">
-
-HbA1c values represent the average percentage change observed among participants with paired laboratory measurements available before and after participation. The "Highest observed" values highlight the largest individual improvements recorded within the current Living Evidence dataset.
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -2105,7 +2058,7 @@ High-sensitivity C-Reactive Protein (hsCRP)
 
 <div class="le-big" style="
 margin-top:18px;
-font-size:60px;
+font-size:40px;
 line-height:1;">
 
 <%=hscrp.get("averageChange")%>%
@@ -2133,7 +2086,7 @@ Highest observed
 
 <div style="
 margin-top:14px;
-font-size:24px;
+font-size:22px;
 color:#22352C;
 line-height:1.7;">
 
@@ -2154,34 +2107,6 @@ margin-top:24px;">
 
 </div>
 
-
-
-<div class="le-divider" style="
-margin-top:68px;
-margin-bottom:48px;"></div>
-
-
-<div style="max-width:690px;margin:auto;">
-
-<div class="le-eyebrow">
-
-Methodology
-
-</div>
-
-<div class="le-note" style="
-margin-top:22px;
-font-size:17px;
-line-height:1.9;
-color:#4d5a53;">
-
-hsCRP values represent the average percentage change observed among participants with paired laboratory measurements before and after participation. The "Highest observed" values indicate the largest individual reductions recorded within the current Living Evidence dataset.
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -2246,7 +2171,7 @@ Vitamin D
 
 <div class="le-big" style="
 margin-top:18px;
-font-size:60px;
+font-size:40px;
 line-height:1;">
 
 <%=vitd.get("averageChange")%>%
@@ -2272,7 +2197,7 @@ Highest observed
 
 <div style="
 margin-top:14px;
-font-size:24px;
+font-size:22px;
 line-height:1.7;
 color:#22352C;">
 
@@ -2312,7 +2237,7 @@ Vitamin B12
 
 <div class="le-big" style="
 margin-top:18px;
-font-size:60px;
+font-size:40px;
 line-height:1;">
 
 <%=b12.get("averageChange")%>%
@@ -2338,7 +2263,7 @@ Highest observed
 
 <div style="
 margin-top:14px;
-font-size:24px;
+font-size:22px;
 line-height:1.7;
 color:#22352C;">
 
@@ -2359,32 +2284,6 @@ color:#22352C;">
 </div>
 
 
-
-<div class="le-divider" style="
-margin-top:68px;
-margin-bottom:48px;"></div>
-
-<div style="max-width:690px;margin:auto;">
-
-<div class="le-eyebrow">
-
-Methodology
-
-</div>
-
-<div class="le-note" style="
-margin-top:22px;
-font-size:17px;
-line-height:1.9;
-color:#4d5a53;">
-
-Vitamin D and Vitamin B12 values represent the average percentage change observed among participants with paired laboratory measurements available before and after participation. "Highest observed" values indicate the largest individual improvements recorded within the current Living Evidence dataset.
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -2443,7 +2342,7 @@ Body Weight
 
 </div>
 
-<div class="le-big" style="margin-top:18px;font-size:60px;line-height:1;">
+<div class="le-big" style="margin-top:18px;font-size:40px;line-height:1;">
 
 <%=weight.get("averageDifference")%> kg
 
@@ -2461,7 +2360,7 @@ Highest observed
 
 </div>
 
-<div style="margin-top:14px;font-size:24px;color:#22352C;line-height:1.7;">
+<div style="margin-top:14px;font-size:22px;color:#22352C;line-height:1.7;">
 
 <%=weight.get("highestObservedDifference").get(0)%> ·
 <%=weight.get("highestObservedDifference").get(1)%> ·
@@ -2491,7 +2390,7 @@ Body Mass Index (BMI)
 
 </div>
 
-<div class="le-big" style="margin-top:18px;font-size:60px;line-height:1;">
+<div class="le-big" style="margin-top:18px;font-size:40px;line-height:1;">
 
 <%=bmi.get("averageDifference")%>
 
@@ -2509,7 +2408,7 @@ Highest observed
 
 </div>
 
-<div style="margin-top:14px;font-size:24px;color:#22352C;line-height:1.7;">
+<div style="margin-top:14px;font-size:22px;color:#22352C;line-height:1.7;">
 
 <%=bmi.get("highestObservedDifference").get(0)%> ·
 <%=bmi.get("highestObservedDifference").get(1)%> ·
@@ -2526,103 +2425,6 @@ Highest observed
 </div>
 
 
-
-<!-- ===================================================== -->
-<!-- Waist Circumference -->
-<!-- ===================================================== -->
-
-<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
-
-<div style="font-size:28px;font-weight:500;color:#22352C;">
-
-Waist Circumference
-
-</div>
-
-<div class="le-big" style="margin-top:18px;font-size:60px;line-height:1;">
-
-<%=waist.get("averageDifference")%> cm
-
-</div>
-
-<div class="le-note" style="margin-top:10px;">
-
-<%=waist.get("changeLabel")%>
-
-</div>
-
-<div style="margin-top:30px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#97A09A;">
-
-Highest observed
-
-</div>
-
-<div style="margin-top:14px;font-size:24px;color:#22352C;line-height:1.7;">
-
-<%=waist.get("highestObservedDifference").get(0)%> ·
-<%=waist.get("highestObservedDifference").get(1)%> ·
-<%=waist.get("highestObservedDifference").get(2)%> cm
-
-</div>
-
-<div class="le-note" style="margin-top:22px;">
-
-<%=waist.get("participants")%> participants
-
-</div>
-
-</div>
-
-
-
-<!-- ===================================================== -->
-<!-- Body Fat -->
-<!-- ===================================================== -->
-
-<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
-
-<div style="font-size:28px;font-weight:500;color:#22352C;">
-
-Body Fat
-
-</div>
-
-<div class="le-big" style="margin-top:18px;font-size:60px;line-height:1;">
-
-<%=bodyfat.get("averageDifference")%>%
-
-</div>
-
-<div class="le-note" style="margin-top:10px;">
-
-<%=bodyfat.get("changeLabel")%>
-
-</div>
-
-<div style="margin-top:30px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#97A09A;">
-
-Highest observed
-
-</div>
-
-<div style="margin-top:14px;font-size:24px;color:#22352C;line-height:1.7;">
-
-<%=bodyfat.get("highestObservedDifference").get(0)%> ·
-<%=bodyfat.get("highestObservedDifference").get(1)%> ·
-<%=bodyfat.get("highestObservedDifference").get(2)%>%
-
-</div>
-
-<div class="le-note" style="margin-top:22px;">
-
-<%=bodyfat.get("participants")%> participants
-
-</div>
-
-</div>
-
-
-
 <!-- ===================================================== -->
 <!-- Visceral Fat -->
 <!-- ===================================================== -->
@@ -2635,7 +2437,7 @@ Visceral Fat
 
 </div>
 
-<div class="le-big" style="margin-top:18px;font-size:60px;line-height:1;">
+<div class="le-big" style="margin-top:18px;font-size:40px;line-height:1;">
 
 <%=visceralfat.get("averageDifference")%>
 
@@ -2653,7 +2455,7 @@ Highest observed
 
 </div>
 
-<div style="margin-top:14px;font-size:24px;color:#22352C;line-height:1.7;">
+<div style="margin-top:14px;font-size:22px;color:#22352C;line-height:1.7;">
 
 <%=visceralfat.get("highestObservedDifference").get(0)%> ·
 <%=visceralfat.get("highestObservedDifference").get(1)%> ·
@@ -2669,27 +2471,6 @@ Highest observed
 
 </div>
 
-
-
-<div class="le-divider" style="margin-top:68px;margin-bottom:48px;"></div>
-
-<div style="max-width:690px;margin:auto;">
-
-<div class="le-eyebrow">
-
-Methodology
-
-</div>
-
-<div class="le-note" style="margin-top:22px;font-size:17px;line-height:1.9;color:#4d5a53;">
-
-Body composition values represent average observed changes among participants with paired measurements available before and after participation. "Highest observed" values indicate the largest individual improvements recorded within the current Living Evidence dataset.
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -2763,6 +2544,29 @@ Average observed change across
 
 </div>
 
+<div style="
+margin-top:34px;
+font-size:12px;
+letter-spacing:.18em;
+text-transform:uppercase;
+color:#97A09A;">
+
+Highest observed
+
+</div>
+
+<div style="
+margin-top:14px;
+font-size:22px;
+color:#22352C;
+line-height:1.7;">
+
+<%=bioage.get("highestObservedDifference").get(0)%> ·
+<%=bioage.get("highestObservedDifference").get(1)%> ·
+<%=bioage.get("highestObservedDifference").get(2)%> years
+
+</div>
+
 </div>
 
 
@@ -2796,36 +2600,6 @@ Biological age is intended to provide a broader perspective on overall physiolog
 </div>
 
 
-
-<div class="le-divider"
-style="
-margin-top:68px;
-margin-bottom:52px;"></div>
-
-
-
-<div style="max-width:700px;margin:auto;">
-
-<div class="le-eyebrow">
-
-Methodology
-
-</div>
-
-<div class="le-note"
-style="
-margin-top:22px;
-font-size:17px;
-line-height:1.9;
-color:#4d5a53;">
-
-Biological age values represent the average observed change among participants with participants available before and after participation. Estimates are derived from the biological age methodology incorporated within the Moodforest Living Evidence framework.
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -2874,7 +2648,7 @@ margin-bottom:52px;"></div>
 <div style="max-width:700px;margin:auto;">
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -2906,7 +2680,7 @@ margin-bottom:52px;"></div>
 <div style="max-width:700px;margin:auto;">
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -2938,7 +2712,7 @@ margin-bottom:52px;"></div>
 <div style="max-width:700px;margin:auto;">
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -2970,7 +2744,7 @@ margin-bottom:52px;"></div>
 <div style="max-width:700px;margin:auto;">
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
@@ -3002,7 +2776,7 @@ margin-bottom:52px;"></div>
 <div style="max-width:700px;margin:auto;">
 
 <div style="
-font-size:24px;
+font-size:22px;
 font-weight:500;
 color:#22352C;">
 
