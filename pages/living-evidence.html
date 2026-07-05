@@ -1,522 +1,1108 @@
 <%{
 	outcomes = thisapp.getOutcomesAverages();
+	mq = outcomes.get("Mood_Quotient");
+	bv = outcomes.get("Body_Vitality");
+	weightStats = outcomes.get("Weight");
+	bodyAgeStats = outcomes.get("Body_Age");
+	mq = outcomes.get("Mood_Quotient");
+	cc = outcomes.get("Cognitive_Clarity");
+	er = outcomes.get("Emotional_Resilience");
+	sb = outcomes.get("Somatic_Balance");
+	me = outcomes.get("Meaning_Engagement");
+	fo = outcomes.get("Future_Orientation");
+	cvr = outcomes.get("Cardiovascular_Resilience");
+	mr = outcomes.get("Metabolic_Resilience");
+	ir = outcomes.get("Inflammation_Regulation");
+	vs = outcomes.get("Vitamin_Status");
+	pr = outcomes.get("Physical_Resilience");
+	bb = outcomes.get("Belly_Balance");
+	sbp = outcomes.get("Systolic_BP");
+	dbp = outcomes.get("Diastolic_BP");
+	pulse = outcomes.get("Resting_Pulse");
+	apob = outcomes.get("ApoB");
+	ldl = outcomes.get("LDL");
+	hdl = outcomes.get("HDL");
+	hba1c = outcomes.get("HbA1c");
+	hscrp = outcomes.get("hsCRP");
+	vitd = outcomes.get("Vitamin_D");
+	vitb12 = outcomes.get("Vitamin_B12");
+	weight = outcomes.get("Weight");
+	bmi = outcomes.get("BMI");
+	vf = outcomes.get("Visceral_Fat");
+	bage = outcomes.get("Body_Age");
 	participantCount = outcomes.get("participantCount");
-	preMQ = outcomes.get("preMQ");
-	postMQ = outcomes.get("postMQ");
-	preBV = outcomes.get("preBV");
-	postBV = outcomes.get("postBV");
-	preCognitive = outcomes.get("preCognitive");
-	postCognitive = outcomes.get("postCognitive");
-	preEmotional = outcomes.get("preEmotional");
-	postEmotional = outcomes.get("postEmotional");
-	preSomatic = outcomes.get("preSomatic");
-	postSomatic = outcomes.get("postSomatic");
-	preMeaning = outcomes.get("preMeaning");
-	postMeaning = outcomes.get("postMeaning");
-	preFuture = outcomes.get("preFuture");
-	postFuture = outcomes.get("postFuture");
-	preCardio = outcomes.get("preCardio");
-	postCardio = outcomes.get("postCardio");
-	preMetabolic = outcomes.get("preMetabolic");
-	postMetabolic = outcomes.get("postMetabolic");
-	preInflammation = outcomes.get("preInflammation");
-	postInflammation = outcomes.get("postInflammation");
-	preVitamin = outcomes.get("preVitamin");
-	postVitamin = outcomes.get("postVitamin");
-	prePhysical = outcomes.get("prePhysical");
-	postPhysical = outcomes.get("postPhysical");
-	preBelly = outcomes.get("preBelly");
-	postBelly = outcomes.get("postBelly");
-	preApoB = outcomes.get("preApoB");
-	postApoB = outcomes.get("postApoB");
-	preLDL = outcomes.get("preLDL");
-	postLDL = outcomes.get("postLDL");
-	preHDL = outcomes.get("preHDL");
-	postHDL = outcomes.get("postHDL");
-	preTriglycerides = outcomes.get("preTriglycerides");
-	postTriglycerides = outcomes.get("postTriglycerides");
-	preHbA1c = outcomes.get("preHbA1c");
-	postHbA1c = outcomes.get("postHbA1c");
-	prehsCRP = outcomes.get("prehsCRP");
-	posthsCRP = outcomes.get("posthsCRP");
-	preVitaminD = outcomes.get("preVitaminD");
-	postVitaminD = outcomes.get("postVitaminD");
-	preVitaminB12 = outcomes.get("preVitaminB12");
-	postVitaminB12 = outcomes.get("postVitaminB12");
-	preWeight = outcomes.get("preWeight");
-	postWeight = outcomes.get("postWeight");
-	preBMI = outcomes.get("preBMI");
-	postBMI = outcomes.get("postBMI");
-	preVisceralFat = outcomes.get("preVisceralFat");
-	postVisceralFat = outcomes.get("postVisceralFat");
-	preBodyAge = outcomes.get("preBodyAge");
-	postBodyAge = outcomes.get("postBodyAge");
 	%>
-<div style="
-font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-background:#f5f3ee;
+<div class="le-page">
+
+<div class="le-paper">
+
+<style>
+
+/* ==========================================================
+MOODFOREST LIVING EVIDENCE DESIGN SYSTEM v2
+========================================================== */
+
+:root{
+
+--paper:#ffffff;
+--background:#f5f3ee;
+
+--text:#24332b;
+--heading:#22352C;
+--muted:#5f6d64;
+--light:#8d938d;
+
+--line:#e8e4dc;
+
+}
+
+/* ---------- PAGE ---------- */
+
+.le-page{
+
+background:var(--background);
 min-height:100vh;
-padding:12px 10px 20px;
-color:#24332b;
-">
+padding:12px;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+color:var(--text);
 
+}
 
-<div style="max-width:920px;margin:0 auto;">
+.le-paper{
 
-<div style="
-background:white;
+background:var(--paper);
+max-width:960px;
+margin:0 auto;
 border-radius:24px;
-padding:34px 26px;
-margin-bottom:22px;
-box-shadow:0 6px 18px rgba(28,38,32,0.035);
-">
+border:1px solid #ebe6dc;
+box-shadow:0 2px 10px rgba(22,28,24,.03);
 
-<div style="
-font-size:34px;
+}
+
+/* ---------- SECTION ---------- */
+
+.le-section{
+
+padding:96px 22px;
+
+}
+
+.le-section:first-child{
+
+padding-top:42px;
+
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+
+.le-eyebrow{
+
+font-size:11px;
+letter-spacing:.22em;
+text-transform:uppercase;
+color:var(--light);
+
+}
+
+.le-h1{
+
+font-size:52px;
+font-weight:700;
+line-height:1.03;
+letter-spacing:-.03em;
+color:var(--heading);
+
+}
+
+.le-h2{
+
+font-size:42px;
 font-weight:700;
 line-height:1.2;
-margin-bottom:12px;
-">
-SuperFasting Outcomes Report
+letter-spacing:-.03em;
+color:var(--heading);
+
+}
+
+.le-intro{
+
+font-size:19px;
+line-height:1.85;
+color:var(--muted);
+
+max-width:660px;
+
+}
+
+.le-note{
+
+font-size:11px;
+line-height:1.8;
+color:var(--light);
+
+}
+
+.le-divider{
+
+width:70px;
+height:1px;
+background:var(--line);
+margin:56px auto 34px;
+
+}
+
+/* ---------- NUMBERS ---------- */
+
+.le-big{
+
+font-size:96px;
+font-weight:300;
+line-height:.92;
+letter-spacing:-.05em;
+font-variant-numeric:tabular-nums;
+color:var(--heading);
+
+}
+
+.le-medium{
+
+font-size:34px;
+font-weight:300;
+font-variant-numeric:tabular-nums;
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:640px){
+
+.le-page{
+
+padding:10px;
+
+}
+
+.le-paper{
+
+border-radius:20px;
+
+}
+
+.le-h1{
+
+font-size:38px;
+
+}
+
+.le-h2{
+
+font-size:34px;
+
+}
+
+.le-intro{
+
+font-size:17px;
+
+}
+
+.le-big{
+
+font-size:68px;
+
+}
+
+.le-medium{
+
+font-size:28px;
+
+}
+
+.le-section{
+
+padding:72px 20px;
+
+}
+
+}
+
+</style>
+
+<!-- ==========================================================
+LIVING EVIDENCE v2
+Hero + Observed Outcomes
+Release 2
+========================================================== -->
+
+<section class="le-section" style="padding-top:70px;padding-bottom:36px;">
+
+<div style="max-width:760px;margin:auto;">
+
+<div class="le-eyebrow" style="margin-bottom:26px;">
+Living Evidence
+</div>
+
+<div class="le-h1">
+
+Real Participants.<br>
+Real Biomarkers.<br>
+Real Change.
+
+</div>
+
+<div class="le-intro" style="margin-top:34px;max-width:680px;">
+
+A continuously growing collection of measured health outcomes from participants completing paired assessments.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="le-section" style="padding-top:18px;padding-bottom:70px;">
+
+<div style="max-width:760px;margin:auto;">
+
+<div class="le-divider" style="margin:0 0 48px 0;width:100%;"></div>
+
+<div class="le-eyebrow" style="margin-bottom:18px;">
+
+Observed Outcomes
+
 </div>
 
 <div style="
-font-size:15px;
+font-size:24px;
 line-height:1.7;
-color:#5f6d64;
-">
-Observed changes across participants completing baseline and post-program assessments.
-</div>
+max-width:640px;
+color:#324039;
+margin-bottom:76px;">
 
-<div style="
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-top:18px;
-">
-
+Average observed change across participants completing paired assessments.
 
 </div>
 
+
+<!-- Biological Age -->
+
+<div style="padding:46px 0;border-top:1px solid #ebe7df;">
+
+<div class="le-big">
+
+−<%=bodyAgeStats.get("averageDifference")%>
+
 </div>
 
-<div style="
-background:white;
-border-radius:24px;
-padding:26px;
-box-shadow:0 6px 18px rgba(28,38,32,0.035);
-">
+<div style="margin-top:4px;font-size:18px;color:#8d938d;">
 
-<div style="
-font-size:22px;
-font-weight:700;
-margin-bottom:18px;
-">
-Cohort Overview
+years
+
 </div>
 
-<div style="font-size:16px;line-height:2;">
-Participants: <%=participantCount%><br>
-Mood Quotient: <%=preMQ%> → <%=postMQ%><br>
-Bio-Vitality: <%=preBV%> → <%=postBV%>
+<div style="margin-top:18px;font-size:26px;">
+
+Biological Age
+
 </div>
 
-<div style="
-margin-top:24px;
-padding-top:24px;
-border-top:1px solid #e3e5de;
-">
+<div class="le-note" style="margin-top:18px;">
 
-<div style="
-font-size:22px;
-font-weight:700;
-margin-bottom:18px;
-">
+n = <%=bodyAgeStats.get("participants")%> paired assessments
+
+</div>
+
+</div>
+
+
+<!-- Weight -->
+
+<div style="padding:46px 0;border-top:1px solid #ebe7df;">
+
+<div class="le-big">
+
+−<%=weightStats.get("averageDifference")%>
+
+</div>
+
+<div style="margin-top:4px;font-size:18px;color:#8d938d;">
+
+kg
+
+</div>
+
+<div style="margin-top:18px;font-size:26px;">
+
+Body Weight
+
+</div>
+
+<div class="le-note" style="margin-top:18px;">
+
+n = <%=weightStats.get("participants")%> paired assessments
+
+</div>
+
+</div>
+
+
+<!-- Bio Vitality -->
+
+<div style="padding:46px 0;border-top:1px solid #ebe7df;">
+
+<div class="le-big">
+
++<%=bv.get("averageChange")%>
+
+</div>
+
+<div style="margin-top:4px;font-size:18px;color:#8d938d;">
+
+%
+
+</div>
+
+<div style="margin-top:18px;font-size:26px;">
+
+Bio-Vitality
+
+</div>
+
+<div class="le-note" style="margin-top:18px;">
+
+n = <%=bv.get("participants")%> paired assessments
+
+</div>
+
+</div>
+
+
+<!-- Mood -->
+
+<div style="padding:46px 0;border-top:1px solid #ebe7df;border-bottom:1px solid #ebe7df;">
+
+<div class="le-big">
+
++<%=mq.get("averageChange")%>
+
+</div>
+
+<div style="margin-top:4px;font-size:18px;color:#8d938d;">
+
+%
+
+</div>
+
+<div style="margin-top:18px;font-size:26px;">
+
+Mood Quotient
+
+</div>
+
+<div class="le-note" style="margin-top:18px;">
+
+n = <%=mq.get("participants")%> paired assessments
+
+</div>
+
+</div>
+
+
+<div class="le-note" style="margin-top:28px;max-width:620px;">
+
+Living Evidence presents pooled observations from verified participant assessments. Values shown represent measured average change among participants with paired data available for each outcome.
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+@media(max-width:640px){
+
+.le-big{
+
+font-size:64px !important;
+
+}
+
+.le-h1{
+
+font-size:40px !important;
+line-height:1.08;
+
+}
+
+}
+
+</style>
+
+
+<!-- ==========================================================
+Moodforest Living Evidence
+File: LE-02_Mind_v2.html
+Replace LE-02_Mind_v1.html
+Required variables:
+mq, cc, er, sb, me, fo
+=========================================================== -->
+
+<div style="max-width:860px;margin:120px auto 100px;padding:0 22px;">
+
+<div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7d877f;margin-bottom:18px;">
+Mind
+</div>
+
+<div style="font-size:42px;font-weight:700;line-height:1.2;letter-spacing:-0.03em;color:#22352C;">
 Mood Quotient
 </div>
 
-<table style="
-width:100%;
-border-collapse:collapse;
-font-size:15px;
-">
+<div style="max-width:650px;margin-top:24px;font-size:19px;line-height:1.85;color:#5f6d64;">
+Mood Quotient combines five dimensions of psychological wellbeing into a single measure of how participants think, feel and engage with life.
+</div>
 
-<tr style="border-bottom:1px solid #e3e5de;">
-<th align="left" style="padding:10px 4px;">Metric</th>
-<th align="right" style="padding-right:12px;">Baseline</th>
-<th align="right" style="padding-right:12px;">Post</th>
-</tr>
+<div style="height:70px;"></div>
 
-<tr>
-<td style="padding:10px 4px;">Mood Quotient (100)</td>
-<td align="right" style="padding-right:12px;"><%=preMQ%></td>
-<td align="right" style="padding-right:12px;"><%=postMQ%></td>
-</tr>
+<div style="text-align:center;">
+<div style="font-size:96px;font-weight:300;line-height:.9;letter-spacing:-0.05em;color:#22352C;">
++<%=mq.get("averageChange")%>%
+</div>
 
-<tr>
-<td style="padding:10px 4px;">Cognitive Clarity (25)</td>
-<td align="right" style="padding-right:12px;"><%=preCognitive%></td>
-<td align="right" style="padding-right:12px;"><%=postCognitive%></td>
-</tr>
+<div style="font-size:30px;margin-top:18px;color:#24332b;">
+Mood Quotient
+</div>
 
-<tr>
-<td style="padding:10px 4px;">Emotional Resilience (25)</td>
-<td align="right" style="padding-right:12px;"><%=preEmotional%></td>
-<td align="right" style="padding-right:12px;"><%=postEmotional%></td>
-</tr>
+<div style="margin-top:14px;font-size:11px;color:#8d938d;">
+n = <%=mq.get("participants")%> paired assessments
+</div>
+</div>
 
-<tr>
-<td style="padding:10px 4px;">Somatic Balance (15)</td>
-<td align="right" style="padding-right:12px;"><%=preSomatic%></td>
-<td align="right" style="padding-right:12px;"><%=postSomatic%></td>
-</tr>
+<div style="width:70px;height:1px;background:#e7e3db;margin:60px auto 34px;"></div>
 
-<tr>
-<td style="padding:10px 4px;">Meaning & Engagement (20)</td>
-<td align="right" style="padding-right:12px;"><%=preMeaning%></td>
-<td align="right" style="padding-right:12px;"><%=postMeaning%></td>
-</tr>
+<div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8d938d;margin-bottom:26px;">
+Built From
+</div>
 
-<tr>
-<td style="padding:10px 4px;">Future Orientation (15)</td>
-<td align="right" style="padding-right:12px;"><%=preFuture%></td>
-<td align="right" style="padding-right:12px;"><%=postFuture%></td>
-</tr>
+<div style="max-width:700px;margin:0 auto;">
 
-</table>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
+<div style="font-size:20px;color:#334139;">Cognitive Clarity</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=cc.get("averageChange")%>%</div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
+<div style="font-size:20px;color:#334139;">Emotional Resilience</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=er.get("averageChange")%>%</div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
+<div style="font-size:20px;color:#334139;">Somatic Balance</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=sb.get("averageChange")%>%</div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
+<div style="font-size:20px;color:#334139;">Meaning &amp; Engagement</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=me.get("averageChange")%>%</div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:flex-end;">
+<div style="font-size:20px;color:#334139;">Future Orientation</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=fo.get("averageChange")%>%</div>
+</div>
 
 </div>
 
-
-
-</div>
-
-<div style="
-background:white;
-border-radius:24px;
-padding:26px;
-margin-top:20px;
-box-shadow:0 6px 18px rgba(28,38,32,0.035);
-">
-
-<div style="
-font-size:22px;
-font-weight:700;
-margin-bottom:18px;
-">
-Bio-Vitality
-</div>
-
-<table style="
-width:100%;
-border-collapse:collapse;
-font-size:15px;
-">
-
-<tr style="border-bottom:1px solid #e3e5de;">
-<th align="left" style="padding:10px 4px;">Metric</th>
-<th align="right" style="padding-right:12px;">Baseline</th>
-<th align="right" style="padding-right:12px;">Post</th>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Bio-Vitality (100)</td>
-<td align="right" style="padding-right:12px;"><%=preBV%></td>
-<td align="right" style="padding-right:12px;"><%=postBV%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Cardio Lipids (20)</td>
-<td align="right" style="padding-right:12px;"><%=preCardio%></td>
-<td align="right" style="padding-right:12px;"><%=postCardio%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Metabolic Resilience (20)</td>
-<td align="right" style="padding-right:12px;"><%=preMetabolic%></td>
-<td align="right" style="padding-right:12px;"><%=postMetabolic%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Inflammation Regulation (15)</td>
-<td align="right" style="padding-right:12px;"><%=preInflammation%></td>
-<td align="right" style="padding-right:12px;"><%=postInflammation%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Vitamin Status (15)</td>
-<td align="right" style="padding-right:12px;"><%=preVitamin%></td>
-<td align="right" style="padding-right:12px;"><%=postVitamin%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Physical Resilience (15)</td>
-<td align="right" style="padding-right:12px;"><%=prePhysical%></td>
-<td align="right" style="padding-right:12px;"><%=postPhysical%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Belly Balance (15)</td>
-<td align="right" style="padding-right:12px;"><%=preBelly%></td>
-<td align="right" style="padding-right:12px;"><%=postBelly%></td>
-</tr>
-
-</table>
-
-
-
-</div>
-
-<div style="
-background:white;
-border-radius:24px;
-padding:26px;
-margin-top:20px;
-box-shadow:0 6px 18px rgba(28,38,32,0.035);
-">
-
-<div style="
-font-size:22px;
-font-weight:700;
-margin-bottom:18px;
-">
-Cardiometabolic Biomarkers
-</div>
-
-<table style="width:100%;border-collapse:collapse;font-size:15px;">
-
-<tr style="border-bottom:1px solid #e3e5de;">
-<th align="left" style="padding:10px 4px;">Marker</th>
-<th align="right" style="padding-right:12px;">Baseline</th>
-<th align="right" style="padding-right:12px;">Post</th>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">
-ApoB
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: &lt;80 mg/dL
-</div>
-</td>
-<td align="right" style="padding-right:12px;"><%=preApoB%></td>
-<td align="right" style="padding-right:12px;"><%=postApoB%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">LDL Cholesterol
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: &lt;100 mg/dL
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preLDL%></td>
-<td align="right" style="padding-right:12px;"><%=postLDL%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">HDL Cholesterol
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: 40–60 mg/dL
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preHDL%></td>
-<td align="right" style="padding-right:12px;"><%=postHDL%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Triglycerides
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: &lt;150 mg/dL
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preTriglycerides%></td>
-<td align="right" style="padding-right:12px;"><%=postTriglycerides%></td>
-</tr>
-
-</table>
-
-</div>
-
-<div style="
-background:white;
-border-radius:24px;
-padding:26px;
-margin-top:20px;
-box-shadow:0 6px 18px rgba(28,38,32,0.035);
-">
-
-<div style="
-font-size:22px;
-font-weight:700;
-margin-bottom:18px;
-">
-Glucose & Inflammation
-</div>
-
-<table style="width:100%;border-collapse:collapse;font-size:15px;">
-
-<tr style="border-bottom:1px solid #e3e5de;">
-<th align="left" style="padding:10px 4px;">Marker</th>
-<th align="right" style="padding-right:12px;">Baseline</th>
-<th align="right" style="padding-right:12px;">Post</th>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">HbA1c
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: &lt;5.7%
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preHbA1c%></td>
-<td align="right" style="padding-right:12px;"><%=postHbA1c%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">hsCRP
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: &lt;1 mg/L
-</div></td>
-<td align="right" style="padding-right:12px;"><%=prehsCRP%></td>
-<td align="right" style="padding-right:12px;"><%=posthsCRP%></td>
-</tr>
-
-</table>
-
-</div>
-
-<div style="
-background:white;
-border-radius:24px;
-padding:26px;
-margin-top:20px;
-box-shadow:0 6px 18px rgba(28,38,32,0.035);
-">
-
-<div style="
-font-size:22px;
-font-weight:700;
-margin-bottom:18px;
-">
-Vitamins
-</div>
-
-<table style="width:100%;border-collapse:collapse;font-size:15px;">
-
-<tr style="border-bottom:1px solid #e3e5de;">
-<th align="left" style="padding:10px 4px;">Marker</th>
-<th align="right" style="padding-right:12px;">Baseline</th>
-<th align="right" style="padding-right:12px;">Post</th>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Vitamin D
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: 30–100 ng/mL
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preVitaminD%></td>
-<td align="right" style="padding-right:12px;"><%=postVitaminD%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Vitamin B12
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: 197–771 pg/mL
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preVitaminB12%></td>
-<td align="right" style="padding-right:12px;"><%=postVitaminB12%></td>
-</tr>
-
-</table>
-
-</div>
-
-<div style="
-background:white;
-border-radius:24px;
-padding:26px;
-margin-top:20px;
-margin-bottom:20px;
-box-shadow:0 6px 18px rgba(28,38,32,0.035);
-">
-
-<div style="
-font-size:22px;
-font-weight:700;
-margin-bottom:18px;
-">
-Body Composition & Longevity
-</div>
-
-<table style="width:100%;border-collapse:collapse;font-size:15px;">
-
-<tr style="border-bottom:1px solid #e3e5de;">
-<th align="left" style="padding:10px 4px;">Metric</th>
-<th align="right" style="padding-right:12px;">Baseline</th>
-<th align="right" style="padding-right:12px;">Post</th>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Weight</td>
-<td align="right" style="padding-right:12px;"><%=preWeight%></td>
-<td align="right" style="padding-right:12px;"><%=postWeight%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">BMI
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: 20–22 kg/m²
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preBMI%></td>
-<td align="right" style="padding-right:12px;"><%=postBMI%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Visceral Fat
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: 1–7%
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preVisceralFat%></td>
-<td align="right" style="padding-right:12px;"><%=postVisceralFat%></td>
-</tr>
-
-<tr>
-<td style="padding:10px 4px;">Body Age
-<div style="font-size:11px;color:#8a948d;margin-top:3px;">
-Target: Below Chronological Age
-</div></td>
-<td align="right" style="padding-right:12px;"><%=preBodyAge%></td>
-<td align="right" style="padding-right:12px;"><%=postBodyAge%></td>
-</tr>
-
-</table>
-
+<div style="margin-top:40px;font-size:11px;line-height:1.8;color:#8d938d;">
+Average percentage improvement across paired participant assessments.
 </div>
 
 </div>
 
 <style>
-
-
-
-@media(max-width:640px)
-{
-    div[style*='font-size:34px']
-    {
-        font-size:28px !important;
-    }
-
-   div[style*='font-size:44px']
-{
-    font-size:34px !important;
+@media(max-width:640px){
+div[style*='font-size:96px']{font-size:68px!important;}
+div[style*='font-size:42px']{font-size:34px!important;}
+div[style*='font-size:34px']{font-size:28px!important;}
+div[style*='font-size:30px']{font-size:24px!important;}
+div[style*='font-size:20px']{font-size:18px!important;}
 }
-}
+</style>
 
-.mf-pill{
-    background:#f3f1eb;
-    padding:8px 12px;
-    border-radius:999px;
-    font-size:12px;
-    color:#66756c;
-    letter-spacing:0.02em;
-    line-height:1.3;
+<!-- ==========================================================
+Moodforest Living Evidence
+File: LE-03_BioVitality_v3.html
+Replace LE-03_BioVitality_v2.html
+
+Required variables (adjust only keys if needed)
+
+bv  = outcomes.get("Body_Vitality");
+
+cvr = outcomes.get("Cardiovascular_Resilience");
+mr  = outcomes.get("Metabolic_Resilience");
+ir  = outcomes.get("Inflammation_Regulation");
+vs  = outcomes.get("Vitamin_Status");
+pr  = outcomes.get("Physical_Resilience");
+bb  = outcomes.get("Belly_Balance");
+=========================================================== -->
+
+<div style="max-width:860px;margin:120px auto 100px;padding:0 22px;">
+
+<div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7d877f;margin-bottom:18px;">
+Body
+</div>
+
+<div style="font-size:42px;font-weight:700;line-height:1.2;letter-spacing:-0.03em;color:#22352C;">
+Bio‑Vitality
+</div>
+
+<div style="max-width:660px;margin-top:24px;font-size:19px;line-height:1.85;color:#5f6d64;">
+Bio‑Vitality is Moodforest's composite measure of whole‑body wellbeing. It brings together six independently calculated physiological systems into a single measure of physical resilience.
+</div>
+
+<div style="height:70px;"></div>
+
+<div style="text-align:center;">
+<div style="font-size:96px;font-weight:300;line-height:.9;letter-spacing:-0.05em;color:#22352C;">
++<%=bv.get("averageChange")%>%
+</div>
+
+<div style="font-size:30px;margin-top:18px;color:#24332b;">
+Bio‑Vitality
+</div>
+
+<div style="margin-top:14px;font-size:11px;color:#8d938d;">
+n = <%=bv.get("participants")%> paired assessments
+</div>
+</div>
+
+<div style="width:70px;height:1px;background:#e7e3db;margin:60px auto 34px;"></div>
+
+<div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8d938d;margin-bottom:28px;">
+Physiological Systems
+</div>
+
+<div style="max-width:720px;margin:0 auto;">
+
+
+<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+<div style="font-size:20px;color:#334139;">Cardiovascular Resilience</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=cvr.get("averageChange")%>%</div>
+</div>
+<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+n = <%=cvr.get("participants")%> paired assessments
+</div>
+</div>
+
+<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+<div style="font-size:20px;color:#334139;">Metabolic Resilience</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=mr.get("averageChange")%>%</div>
+</div>
+<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+n = <%=mr.get("participants")%> paired assessments
+</div>
+</div>
+
+<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+<div style="font-size:20px;color:#334139;">Inflammation Regulation</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=ir.get("averageChange")%>%</div>
+</div>
+<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+n = <%=ir.get("participants")%> paired assessments
+</div>
+</div>
+
+<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+<div style="font-size:20px;color:#334139;">Vitamin Status</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=vs.get("averageChange")%>%</div>
+</div>
+<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+n = <%=vs.get("participants")%> paired assessments
+</div>
+</div>
+
+<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+<div style="font-size:20px;color:#334139;">Physical Resilience</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=pr.get("averageChange")%>%</div>
+</div>
+<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+n = <%=pr.get("participants")%> paired assessments
+</div>
+</div>
+
+<div style="margin-bottom:26px;">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+<div style="font-size:20px;color:#334139;">Belly Balance</div>
+<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=bb.get("averageChange")%>%</div>
+</div>
+<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+n = <%=bb.get("participants")%> paired assessments
+</div>
+</div>
+
+</div>
+
+<div style="margin-top:40px;font-size:11px;line-height:1.8;color:#8d938d;">
+Each physiological system is calculated independently. Participant counts vary because different laboratory tests and assessments were available for different participants.
+</div>
+
+</div>
+
+<style>
+@media(max-width:640px){
+div[style*='font-size:96px']{font-size:68px!important;}
+div[style*='font-size:42px']{font-size:34px!important;}
+div[style*='font-size:34px']{font-size:28px!important;}
+div[style*='font-size:30px']{font-size:24px!important;}
+div[style*='font-size:20px']{font-size:18px!important;}
 }
+</style>
+
+<!-- ==========================================================
+Moodforest Living Evidence
+File: LE-04A_CardiovascularHealth_v2.html
+Replaces LE-04A_CardiovascularHealth_v1.html
+=========================================================== -->
+
+<div style="max-width:860px;margin:120px auto 90px;padding:0 22px;">
+
+<div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7d877f;margin-bottom:18px;">
+Cardiovascular Health
+</div>
+
+<div style="margin-top:18px;border-top:1px solid #e8e4dc;">
+
+<!-- Row Template -->
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            Systolic Blood Pressure
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=sbp.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                mmHg
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=sbp.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            Diastolic Blood Pressure
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=dbp.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                mmHg
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=dbp.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            Resting Pulse
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=pulse.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                bpm
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=pulse.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            ApoB
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=apob.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                mg/dL
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=apob.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            LDL Cholesterol
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=ldl.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                mg/dL
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=ldl.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            HDL Cholesterol
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=hdl.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                mg/dL
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=hdl.get("participants")%>
+    </div>
+</div>
+
+</div>
+
+<div style="margin-top:34px;font-size:11px;line-height:1.8;color:#8d938d;">
+Values represent the average observed change for participants with available measurements for each biomarker.
+</div>
+
+</div>
+
+<style>
+@media(max-width:640px){
+div[style*='font-size:30px']{font-size:26px!important;}
+div[style*='font-size:20px']{font-size:18px!important;}
+}
+</style>
+
+<!-- ==========================================================
+Moodforest Living Evidence
+File: LE-04B_GlucoseInflammation_v1.html
+Paste after LE-04A_CardiovascularHealth_v2.html
+
+Required variables (adjust ONLY key names if required)
+
+hba1c = outcomes.get("HbA1c");
+hscrp = outcomes.get("hsCRP");
+
+Uses averageDifference (not percentage).
+=========================================================== -->
+
+<div style="max-width:860px;margin:120px auto 90px;padding:0 22px;">
+
+<div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7d877f;margin-bottom:18px;">
+Glucose &amp; Inflammatory Markers
+</div>
+
+<div style="margin-top:18px;border-top:1px solid #e8e4dc;">
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            HbA1c
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=hba1c.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                %
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=hba1c.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            hsCRP
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=hscrp.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                mg/L
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=hscrp.get("participants")%>
+    </div>
+</div>
+
+</div>
+
+<div style="margin-top:34px;font-size:11px;line-height:1.8;color:#8d938d;">
+Values represent the average observed change for participants with available measurements for each biomarker.
+</div>
+
+</div>
+
+<style>
+@media(max-width:640px){
+div[style*='font-size:30px']{font-size:26px!important;}
+div[style*='font-size:20px']{font-size:18px!important;}
+}
+</style>
+
+<!-- ==========================================================
+Moodforest Living Evidence
+File: LE-04C_Vitamins_v1.html
+Paste after LE-04B_GlucoseInflammation_v1.html
+
+Required variables (adjust ONLY key names if required)
+
+vitd   = outcomes.get("Vitamin_D");
+vitb12 = outcomes.get("Vitamin_B12");
+
+Uses averageDifference (not percentage).
+=========================================================== -->
+
+<div style="max-width:860px;margin:120px auto 90px;padding:0 22px;">
+
+<div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7d877f;margin-bottom:18px;">
+Vitamins
+</div>
+
+<div style="margin-top:18px;border-top:1px solid #e8e4dc;">
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            Vitamin D
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=vitd.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                ng/mL
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=vitd.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            Vitamin B12
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=vitb12.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                pg/mL
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=vitb12.get("participants")%>
+    </div>
+</div>
+
+</div>
+
+<div style="margin-top:34px;font-size:11px;line-height:1.8;color:#8d938d;">
+Values represent the average observed change for participants with available measurements for each biomarker.
+</div>
+
+</div>
+
+<style>
+@media(max-width:640px){
+div[style*='font-size:30px']{font-size:26px!important;}
+div[style*='font-size:20px']{font-size:18px!important;}
+}
+</style>
+
+<!-- ==========================================================
+Moodforest Living Evidence
+File: LE-04D_BodyCompositionLongevity_v1.html
+Paste after LE-04C_Vitamins_v1.html
+
+Required variables (adjust ONLY key names if required)
+
+weight = outcomes.get("Weight");
+bmi    = outcomes.get("BMI");
+vf     = outcomes.get("Visceral_Fat");
+bage   = outcomes.get("Body_Age");
+
+Uses averageDifference (not percentage).
+=========================================================== -->
+
+<div style="max-width:860px;margin:120px auto 90px;padding:0 22px;">
+
+<div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7d877f;margin-bottom:18px;">
+Body Composition &amp; Longevity
+</div>
+
+<div style="margin-top:18px;border-top:1px solid #e8e4dc;">
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            Weight
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=weight.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                kg
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=weight.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            BMI
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=bmi.get("averageDifference")%>
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=bmi.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;border-bottom:1px solid #ece9e2;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            Visceral Fat
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=vf.get("averageDifference")%>
+            </span>
+			 <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                %
+				 </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=vf.get("participants")%>
+    </div>
+</div>
+
+<div style="padding:24px 0;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;">
+        <div style="font-size:20px;font-weight:600;color:#22352C;">
+            Biological Age
+        </div>
+
+        <div style="font-variant-numeric:tabular-nums;white-space:nowrap;">
+            <span style="font-size:30px;font-weight:300;color:#22352C;">
+                <%=bage.get("averageDifference")%>
+            </span>
+            <span style="font-size:13px;color:#8d938d;margin-left:4px;">
+                years
+            </span>
+        </div>
+    </div>
+
+    <div style="margin-top:8px;font-size:11px;color:#8d938d;">
+        n = <%=bage.get("participants")%>
+    </div>
+</div>
+
+</div>
+
+<div style="margin-top:34px;font-size:11px;line-height:1.8;color:#8d938d;">
+Values represent the average observed change for participants with available measurements for each biomarker.
+</div>
+
+</div>
+
+<style>
+@media(max-width:640px){
+div[style*='font-size:30px']{font-size:26px!important;}
+div[style*='font-size:20px']{font-size:18px!important;}
+}
+</style>
+
 
 </style>
+
+
+</div>
+</div>
+
 <%
 
-}%></div>
+} %>
