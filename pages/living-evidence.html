@@ -440,229 +440,1004 @@ line-height:1.08;
 
 </style>
 
-
 <!-- ==========================================================
 Moodforest Living Evidence
-File: LE-02_Mind_v2.html
-Replace LE-02_Mind_v1.html
-Required variables:
-mq, cc, er, sb, me, fo
-=========================================================== -->
+File: LE-02_Mind_v3.html
+Replaces LE-02_Mind_v2.html
 
-<div style="max-width:860px;margin:120px auto 100px;padding:0 22px;">
+Required variables
 
-<div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7d877f;margin-bottom:18px;">
+mq
+cc
+er
+sb
+me
+fo
+
+No Deluge variables modified.
+Calculations preserved.
+
+========================================================== -->
+
+<section class="le-section">
+
+<div style="max-width:760px;margin:auto;">
+
+<div class="le-divider" style="margin:0 0 52px 0;width:100%;"></div>
+
+<div class="le-eyebrow">
+
 Mind
+
 </div>
 
-<div style="font-size:42px;font-weight:700;line-height:1.2;letter-spacing:-0.03em;color:#22352C;">
+<div class="le-h2" style="margin-top:18px;">
+
 Mood Quotient
+
 </div>
 
-<div style="max-width:650px;margin-top:24px;font-size:19px;line-height:1.85;color:#5f6d64;">
-Mood Quotient combines five dimensions of psychological wellbeing into a single measure of how participants think, feel and engage with life.
+<div class="le-intro" style="margin-top:30px;">
+
+Mental wellbeing rarely changes in a single dimension. Participants may experience greater clarity, steadier emotions, improved connection with the body, renewed engagement with everyday life and a more optimistic view of the future. Mood Quotient brings these dimensions together into a single composite measure, providing a broader picture of psychological wellbeing before and after participation.
+
 </div>
 
-<div style="height:70px;"></div>
+<div style="height:82px;"></div>
 
 <div style="text-align:center;">
-<div style="font-size:96px;font-weight:300;line-height:.9;letter-spacing:-0.05em;color:#22352C;">
-+<%=mq.get("averageChange")%>%
+
+<div class="le-big">
+
++<%=mq.get("averageChange")%>
+
 </div>
 
-<div style="font-size:30px;margin-top:18px;color:#24332b;">
+<div style="
+margin-top:8px;
+font-size:18px;
+color:#8d938d;">
+
+%
+
+</div>
+
+<div style="
+margin-top:20px;
+font-size:28px;
+color:#24332b;">
+
 Mood Quotient
+
 </div>
 
-<div style="margin-top:14px;font-size:11px;color:#8d938d;">
+<div class="le-note" style="margin-top:18px;">
+
 n = <%=mq.get("participants")%> paired assessments
-</div>
-</div>
 
-<div style="width:70px;height:1px;background:#e7e3db;margin:60px auto 34px;"></div>
-
-<div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8d938d;margin-bottom:26px;">
-Built From
-</div>
-
-<div style="max-width:700px;margin:0 auto;">
-
-<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
-<div style="font-size:20px;color:#334139;">Cognitive Clarity</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=cc.get("averageChange")%>%</div>
-</div>
-
-<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
-<div style="font-size:20px;color:#334139;">Emotional Resilience</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=er.get("averageChange")%>%</div>
-</div>
-
-<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
-<div style="font-size:20px;color:#334139;">Somatic Balance</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=sb.get("averageChange")%>%</div>
-</div>
-
-<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:26px;">
-<div style="font-size:20px;color:#334139;">Meaning &amp; Engagement</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=me.get("averageChange")%>%</div>
-</div>
-
-<div style="display:flex;justify-content:space-between;align-items:flex-end;">
-<div style="font-size:20px;color:#334139;">Future Orientation</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=fo.get("averageChange")%>%</div>
 </div>
 
 </div>
 
-<div style="margin-top:40px;font-size:11px;line-height:1.8;color:#8d938d;">
-Average percentage improvement across paired participant assessments.
+<div class="le-divider" style="margin-top:74px;margin-bottom:54px;"></div>
+
+<div class="le-eyebrow">
+
+Five Contributing Dimensions
+
+</div>
+
+<div class="le-intro" style="margin-top:22px;max-width:620px;">
+
+Each dimension is calculated independently using paired participant assessments. Together they contribute to the overall Mood Quotient while remaining visible as separate domains of psychological wellbeing.
+
+</div>
+
+<div style="margin-top:56px;">
+
+<div style="border-top:1px solid #ebe7df;">
+
+<!-- Cognitive Clarity -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Cognitive Clarity
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:440px;">
+
+The ability to think clearly, sustain attention and make decisions with reduced mental fatigue.
+
 </div>
 
 </div>
+
+<div class="le-medium">
+
++<%=cc.get("averageChange")%>%
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Emotional Resilience -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Emotional Resilience
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:440px;">
+
+Capacity to remain emotionally steady while recovering more effectively from stress and daily challenges.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=er.get("averageChange")%>%
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Somatic Balance -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Somatic Balance
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:440px;">
+
+Awareness of bodily comfort, relaxation and the perceived balance between effort and recovery.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=sb.get("averageChange")%>%
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Meaning & Engagement -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Meaning &amp; Engagement
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:440px;">
+
+Sense of purpose, enthusiasm and willingness to participate fully in work and everyday life.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=me.get("averageChange")%>%
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Future Orientation -->
+
+<div style="padding:34px 0;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Future Orientation
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:440px;">
+
+Confidence, optimism and motivation when thinking about future goals and possibilities.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=fo.get("averageChange")%>%
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="le-divider" style="margin-top:72px;margin-bottom:56px;"></div>
+
+<div style="max-width:680px;margin:auto;">
+
+<div class="le-eyebrow">
+
+Interpreting the Findings
+
+</div>
+
+<div class="le-h2" style="
+font-size:30px;
+margin-top:18px;">
+
+A broader view of psychological wellbeing
+
+</div>
+
+<div class="le-intro" style="
+margin-top:26px;
+max-width:680px;">
+
+Psychological wellbeing is multidimensional. Improvements in one domain do not always occur alongside improvements in another. Someone may think more clearly while still feeling emotionally overwhelmed, or regain physical calm before experiencing greater motivation or purpose. Looking at these dimensions together provides a more balanced understanding of overall mental wellbeing than relying on a single measure alone.
+
+</div>
+
+<div class="le-intro" style="
+margin-top:28px;
+max-width:680px;">
+
+Mood Quotient is designed as a composite observational measure that integrates five independently assessed dimensions into a single summary score. The individual dimensions remain visible because each reflects a distinct aspect of psychological function and may respond differently across participants.
+
+</div>
+
+<div class="le-divider" style="
+margin-top:62px;
+margin-bottom:48px;"></div>
+
+<div class="le-eyebrow">
+
+Methodological Note
+
+</div>
+
+<div style="
+font-size:20px;
+line-height:1.9;
+color:#324039;
+margin-top:22px;">
+
+Values shown represent the average percentage improvement observed among participants with paired pre- and post-programme assessments available for each dimension. Participant counts may differ across measures because incomplete assessment pairs are excluded from individual calculations.
+
+</div>
+
+<div class="le-note" style="
+margin-top:34px;">
+
+Mood Quotient is an observational composite index developed by Moodforest to summarise multiple dimensions of psychological wellbeing within the Living Evidence framework. Individual dimensions are calculated independently before contributing to the composite score.
+
+</div>
+
+</div>
+
+<div style="height:32px;"></div>
 
 <style>
-@media(max-width:640px){
-div[style*='font-size:96px']{font-size:68px!important;}
-div[style*='font-size:42px']{font-size:34px!important;}
-div[style*='font-size:34px']{font-size:28px!important;}
-div[style*='font-size:30px']{font-size:24px!important;}
-div[style*='font-size:20px']{font-size:18px!important;}
+
+/* ==========================================================
+LE-02 Mind
+Responsive refinements
+========================================================== */
+
+@media (max-width:640px){
+
+.le-section{
+
+padding-left:20px;
+padding-right:20px;
+
 }
-</style>
+
+/* Headings */
+
+.le-h2{
+
+font-size:34px !important;
+line-height:1.18;
+
+}
+
+/* Main percentage */
+
+.le-big{
+
+font-size:68px !important;
+line-height:.92;
+
+}
+
+/* Dimension values */
+
+.le-medium{
+
+font-size:28px !important;
+
+}
+
+/* Dimension rows */
+
+div[style*="justify-content:space-between"]{
+
+flex-direction:column;
+align-items:flex-start !important;
+gap:16px !important;
+
+}
+
+/* Dimension titles */
+
+div[style*="font-size:24px"]{
+
+font-size:21px !important;
+
+}
+
+/* Editorial paragraph */
+
+div[style*="font-size:20px"]{
+
+font-size:18px !important;
+line-height:1.8 !important;
+
+}
+
+/* Improve breathing room */
+
+.le-divider{
+
+margin-top:52px !important;
+margin-bottom:42px !important;
+
+}
+
+/* Prevent long descriptions becoming too wide */
+
+.le-note{
+
+max-width:100% !important;
+
+}
+
+}
 
 <!-- ==========================================================
 Moodforest Living Evidence
-File: LE-03_BioVitality_v3.html
-Replace LE-03_BioVitality_v2.html
+File: LE-03_BioVitality_v4.html
+Replaces LE-03_BioVitality_v3.html
 
-Required variables (adjust only keys if needed)
+Required variables
 
-bv  = outcomes.get("Body_Vitality");
+bv
 
-cvr = outcomes.get("Cardiovascular_Resilience");
-mr  = outcomes.get("Metabolic_Resilience");
-ir  = outcomes.get("Inflammation_Regulation");
-vs  = outcomes.get("Vitamin_Status");
-pr  = outcomes.get("Physical_Resilience");
-bb  = outcomes.get("Belly_Balance");
-=========================================================== -->
+cvr
+mr
+ir
+vs
+pr
+bb
 
-<div style="max-width:860px;margin:120px auto 100px;padding:0 22px;">
+No Deluge variables modified.
+Calculations preserved.
 
-<div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7d877f;margin-bottom:18px;">
+========================================================== -->
+
+<section class="le-section">
+
+<div style="max-width:760px;margin:auto;">
+
+<div class="le-divider" style="margin:0 0 52px 0;width:100%;"></div>
+
+<div class="le-eyebrow">
+
 Body
+
 </div>
 
-<div style="font-size:42px;font-weight:700;line-height:1.2;letter-spacing:-0.03em;color:#22352C;">
-Bio‑Vitality
+<div class="le-h2" style="margin-top:18px;">
+
+Bio-Vitality
+
 </div>
 
-<div style="max-width:660px;margin-top:24px;font-size:19px;line-height:1.85;color:#5f6d64;">
-Bio‑Vitality is Moodforest's composite measure of whole‑body wellbeing. It brings together six independently calculated physiological systems into a single measure of physical resilience.
+<div class="le-intro" style="margin-top:30px;">
+
+Human physiology is shaped by interconnected biological systems rather than isolated biomarkers. Bio-Vitality combines six independently evaluated domains into a single composite measure, providing a broader view of physical resilience before and after participation.
+
 </div>
 
-<div style="height:70px;"></div>
+<div style="height:82px;"></div>
 
 <div style="text-align:center;">
-<div style="font-size:96px;font-weight:300;line-height:.9;letter-spacing:-0.05em;color:#22352C;">
-+<%=bv.get("averageChange")%>%
+
+<div class="le-big">
+
++<%=bv.get("averageChange")%>
+
 </div>
 
-<div style="font-size:30px;margin-top:18px;color:#24332b;">
-Bio‑Vitality
+<div style="
+margin-top:8px;
+font-size:18px;
+color:#8d938d;">
+
+%
+
 </div>
 
-<div style="margin-top:14px;font-size:11px;color:#8d938d;">
+<div style="
+margin-top:20px;
+font-size:28px;
+color:#24332b;">
+
+Bio-Vitality
+
+</div>
+
+<div class="le-note" style="margin-top:18px;">
+
 n = <%=bv.get("participants")%> paired assessments
-</div>
-</div>
 
-<div style="width:70px;height:1px;background:#e7e3db;margin:60px auto 34px;"></div>
-
-<div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8d938d;margin-bottom:28px;">
-Physiological Systems
 </div>
 
-<div style="max-width:720px;margin:0 auto;">
-
-
-<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
-<div style="font-size:20px;color:#334139;">Cardiovascular Resilience</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=cvr.get("averageChange")%>%</div>
 </div>
-<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+
+<div class="le-divider" style="margin-top:74px;margin-bottom:54px;"></div>
+
+<div class="le-eyebrow">
+
+Six Physiological Systems
+
+</div>
+
+<div class="le-intro" style="margin-top:22px;max-width:640px;">
+
+Each physiological system is calculated independently using paired participant assessments. Together they contribute to Bio-Vitality while remaining visible as separate biological domains.
+
+</div>
+
+<div style="margin-top:56px;">
+
+<div style="border-top:1px solid #ebe7df;">
+
+<!-- Cardiovascular Resilience -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Cardiovascular Resilience
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:460px;">
+
+Reflects the body's ability to maintain healthy circulation and cardiovascular regulation through blood pressure, resting pulse and lipid-related biomarkers.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=cvr.get("averageChange")%>%
+
+</div>
+
+</div>
+
+<div class="le-note" style="margin-top:14px;">
+
 n = <%=cvr.get("participants")%> paired assessments
-</div>
+
 </div>
 
-<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
-<div style="font-size:20px;color:#334139;">Metabolic Resilience</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=mr.get("averageChange")%>%</div>
 </div>
-<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+
+
+<!-- Metabolic Resilience -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Metabolic Resilience
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:460px;">
+
+Represents the body's capacity to regulate energy metabolism and maintain healthy glucose control.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=mr.get("averageChange")%>%
+
+</div>
+
+</div>
+
+<div class="le-note" style="margin-top:14px;">
+
 n = <%=mr.get("participants")%> paired assessments
-</div>
+
 </div>
 
-<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
-<div style="font-size:20px;color:#334139;">Inflammation Regulation</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=ir.get("averageChange")%>%</div>
 </div>
-<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+
+
+<!-- Inflammation Regulation -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Inflammation Regulation
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:460px;">
+
+Indicates the body's ability to regulate inflammatory activity, an important component of recovery and long-term physiological resilience.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=ir.get("averageChange")%>%
+
+</div>
+
+</div>
+
+<div class="le-note" style="margin-top:14px;">
+
 n = <%=ir.get("participants")%> paired assessments
-</div>
+
 </div>
 
-<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
-<div style="font-size:20px;color:#334139;">Vitamin Status</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=vs.get("averageChange")%>%</div>
 </div>
-<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+
+
+<!-- Vitamin Status -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Vitamin Status
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:460px;">
+
+Summarises observed changes in key micronutrients that support immune function, metabolism and neurological health.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=vs.get("averageChange")%>%
+
+</div>
+
+</div>
+
+<div class="le-note" style="margin-top:14px;">
+
 n = <%=vs.get("participants")%> paired assessments
-</div>
+
 </div>
 
-<div style="margin-bottom:26px;border-bottom:1px solid #efede8;padding-bottom:24px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
-<div style="font-size:20px;color:#334139;">Physical Resilience</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=pr.get("averageChange")%>%</div>
 </div>
-<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+
+
+<!-- Physical Resilience -->
+
+<div style="padding:34px 0;border-bottom:1px solid #ebe7df;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Physical Resilience
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:460px;">
+
+Reflects the body's overall functional capacity, including strength, recovery and the ability to tolerate physiological stress.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=pr.get("averageChange")%>%
+
+</div>
+
+</div>
+
+<div class="le-note" style="margin-top:14px;">
+
 n = <%=pr.get("participants")%> paired assessments
-</div>
+
 </div>
 
-<div style="margin-bottom:26px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
-<div style="font-size:20px;color:#334139;">Belly Balance</div>
-<div style="font-size:34px;font-weight:300;color:#22352C;">+<%=bb.get("averageChange")%>%</div>
 </div>
-<div style="margin-top:8px;font-size:11px;color:#8d938d;">
+
+
+<!-- Belly Balance -->
+
+<div style="padding:34px 0;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:28px;">
+
+<div>
+
+<div style="
+font-size:24px;
+font-weight:500;
+color:#22352C;">
+
+Belly Balance
+
+</div>
+
+<div class="le-note" style="margin-top:10px;max-width:460px;">
+
+Represents changes in central body composition, an important indicator associated with metabolic and cardiovascular health.
+
+</div>
+
+</div>
+
+<div class="le-medium">
+
++<%=bb.get("averageChange")%>%
+
+</div>
+
+</div>
+
+<div class="le-note" style="margin-top:14px;">
+
 n = <%=bb.get("participants")%> paired assessments
+
 </div>
+
 </div>
 
 </div>
 
-<div style="margin-top:40px;font-size:11px;line-height:1.8;color:#8d938d;">
-Each physiological system is calculated independently. Participant counts vary because different laboratory tests and assessments were available for different participants.
+
+<div class="le-divider" style="margin-top:72px;margin-bottom:56px;"></div>
+
+<div style="max-width:700px;margin:auto;">
+
+<div class="le-eyebrow">
+
+Interpreting the Findings
+
+</div>
+
+<div class="le-h2" style="
+font-size:30px;
+margin-top:18px;">
+
+Looking beyond individual biomarkers
+
+</div>
+
+<div class="le-intro" style="
+margin-top:26px;
+max-width:680px;">
+
+Human biology functions as an interconnected network of physiological systems. While individual biomarkers provide valuable clinical information, they often describe only one aspect of health. Changes observed in one marker may occur independently of improvements elsewhere, making isolated values difficult to interpret in the context of whole-body wellbeing.
+
+</div>
+
+<div class="le-intro" style="
+margin-top:28px;
+max-width:680px;">
+
+Bio-Vitality brings together six independently evaluated physiological systems into a single composite measure. Each system reflects a different aspect of biological function and remains visible alongside the overall score, allowing improvements to be understood both individually and collectively.
+
+</div>
+
+<div class="le-divider" style="
+margin-top:64px;
+margin-bottom:48px;"></div>
+
+<div class="le-eyebrow">
+
+Methodological Note
+
+</div>
+
+<div style="
+font-size:20px;
+line-height:1.9;
+color:#324039;
+margin-top:22px;">
+
+Average percentage improvements are calculated from paired participant assessments for each physiological system. Because laboratory investigations and clinical measurements were not available for every participant, the number of paired assessments differs between systems.
+
+</div>
+
+<div class="le-note" style="
+margin-top:32px;">
+
+Bio-Vitality is an observational composite measure developed by Moodforest to summarise multiple dimensions of physiological wellbeing within the Living Evidence framework. Individual physiological systems are calculated independently before contributing to the composite score.
+
 </div>
 
 </div>
+
+<div style="height:32px;"></div>
 
 <style>
-@media(max-width:640px){
-div[style*='font-size:96px']{font-size:68px!important;}
-div[style*='font-size:42px']{font-size:34px!important;}
-div[style*='font-size:34px']{font-size:28px!important;}
-div[style*='font-size:30px']{font-size:24px!important;}
-div[style*='font-size:20px']{font-size:18px!important;}
+
+/* ==========================================================
+LE-03 Bio-Vitality
+Responsive refinements
+========================================================== */
+
+@media (max-width:640px){
+
+.le-section{
+
+padding-left:20px;
+padding-right:20px;
+
 }
+
+/* Main heading */
+
+.le-h2{
+
+font-size:34px !important;
+line-height:1.18;
+
+}
+
+/* Hero number */
+
+.le-big{
+
+font-size:68px !important;
+line-height:.92;
+
+}
+
+/* System values */
+
+.le-medium{
+
+font-size:28px !important;
+
+}
+
+/* Stack system rows */
+
+div[style*="justify-content:space-between"]{
+
+flex-direction:column;
+align-items:flex-start !important;
+gap:16px !important;
+
+}
+
+/* System titles */
+
+div[style*="font-size:24px"]{
+
+font-size:21px !important;
+
+}
+
+/* Editorial paragraphs */
+
+div[style*="font-size:20px"]{
+
+font-size:18px !important;
+line-height:1.8 !important;
+
+}
+
+/* Better spacing */
+
+.le-divider{
+
+margin-top:52px !important;
+margin-bottom:42px !important;
+
+}
+
+/* Prevent notes becoming narrow */
+
+.le-note{
+
+max-width:100% !important;
+
+}
+
+}
+
 </style>
+
+<!-- ==========================================================
+End of LE-03_BioVitality_v4.html
+
+The following section begins immediately:
+
+LE-04A_CardiovascularHealth_v2.html
+
+========================================================== -->
+
+</section>
+
+
+
+
+
 
 <!-- ==========================================================
 Moodforest Living Evidence
