@@ -3,21 +3,23 @@ map calculateStatistics(list preValues, list postValues, int direction)
 	// =====================================================
 	// INITIALIZE
 	// =====================================================
-
 	returnMap = Map();
-
 	baselineTotal = 0.0;
 	postTotal = 0.0;
-
 	totalPercentChange = 0.0;
 	maximumPercentChange = null;
-
 	participantCount = 0;
-
+	// Top 3 percentage improvements
+	top1 = null;
+	top2 = null;
+	top3 = null;
+	// Top 3 absolute improvements
+	diff1 = null;
+	diff2 = null;
+	diff3 = null;
 	// =====================================================
 	// VALIDATION
 	// =====================================================
-
 	if(preValues.size() != postValues.size())
 	{
 		returnMap.put("baseline",0);
@@ -25,48 +27,86 @@ map calculateStatistics(list preValues, list postValues, int direction)
 		returnMap.put("averageChange",0);
 		returnMap.put("maximumChange",0);
 		returnMap.put("participants",0);
+		returnMap.put("averageDifference",0);
+		returnMap.put("highestObserved",List());
+		returnMap.put("highestObservedDifference",List());
+		returnMap.put("direction",direction);
+		if(direction == 1)
+		{
+			returnMap.put("changeLabel","Average improvement");
+		}
+		else
+		{
+			returnMap.put("changeLabel","Average reduction");
+		}
 		return returnMap;
 	}
-
 	// =====================================================
 	// CALCULATE
 	// =====================================================
-
 	i = 0;
-
-	for each preValue in preValues
+	for each  preValue in preValues
 	{
 		postValue = postValues.get(i);
-
 		if(preValue != null && postValue != null)
 		{
 			baselineTotal = baselineTotal + preValue;
 			postTotal = postTotal + postValue;
-
 			participantCount = participantCount + 1;
-
 			if(preValue != 0)
 			{
-				rawPercentChange = ((postValue - preValue) / preValue) * 100;
-
+				rawPercentChange = (postValue - preValue) / preValue * 100;
 				percentImprovement = rawPercentChange * direction;
-
+				absoluteImprovement = (postValue - preValue) * direction;
 				totalPercentChange = totalPercentChange + percentImprovement;
-
+				// Maximum percentage improvement
 				if(maximumPercentChange == null || percentImprovement > maximumPercentChange)
 				{
 					maximumPercentChange = percentImprovement;
 				}
+				// ============================================
+				// TOP 3 PERCENTAGE IMPROVEMENTS
+				// ============================================
+				if(top1 == null || percentImprovement > top1)
+				{
+					top3 = top2;
+					top2 = top1;
+					top1 = percentImprovement;
+				}
+				else if(top2 == null || percentImprovement > top2)
+				{
+					top3 = top2;
+					top2 = percentImprovement;
+				}
+				else if(top3 == null || percentImprovement > top3)
+				{
+					top3 = percentImprovement;
+				}
+				// ============================================
+				// TOP 3 ABSOLUTE IMPROVEMENTS
+				// ============================================
+				if(diff1 == null || absoluteImprovement > diff1)
+				{
+					diff3 = diff2;
+					diff2 = diff1;
+					diff1 = absoluteImprovement;
+				}
+				else if(diff2 == null || absoluteImprovement > diff2)
+				{
+					diff3 = diff2;
+					diff2 = absoluteImprovement;
+				}
+				else if(diff3 == null || absoluteImprovement > diff3)
+				{
+					diff3 = absoluteImprovement;
+				}
 			}
 		}
-
 		i = i + 1;
 	}
-
 	// =====================================================
 	// AVERAGES
 	// =====================================================
-
 	if(participantCount > 0)
 	{
 		baselineAverage = (baselineTotal / participantCount).round(1);
@@ -79,21 +119,59 @@ map calculateStatistics(list preValues, list postValues, int direction)
 		postAverage = 0;
 		averageImprovement = 0;
 	}
-
 	if(maximumPercentChange == null)
 	{
 		maximumPercentChange = 0;
 	}
-
+	averageDifference = ((postAverage - baselineAverage) * direction).round(1);
+	// =====================================================
+	// BUILD LISTS
+	// =====================================================
+	highestObserved = List();
+	if(top1 != null)
+	{
+		highestObserved.add(top1.round(1));
+	}
+	if(top2 != null)
+	{
+		highestObserved.add(top2.round(1));
+	}
+	if(top3 != null)
+	{
+		highestObserved.add(top3.round(1));
+	}
+	highestObservedDifference = List();
+	if(diff1 != null)
+	{
+		highestObservedDifference.add(diff1.round(1));
+	}
+	if(diff2 != null)
+	{
+		highestObservedDifference.add(diff2.round(1));
+	}
+	if(diff3 != null)
+	{
+		highestObservedDifference.add(diff3.round(1));
+	}
 	// =====================================================
 	// RETURN
 	// =====================================================
-
 	returnMap.put("baseline",baselineAverage);
 	returnMap.put("post",postAverage);
 	returnMap.put("averageChange",averageImprovement);
 	returnMap.put("maximumChange",maximumPercentChange.round(1));
 	returnMap.put("participants",participantCount);
-
+	returnMap.put("averageDifference",averageDifference);
+	returnMap.put("highestObserved",highestObserved);
+	returnMap.put("highestObservedDifference",highestObservedDifference);
+	returnMap.put("direction",direction);
+	if(direction == 1)
+	{
+		returnMap.put("changeLabel","Average improvement");
+	}
+	else
+	{
+		returnMap.put("changeLabel","Average reduction");
+	}
 	return returnMap;
 }
