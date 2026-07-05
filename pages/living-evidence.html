@@ -165,6 +165,19 @@ color:var(--heading);
 
 }
 
+/* ---------- BIOMARKER VALUES ---------- */
+
+.le-metric{
+
+font-size:40px;
+font-weight:300;
+line-height:1;
+letter-spacing:-.03em;
+font-variant-numeric:tabular-nums;
+color:var(--heading);
+
+}
+
 .le-medium{
 
 font-size:34px;
@@ -1494,7 +1507,7 @@ Systolic Blood Pressure
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:16px;">
 
 <%=sbp.get("averageDifference")%> mmHg
 
@@ -1513,7 +1526,7 @@ letter-spacing:.16em;
 text-transform:uppercase;
 color:#97A09A;">
 
-Highest observed changes
+Highest observed
 
 </div>
 
@@ -1560,7 +1573,7 @@ Diastolic Blood Pressure
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:16px;">
 
 <%=dbp.get("averageDifference")%> mmHg
 
@@ -1579,7 +1592,7 @@ letter-spacing:.16em;
 text-transform:uppercase;
 color:#97A09A;">
 
-Highest observed changes
+Highest observed
 
 </div>
 
@@ -1627,7 +1640,7 @@ Resting Pulse
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:16px;">
 
 <%=pulse.get("averageDifference")%> bpm
 
@@ -1646,7 +1659,7 @@ letter-spacing:.16em;
 text-transform:uppercase;
 color:#97A09A;">
 
-Highest observed changes
+Highest observed
 
 </div>
 
@@ -1692,7 +1705,7 @@ LDL Cholesterol
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:16px;">
 
 <%=ldl.get("averageChange")%>%
 
@@ -1757,7 +1770,7 @@ HDL Cholesterol
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:16px;">
 
 <%=hdl.get("averageChange")%>%
 
@@ -1822,7 +1835,7 @@ Apolipoprotein B (ApoB)
 
 </div>
 
-<div class="le-big" style="margin-top:16px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:16px;">
 
 <%=apob.get("averageChange")%>%
 
@@ -1942,10 +1955,9 @@ HbA1c
 
 </div>
 
-<div class="le-big" style="
+<div class="le-metric" style="
 margin-top:18px;
-font-size:40px;
-line-height:1;">
+
 
 <%=hba1c.get("averageChange")%>%
 
@@ -2056,10 +2068,8 @@ High-sensitivity C-Reactive Protein (hsCRP)
 
 </div>
 
-<div class="le-big" style="
+<div class="le-metric" style="
 margin-top:18px;
-font-size:40px;
-line-height:1;">
 
 <%=hscrp.get("averageChange")%>%
 
@@ -2169,10 +2179,8 @@ Vitamin D
 
 </div>
 
-<div class="le-big" style="
+<div class="le-metric" style="
 margin-top:18px;
-font-size:40px;
-line-height:1;">
 
 <%=vitd.get("averageChange")%>%
 
@@ -2235,10 +2243,8 @@ Vitamin B12
 
 </div>
 
-<div class="le-big" style="
+<div class="le-metric" style="
 margin-top:18px;
-font-size:40px;
-line-height:1;">
 
 <%=b12.get("averageChange")%>%
 
@@ -2342,7 +2348,7 @@ Body Weight
 
 </div>
 
-<div class="le-big" style="margin-top:18px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:18px;font-size:40px;line-height:1;">
 
 <%=weight.get("averageDifference")%> kg
 
@@ -2390,7 +2396,7 @@ Body Mass Index (BMI)
 
 </div>
 
-<div class="le-big" style="margin-top:18px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:18px;font-size:40px;line-height:1;">
 
 <%=bmi.get("averageDifference")%>
 
@@ -2437,7 +2443,7 @@ Visceral Fat
 
 </div>
 
-<div class="le-big" style="margin-top:18px;font-size:40px;line-height:1;">
+<div class="le-metric" style="margin-top:18px;font-size:40px;line-height:1;">
 
 <%=visceralfat.get("averageDifference")%>
 
