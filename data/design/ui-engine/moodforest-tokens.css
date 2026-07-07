@@ -1,0 +1,423 @@
+/*
+===============================================================================
+Moodforest UI Engine
+===============================================================================
+
+File
+    moodforest-tokens.css
+
+Version
+    1.0
+
+Status
+    LOCKED
+Last Updated
+    07 July 2026
+
+Purpose
+    This file defines the global design tokens used throughout the Moodforest
+    website.
+
+    It is the single source of truth for colours, typography, spacing,
+    sizing, layout, motion and accessibility.
+
+Engineering Rules
+
+    1. Components never use hard-coded values.
+
+    2. Components consume semantic tokens.
+
+    3. Semantic tokens map to primitive tokens.
+
+    4. All reusable values belong in this file.
+
+    5. No component introduces new colours, spacing, typography,
+       shadows or border radii.
+
+Design Philosophy
+
+    Moodforest is designed as a documentary.
+
+    Not an advertisement.
+
+    The design exists to reduce uncertainty,
+    increase understanding,
+    and quietly build trust.
+
+    Simplicity is a scientific discipline.
+
+===============================================================================
+TABLE OF CONTENTS
+===============================================================================
+
+01 Foundation
+02 Primitive Colour Palette
+03 Semantic Colour System
+04 Typography
+05 Spacing
+06 Layout
+07 Borders
+08 Border Radius
+09 Shadows
+10 Motion
+11 Z-Index
+12 Forms
+13 Accessibility
+14 Future Tokens
+
+===============================================================================
+NAMING CONVENTION
+===============================================================================
+
+Primitive Tokens
+
+    --mf-forest-700
+    --mf-space-24
+    --mf-radius-md
+
+Semantic Tokens
+
+    --mf-color-background
+    --mf-color-text
+    --mf-color-primary
+
+Component Tokens
+(Not defined here.)
+
+Example
+
+    Primitive
+        --mf-forest-700
+
+            ↓
+
+    Semantic
+        --mf-color-primary
+
+            ↓
+
+    Component
+
+        .mf-button {
+            background: var(--mf-color-primary);
+        }
+
+Never reference primitive colours inside components.
+
+===============================================================================
+VERSION HISTORY
+===============================================================================
+
+v1.0
+Production release.
+Locked on 07 July 2026.
+
+===============================================================================
+*/
+
+/* ============================================================================
+   01 FOUNDATION
+============================================================================ */
+
+:root {
+  /*
+    ---------------------------------------------------------------------------
+    All global design tokens are declared inside this root scope.
+
+    Components must never define design values that belong here.
+
+    Every visual decision should ultimately trace back to this file.
+    ---------------------------------------------------------------------------
+    */
+
+  /* =========================================================================
+       02 PRIMITIVE COLOUR PALETTE
+       -------------------------------------------------------------------------
+       These colours represent the natural visual language of Moodforest.
+
+       Components must NEVER use these directly.
+
+       Components always consume semantic colours defined later.
+       ========================================================================= */
+
+  /* -------------------------------------------------------------------------
+       FOREST
+       Primary identity
+       ------------------------------------------------------------------------- */
+
+  --mf-forest-900: #173328;
+  --mf-forest-800: #214538;
+  --mf-forest-700: #2f5d4c;
+  --mf-forest-600: #4a7865;
+  --mf-forest-500: #6c9985;
+  --mf-forest-400: #9dbdac;
+  --mf-forest-300: #c8d9d0;
+  --mf-forest-200: #e6eeea;
+  --mf-forest-100: #f4f8f6;
+
+  /* -------------------------------------------------------------------------
+       STONE
+       Primary reading colours
+       ------------------------------------------------------------------------- */
+
+  --mf-stone-900: #222525;
+  --mf-stone-800: #383c3c;
+  --mf-stone-700: #555b5b;
+  --mf-stone-600: #757c7c;
+  --mf-stone-500: #979e9e;
+  --mf-stone-400: #bec4c4;
+  --mf-stone-300: #d9dddd;
+  --mf-stone-200: #ecefef;
+  --mf-stone-100: #f7f8f8;
+
+  /* -------------------------------------------------------------------------
+       PAPER
+       Primary backgrounds
+       ------------------------------------------------------------------------- */
+
+  --mf-paper-100: #fcfbf8;
+  --mf-paper-200: #f8f6f2;
+  --mf-paper-300: #f3f1ec;
+
+  /* -------------------------------------------------------------------------
+       MIST
+       Quiet surfaces
+       ------------------------------------------------------------------------- */
+
+  --mf-mist-100: #f6f7f6;
+  --mf-mist-200: #eff2f0;
+  --mf-mist-300: #e6ebe8;
+
+  /* -------------------------------------------------------------------------
+       WATER
+       Reserved for information
+       ------------------------------------------------------------------------- */
+
+  --mf-water-700: #2d6e9f;
+  --mf-water-500: #5f98c2;
+  --mf-water-200: #ddebf5;
+
+  /* -------------------------------------------------------------------------
+       MORNING LIGHT
+       Reserved for subtle highlights
+       ------------------------------------------------------------------------- */
+
+  --mf-light-200: #fff8e8;
+  --mf-light-300: #f8ebc6;
+
+  /* -------------------------------------------------------------------------
+       STATE COLOURS
+       Reserved for forms and feedback
+       ------------------------------------------------------------------------- */
+
+  --mf-success: #2e7d57;
+  --mf-warning: #b88416;
+  --mf-danger: #c04747;
+  --mf-info: #2d6e9f;
+  /* ============================================================================
+   03 SEMANTIC COLOURS
+   ========================================================================== */
+
+  /* Backgrounds */
+
+  --mf-color-background: var(--mf-paper-100);
+  --mf-color-surface: var(--mf-paper-200);
+  --mf-color-surface-soft: var(--mf-mist-100);
+
+  /* Typography */
+
+  --mf-color-heading: var(--mf-forest-900);
+  --mf-color-text: var(--mf-stone-900);
+  --mf-color-text-muted: var(--mf-stone-700);
+  --mf-color-text-light: var(--mf-stone-500);
+
+  /* Primary Brand */
+
+  --mf-color-primary: var(--mf-forest-700);
+  --mf-color-primary-hover: var(--mf-forest-800);
+
+  /* Borders */
+
+  --mf-color-border: var(--mf-stone-300);
+  --mf-color-divider: var(--mf-stone-200);
+
+  /* Links */
+
+  --mf-color-link: var(--mf-forest-700);
+  --mf-color-link-hover: var(--mf-forest-900);
+
+  /* States */
+
+  --mf-color-success: var(--mf-success);
+  --mf-color-warning: var(--mf-warning);
+  --mf-color-danger: var(--mf-danger);
+  --mf-color-info: var(--mf-info);
+
+  /* Focus */
+
+  --mf-color-focus: #3b82f6;
+
+  /* =========================================================================
+       04 TYPOGRAPHY
+       ========================================================================= */
+
+  /* Font Families */
+
+  --mf-font-family-base:
+    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+
+  --mf-font-family-heading: var(--mf-font-family-base);
+
+  /* Font Weights */
+
+  --mf-font-weight-regular: 400;
+  --mf-font-weight-medium: 500;
+  --mf-font-weight-semibold: 600;
+  --mf-font-weight-bold: 700;
+
+  /* Font Sizes
+       Mobile-first using clamp()
+    */
+
+  --mf-font-size-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.8rem);
+  --mf-font-size-sm: clamp(0.875rem, 0.84rem + 0.1vw, 0.95rem);
+  --mf-font-size-md: clamp(1rem, 0.96rem + 0.2vw, 1.05rem);
+
+  --mf-font-size-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+
+  --mf-font-size-xl: clamp(1.5rem, 1.35rem + 0.8vw, 1.75rem);
+
+  --mf-font-size-2xl: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+
+  --mf-font-size-3xl: clamp(2.5rem, 2.2rem + 1.2vw, 3.5rem);
+
+  /* Line Heights */
+
+  --mf-line-height-tight: 1.2;
+  --mf-line-height-normal: 1.6;
+  --mf-line-height-loose: 1.8;
+
+  /* Letter Spacing */
+
+  --mf-letter-spacing-tight: -0.02em;
+  --mf-letter-spacing-normal: 0;
+  --mf-letter-spacing-wide: 0.02em;
+
+  /* =========================================================================
+       05 SPACING
+       ========================================================================= */
+
+  --mf-space-0: 0;
+  --mf-space-4: 0.25rem;
+  --mf-space-8: 0.5rem;
+  --mf-space-12: 0.75rem;
+  --mf-space-16: 1rem;
+  --mf-space-20: 1.25rem;
+  --mf-space-24: 1.5rem;
+  --mf-space-32: 2rem;
+  --mf-space-40: 2.5rem;
+  --mf-space-48: 3rem;
+  --mf-space-64: 4rem;
+  --mf-space-80: 5rem;
+  --mf-space-96: 6rem;
+  --mf-space-128: 8rem;
+
+  /* Common spacing */
+
+  --mf-container-padding: var(--mf-space-24);
+  --mf-section-padding: var(--mf-space-80);
+  --mf-card-padding: var(--mf-space-24);
+  --mf-button-padding-x: var(--mf-space-24);
+  --mf-button-padding-y: var(--mf-space-12);
+
+  /* =========================================================================
+       06 LAYOUT
+       ========================================================================= */
+
+  --mf-container-reading: 720px;
+  --mf-container-content: 960px;
+  --mf-container-wide: 1200px;
+  --mf-container-full: 1440px;
+
+  --mf-breakpoint-mobile: 480px;
+  --mf-breakpoint-tablet: 768px;
+  --mf-breakpoint-laptop: 1024px;
+  --mf-breakpoint-desktop: 1280px;
+
+  /* =========================================================================
+       07 BORDERS
+       ========================================================================= */
+
+  --mf-border-width: 1px;
+  --mf-border-width-strong: 2px;
+
+  --mf-border-color: var(--mf-color-border);
+
+  /* =========================================================================
+       08 BORDER RADIUS
+       ========================================================================= */
+
+  --mf-radius-sm: 4px;
+  --mf-radius-md: 8px;
+  --mf-radius-lg: 12px;
+  --mf-radius-xl: 16px;
+  --mf-radius-2xl: 24px;
+  --mf-radius-pill: 9999px;
+
+  /* =========================================================================
+       09 SHADOWS
+       ========================================================================= */
+
+  --mf-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+
+  --mf-shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  --mf-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1);
+
+  /* =========================================================================
+       10 MOTION
+       ========================================================================= */
+
+  --mf-transition-fast: 150ms ease;
+
+  --mf-transition-normal: 250ms ease;
+
+  --mf-transition-slow: 400ms ease;
+
+  /* =========================================================================
+       11 Z-INDEX
+       ========================================================================= */
+
+  --mf-z-base: 1;
+  --mf-z-dropdown: 100;
+  --mf-z-sticky: 500;
+  --mf-z-overlay: 900;
+  --mf-z-modal: 1000;
+  --mf-z-toast: 1100;
+
+  /* =========================================================================
+       12 FORMS
+       ========================================================================= */
+
+  --mf-input-height: 48px;
+  --mf-button-height: 48px;
+
+  --mf-input-radius: var(--mf-radius-md);
+
+  --mf-input-padding-x: var(--mf-space-16);
+
+  --mf-input-padding-y: var(--mf-space-12);
+
+  /* =========================================================================
+       13 ACCESSIBILITY
+       ========================================================================= */
+
+  --mf-focus-ring-width: 3px;
+
+  --mf-focus-ring-color: rgba(59, 130, 246, 0.35);
+
+  --mf-disabled-opacity: 0.5;
+
+  --mf-overlay-dark: rgba(0, 0, 0, 0.45);
+}
